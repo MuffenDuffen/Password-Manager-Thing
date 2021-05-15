@@ -4,12 +4,7 @@
     <projectFile>PasswordManger/PasswordManger.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbf3dc69-fbaa-44b1-ba63-277ed7cd8532" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PasswordManger/Interface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" afterDir="false" />
-    </list>
+    <list default="true" id="cbf3dc69-fbaa-44b1-ba63-277ed7cd8532" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +62,7 @@
       <updated>1621003509837</updated>
       <workItem from="1621003512786" duration="799000" />
       <workItem from="1621004667432" duration="106000" />
-      <workItem from="1621004787112" duration="3116000" />
+      <workItem from="1621004787112" duration="3348000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -81,7 +76,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1621003710464</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Started working on user input.">
+      <created>1621008143741</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1621008143741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +106,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Base commit" />
     <MESSAGE value="more base commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="more base commits" />
+    <MESSAGE value="Started working on user input." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started working on user input." />
   </component>
 </project>
