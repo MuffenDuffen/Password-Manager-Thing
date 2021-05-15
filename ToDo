@@ -2,3 +2,14 @@ ToDo List
 - Create password hasher
 - Create password encryptor
 - "Visual" interface
+
+Master passsword
+- Encrypt using the encryption key (see Storing encryption key)
+- Hash
+- Hash again
+- Do steps 1-3 on input and compare output string for login
+
+Storing encryption key
+- Get information from entered master password (length, first character, utf-8 values)
+- Make encryption functions run based on the info (if length is 16 then run NextCharacter)
+- Encrypt passwords using the encryption key gotten from the master password 
