@@ -4,7 +4,27 @@
     <projectFile>PasswordManger/PasswordManger.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbf3dc69-fbaa-44b1-ba63-277ed7cd8532" name="Default Changelist" comment="" />
+    <list default="true" id="cbf3dc69-fbaa-44b1-ba63-277ed7cd8532" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PasswordManger/Data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.deps.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.runtimeconfig.dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.runtimeconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.genruntimeconfig.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/apphost.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Interface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +83,7 @@
       <workItem from="1621003512786" duration="799000" />
       <workItem from="1621004667432" duration="106000" />
       <workItem from="1621004787112" duration="3348000" />
+      <workItem from="1621065976902" duration="5711000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
