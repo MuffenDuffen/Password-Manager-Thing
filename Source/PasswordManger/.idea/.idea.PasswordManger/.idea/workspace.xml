@@ -4,14 +4,20 @@
     <projectFile>PasswordManger/PasswordManger.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f92d26f4-9b1e-4b0e-85a6-0852f4415d3a" name="Default Changelist" comment="">
+    <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/project.packagespec.json" afterDir="false" />
@@ -26,7 +32,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/9F/LocalAppContextSwitches.Common.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ACA7B55-3F8E-4F20-AC57-47AA98D503A5/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/5A/AppContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/412/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/1C9/Volatile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/75/Convert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/426/Unsafe.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/199/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/41C/NonRandomizedStringEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ACA7B55-3F8E-4F20-AC57-47AA98D503A5/7/ConsolePal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/3E/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ACA7B55-3F8E-4F20-AC57-47AA98D503A5/E/EncodingHelper.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/FB/BitOperations.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/1F2/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/1F7/EncodingProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/9E/LocalAppContextSwitches.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -97,6 +118,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -105,17 +127,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManger/Program.cs</url>
-          <line>9</line>
-          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Program.cs" initialLine="9" containingFunctionPresentation="method 'Main'">
+          <url>file://$PROJECT_DIR$/PasswordManger/Encrypter.cs</url>
+          <line>53</line>
+          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Encrypter.cs" initialLine="53" containingFunctionPresentation="method 'ConvertToBinaryThenInvertBitsAndBackToString'">
             <startOffsets>
-              <option value="171" />
+              <option value="1840" />
             </startOffsets>
             <endOffsets>
-              <option value="207" />
+              <option value="1874" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

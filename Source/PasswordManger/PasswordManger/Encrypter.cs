@@ -1,23 +1,22 @@
 ﻿using System;
+using System.Collections;
+using System.Linq;
 
 namespace PasswordManger
 {
     internal static class Encryptor
     {
         //Gets next char and replaces old one
-        
+
         //encryptions, replacecharwithnextchar, toandinvertbinary, tooctal
-        
+
         internal static string addOneToUTF8value(string masterPassword)
         {
-            ulong utf8ValueFromChar;
-            char charFromUtf8ValueAddOne;
-
-            foreach (char c in masterPassword)
+            foreach (var c in masterPassword)
             {
-                utf8ValueFromChar = Convert.ToUInt64(c);
+                var utf8ValueFromChar = Convert.ToUInt64(c);
 
-                charFromUtf8ValueAddOne = (char) (utf8ValueFromChar + 1);
+                var charFromUtf8ValueAddOne = (char) (utf8ValueFromChar + 1);
 
                 masterPassword = masterPassword.Replace(c, charFromUtf8ValueAddOne);
             }
@@ -25,33 +24,42 @@ namespace PasswordManger
             return masterPassword;
         }
 
-        internal static string toBinaryAndInvertBits(string stringToInvert)
+        public static string ConvertToBinaryThenInvertBitsAndBackToString(string stringToReverseBits)
         {
-            string invertedStringFromBinary = "";
-            ulong utf8ValueFromChar1;
-            string utf8ValueFromChar1InBinary;
-            int indexInString = 0;
+            var finalString = "";
 
-            foreach (char c in stringToInvert)
+            foreach (var charValue in stringToReverseBits.Select(Convert.ToUInt32))
             {
-                utf8ValueFromChar1 = Convert.ToUInt64(c);
+                var charValueInBinary = Convert.ToString(charValue, 2);
+                var charValueInBinaryArray = new char[charValueInBinary.Length];
+                var indexInCharArray = 0;
 
-                utf8ValueFromChar1InBinary = Convert.ToString((int) utf8ValueFromChar1, 2);
+                for (var i = 0; i < charValueInBinary.Length; i++) charValueInBinaryArray[i] = charValueInBinary[i];
 
-                foreach (char cc in utf8ValueFromChar1InBinary)
+                foreach (var cc in charValueInBinaryArray)
                 {
-                    if (cc == '1')
+                    charValueInBinaryArray[indexInCharArray] = cc switch
                     {
-                        utf8ValueFromChar1InBinary = utf8ValueFromChar1InBinary.Insert(indexInString '0');
-                    }
-                    else if (cc == '0')
-                    {
-                        utf8ValueFromChar1InBinary = utf8ValueFromChar1InBinary.Replace(cc, '1');
-                    }
+                        '1' => '0',
+                        '0' => '1',
+                        _ => charValueInBinaryArray[indexInCharArray]
+                    };
+                    indexInCharArray++;
                 }
+
+                var charFromInvertedBinary = (char) Convert.ToUInt64(charValueInBinary);
+                finalString = finalString.Insert(0, charFromInvertedBinary.ToString());
             }
 
-            return invertedStringFromBinary;
+            stringToReverseBits = finalString;
+            return stringToReverseBits;
+        }
+
+        public static string pSats(string inputString)
+        {
+            var lengthOfString = inputString.Length;
+            
+            
         }
     }
 }

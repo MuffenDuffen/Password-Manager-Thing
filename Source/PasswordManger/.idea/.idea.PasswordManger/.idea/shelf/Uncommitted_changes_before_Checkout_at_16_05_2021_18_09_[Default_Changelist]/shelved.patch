@@ -1,0 +1,162 @@
+Index: PasswordManger/obj/project.packagespec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"version\":\"1.0.0\",\"restore\":{\"projectUniqueName\":\"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\",\"projectName\":\"PasswordManger\",\"projectPath\":\"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\",\"outputPath\":\"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\obj\\\\\",\"projectStyle\":\"PackageReference\",\"fallbackFolders\":[\"C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\Shared\\\\NuGetPackages\"],\"originalTargetFrameworks\":[\"net5.0\"],\"sources\":{\"C:\\\\Program Files (x86)\\\\Microsoft SDKs\\\\NuGetPackages\\\\\":{},\"https://api.nuget.org/v3/index.json\":{}},\"frameworks\":{\"net5.0\":{\"targetAlias\":\"net5.0\",\"projectReferences\":{}}},\"warningProperties\":{\"warnAsError\":[\"NU1605\"]}}\"frameworks\":{\"net5.0\":{\"targetAlias\":\"net5.0\",\"imports\":[\"net461\",\"net462\",\"net47\",\"net471\",\"net472\",\"net48\"],\"assetTargetFallback\":true,\"warn\":true,\"frameworkReferences\":{\"Microsoft.NETCore.App\":{\"privateAssets\":\"all\"}},\"runtimeIdentifierGraphPath\":\"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\5.0.201\\\\RuntimeIdentifierGraph.json\"}}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PasswordManger/obj/project.packagespec.json b/PasswordManger/obj/project.packagespec.json
+--- a/PasswordManger/obj/project.packagespec.json	(revision 36ae5472dc5d77e645cee8ebcf781e061b49b1c8)
++++ b/PasswordManger/obj/project.packagespec.json	(date 1621181346777)
+@@ -1,1 +1,1 @@
+-"version":"1.0.0","restore":{"projectUniqueName":"F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj","projectName":"PasswordManger","projectPath":"F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj","outputPath":"F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\obj\\","projectStyle":"PackageReference","fallbackFolders":["C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"],"originalTargetFrameworks":["net5.0"],"sources":{"C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\":{},"https://api.nuget.org/v3/index.json":{}},"frameworks":{"net5.0":{"targetAlias":"net5.0","projectReferences":{}}},"warningProperties":{"warnAsError":["NU1605"]}}"frameworks":{"net5.0":{"targetAlias":"net5.0","imports":["net461","net462","net47","net471","net472","net48"],"assetTargetFallback":true,"warn":true,"frameworkReferences":{"Microsoft.NETCore.App":{"privateAssets":"all"}},"runtimeIdentifierGraphPath":"C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"}}
+\ No newline at end of file
++"restore":{"projectUniqueName":"C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj","projectName":"PasswordManger","projectPath":"C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj","outputPath":"C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\obj\\","projectStyle":"PackageReference","fallbackFolders":["C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages","C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"],"originalTargetFrameworks":["net5.0"],"sources":{"C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\":{},"https://api.nuget.org/v3/index.json":{}},"frameworks":{"net5.0":{"targetAlias":"net5.0","projectReferences":{}}},"warningProperties":{"warnAsError":["NU1605"]}}"frameworks":{"net5.0":{"targetAlias":"net5.0","imports":["net461","net462","net47","net471","net472","net48"],"assetTargetFallback":true,"warn":true,"frameworkReferences":{"Microsoft.NETCore.App":{"privateAssets":"all"}},"runtimeIdentifierGraphPath":"C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"}}
+\ No newline at end of file
+Index: PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"format\": 1,\r\n  \"restore\": {\r\n    \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\": {}\r\n  },\r\n  \"projects\": {\r\n    \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\": {\r\n      \"version\": \"1.0.0\",\r\n      \"restore\": {\r\n        \"projectUniqueName\": \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\",\r\n        \"projectName\": \"PasswordManger\",\r\n        \"projectPath\": \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\",\r\n        \"packagesPath\": \"C:\\\\Users\\\\reg_i\\\\.nuget\\\\packages\\\\\",\r\n        \"outputPath\": \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\obj\\\\\",\r\n        \"projectStyle\": \"PackageReference\",\r\n        \"fallbackFolders\": [\r\n          \"C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\Shared\\\\NuGetPackages\"\r\n        ],\r\n        \"configFilePaths\": [\r\n          \"C:\\\\Users\\\\reg_i\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\",\r\n          \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.FallbackLocation.config\",\r\n          \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.Offline.config\"\r\n        ],\r\n        \"originalTargetFrameworks\": [\r\n          \"net5.0\"\r\n        ],\r\n        \"sources\": {\r\n          \"C:\\\\Program Files (x86)\\\\Microsoft SDKs\\\\NuGetPackages\\\\\": {},\r\n          \"https://api.nuget.org/v3/index.json\": {}\r\n        },\r\n        \"frameworks\": {\r\n          \"net5.0\": {\r\n            \"targetAlias\": \"net5.0\",\r\n            \"projectReferences\": {}\r\n          }\r\n        },\r\n        \"warningProperties\": {\r\n          \"warnAsError\": [\r\n            \"NU1605\"\r\n          ]\r\n        }\r\n      },\r\n      \"frameworks\": {\r\n        \"net5.0\": {\r\n          \"targetAlias\": \"net5.0\",\r\n          \"imports\": [\r\n            \"net461\",\r\n            \"net462\",\r\n            \"net47\",\r\n            \"net471\",\r\n            \"net472\",\r\n            \"net48\"\r\n          ],\r\n          \"assetTargetFallback\": true,\r\n          \"warn\": true,\r\n          \"frameworkReferences\": {\r\n            \"Microsoft.NETCore.App\": {\r\n              \"privateAssets\": \"all\"\r\n            }\r\n          },\r\n          \"runtimeIdentifierGraphPath\": \"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\5.0.201\\\\RuntimeIdentifierGraph.json\"\r\n        }\r\n      }\r\n    }\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json b/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json
+--- a/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json	(revision 36ae5472dc5d77e645cee8ebcf781e061b49b1c8)
++++ b/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json	(date 1621181351653)
+@@ -1,25 +1,27 @@
+ {
+   "format": 1,
+   "restore": {
+-    "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj": {}
++    "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj": {}
+   },
+   "projects": {
+-    "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj": {
++    "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj": {
+       "version": "1.0.0",
+       "restore": {
+-        "projectUniqueName": "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
++        "projectUniqueName": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
+         "projectName": "PasswordManger",
+-        "projectPath": "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
+-        "packagesPath": "C:\\Users\\reg_i\\.nuget\\packages\\",
+-        "outputPath": "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\obj\\",
++        "projectPath": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
++        "packagesPath": "C:\\Users\\malte\\.nuget\\packages\\",
++        "outputPath": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\obj\\",
+         "projectStyle": "PackageReference",
+         "fallbackFolders": [
+-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
++          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
++          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+         ],
+         "configFilePaths": [
+-          "C:\\Users\\reg_i\\AppData\\Roaming\\NuGet\\NuGet.Config",
++          "C:\\Users\\malte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
++          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
++          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+         ],
+         "originalTargetFrameworks": [
+           "net5.0"
+@@ -58,7 +60,7 @@
+               "privateAssets": "all"
+             }
+           },
+-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
++          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+         }
+       }
+     }
+Index: PasswordManger/obj/rider.project.restore.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>16210035213845741
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PasswordManger/obj/rider.project.restore.info b/PasswordManger/obj/rider.project.restore.info
+--- a/PasswordManger/obj/rider.project.restore.info	(revision 36ae5472dc5d77e645cee8ebcf781e061b49b1c8)
++++ b/PasswordManger/obj/rider.project.restore.info	(date 1621181351666)
+@@ -1,1 +1,1 @@
+-16210035213845741
+\ No newline at end of file
++16211813516538462
+\ No newline at end of file
+Index: PasswordManger/obj/PasswordManger.csproj.nuget.g.props
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?>\r\n<Project ToolsVersion=\"14.0\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup Condition=\" '$(ExcludeRestorePackageImports)' != 'true' \">\r\n    <RestoreSuccess Condition=\" '$(RestoreSuccess)' == '' \">True</RestoreSuccess>\r\n    <RestoreTool Condition=\" '$(RestoreTool)' == '' \">NuGet</RestoreTool>\r\n    <ProjectAssetsFile Condition=\" '$(ProjectAssetsFile)' == '' \">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>\r\n    <NuGetPackageRoot Condition=\" '$(NuGetPackageRoot)' == '' \">$(UserProfile)\\.nuget\\packages\\</NuGetPackageRoot>\r\n    <NuGetPackageFolders Condition=\" '$(NuGetPackageFolders)' == '' \">C:\\Users\\reg_i\\.nuget\\packages\\;C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages</NuGetPackageFolders>\r\n    <NuGetProjectStyle Condition=\" '$(NuGetProjectStyle)' == '' \">PackageReference</NuGetProjectStyle>\r\n    <NuGetToolVersion Condition=\" '$(NuGetToolVersion)' == '' \">5.8.0</NuGetToolVersion>\r\n  </PropertyGroup>\r\n  <ItemGroup Condition=\" '$(ExcludeRestorePackageImports)' != 'true' \">\r\n    <SourceRoot Include=\"$([MSBuild]::EnsureTrailingSlash($(NuGetPackageFolders)))\" />\r\n  </ItemGroup>\r\n  <PropertyGroup>\r\n    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>\r\n  </PropertyGroup>\r\n</Project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PasswordManger/obj/PasswordManger.csproj.nuget.g.props b/PasswordManger/obj/PasswordManger.csproj.nuget.g.props
+--- a/PasswordManger/obj/PasswordManger.csproj.nuget.g.props	(revision 36ae5472dc5d77e645cee8ebcf781e061b49b1c8)
++++ b/PasswordManger/obj/PasswordManger.csproj.nuget.g.props	(date 1621181351595)
+@@ -5,7 +5,7 @@
+     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\reg_i\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
++    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\malte\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages;C:\Program Files (x86)\Microsoft\Xamarin\NuGet</NuGetPackageFolders>
+     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.8.0</NuGetToolVersion>
+   </PropertyGroup>
+Index: PasswordManger/obj/project.assets.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 3,\r\n  \"targets\": {\r\n    \"net5.0\": {}\r\n  },\r\n  \"libraries\": {},\r\n  \"projectFileDependencyGroups\": {\r\n    \"net5.0\": []\r\n  },\r\n  \"packageFolders\": {\r\n    \"C:\\\\Users\\\\reg_i\\\\.nuget\\\\packages\\\\\": {},\r\n    \"C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\Shared\\\\NuGetPackages\": {}\r\n  },\r\n  \"project\": {\r\n    \"version\": \"1.0.0\",\r\n    \"restore\": {\r\n      \"projectUniqueName\": \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\",\r\n      \"projectName\": \"PasswordManger\",\r\n      \"projectPath\": \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\PasswordManger.csproj\",\r\n      \"packagesPath\": \"C:\\\\Users\\\\reg_i\\\\.nuget\\\\packages\\\\\",\r\n      \"outputPath\": \"F:\\\\Reps\\\\WebWrite\\\\Password-Manager-Thing\\\\Source\\\\PasswordManger\\\\PasswordManger\\\\obj\\\\\",\r\n      \"projectStyle\": \"PackageReference\",\r\n      \"fallbackFolders\": [\r\n        \"C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\Shared\\\\NuGetPackages\"\r\n      ],\r\n      \"configFilePaths\": [\r\n        \"C:\\\\Users\\\\reg_i\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\",\r\n        \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.FallbackLocation.config\",\r\n        \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.Offline.config\"\r\n      ],\r\n      \"originalTargetFrameworks\": [\r\n        \"net5.0\"\r\n      ],\r\n      \"sources\": {\r\n        \"C:\\\\Program Files (x86)\\\\Microsoft SDKs\\\\NuGetPackages\\\\\": {},\r\n        \"https://api.nuget.org/v3/index.json\": {}\r\n      },\r\n      \"frameworks\": {\r\n        \"net5.0\": {\r\n          \"targetAlias\": \"net5.0\",\r\n          \"projectReferences\": {}\r\n        }\r\n      },\r\n      \"warningProperties\": {\r\n        \"warnAsError\": [\r\n          \"NU1605\"\r\n        ]\r\n      }\r\n    },\r\n    \"frameworks\": {\r\n      \"net5.0\": {\r\n        \"targetAlias\": \"net5.0\",\r\n        \"imports\": [\r\n          \"net461\",\r\n          \"net462\",\r\n          \"net47\",\r\n          \"net471\",\r\n          \"net472\",\r\n          \"net48\"\r\n        ],\r\n        \"assetTargetFallback\": true,\r\n        \"warn\": true,\r\n        \"frameworkReferences\": {\r\n          \"Microsoft.NETCore.App\": {\r\n            \"privateAssets\": \"all\"\r\n          }\r\n        },\r\n        \"runtimeIdentifierGraphPath\": \"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\5.0.201\\\\RuntimeIdentifierGraph.json\"\r\n      }\r\n    }\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PasswordManger/obj/project.assets.json b/PasswordManger/obj/project.assets.json
+--- a/PasswordManger/obj/project.assets.json	(revision 36ae5472dc5d77e645cee8ebcf781e061b49b1c8)
++++ b/PasswordManger/obj/project.assets.json	(date 1621181351628)
+@@ -8,25 +8,28 @@
+     "net5.0": []
+   },
+   "packageFolders": {
+-    "C:\\Users\\reg_i\\.nuget\\packages\\": {},
+-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
++    "C:\\Users\\malte\\.nuget\\packages\\": {},
++    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
++    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
+   },
+   "project": {
+     "version": "1.0.0",
+     "restore": {
+-      "projectUniqueName": "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
++      "projectUniqueName": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
+       "projectName": "PasswordManger",
+-      "projectPath": "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
+-      "packagesPath": "C:\\Users\\reg_i\\.nuget\\packages\\",
+-      "outputPath": "F:\\Reps\\WebWrite\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\obj\\",
++      "projectPath": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\PasswordManger.csproj",
++      "packagesPath": "C:\\Users\\malte\\.nuget\\packages\\",
++      "outputPath": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManger\\obj\\",
+       "projectStyle": "PackageReference",
+       "fallbackFolders": [
+-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
++        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
++        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+       ],
+       "configFilePaths": [
+-        "C:\\Users\\reg_i\\AppData\\Roaming\\NuGet\\NuGet.Config",
++        "C:\\Users\\malte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
++        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
++        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+       ],
+       "originalTargetFrameworks": [
+         "net5.0"
+@@ -65,7 +68,7 @@
+             "privateAssets": "all"
+           }
+         },
+-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
++        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+       }
+     }
+   }

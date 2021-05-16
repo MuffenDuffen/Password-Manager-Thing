@@ -7,8 +7,10 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            string possibleCharacters = "Hello";
-            Console.WriteLine(Encryptor.toBinaryAndInvertBits(possibleCharacters));
+            foreach (var c in Encryptor.ConvertToBinaryThenInvertBitsAndBackToString("Jag är best!"))
+            {
+                Console.WriteLine(Convert.ToInt64(c));
+            }
         }
     }
 }
