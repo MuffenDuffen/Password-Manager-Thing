@@ -23,7 +23,7 @@ Here's how you can do it:
 5. Add a new way to encrypt the word, I'm going to make every h a #, every 1 a ! and all the q's with <|, feel free to add more. It looks like this: Td9<|b8#f2!j C!3p#6t
 6. To top it all of, I usually reverse the order. The example turned out like this: t6#p3!C j!2f#8b|<9dT
 
-**If you managed to complete all the steps, Congratulations! You have just created a very secure password. **
+**If you managed to complete all the steps, Congratulations! You have just created a very secure password.**
 Feel free to add more steps to your password, the more the better but also more complicated.
 
 If you don't want to use a password manager you should take a number of letters from the app name. Encrypt these letters the same way as the password, and add them to the password to make a unique password for every app.
