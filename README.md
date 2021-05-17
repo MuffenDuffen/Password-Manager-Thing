@@ -24,8 +24,10 @@ Here's how you can do it:
 6. To top it all of, I usually reverse the order. The example turned out like this: t6#p3!C j!2f#8b|<9dT
 
 **If you managed to complete all the steps, Congratulations! You have just created a very secure password.**
+Now, the only thing you need to remember the misspelled word and the ways you change the word into a password.
+
 Feel free to add more steps to your password, the more the better but also more complicated.
 
-If you don't want to use a password manager you should take a number of letters from the app name. Encrypt these letters the same way as the password, and add them to the password to make a unique password for every app.
+If you don't want to use a password manager you should take a number of letters from the app name, I'd recommend using the beginning or end letters, but anything you can remember is totally fine. Encrypt these letters the same way as the password, and add them to the password to make a unique password for every app.
 
-Lets say I want 4 letters and create a github account using the example password. The base looks like this: Gith.The first step looks like this: Hjui. The second like this: Hj21i. The last two like this: #j2!i, i!2j#. I'm jus adding them to the end, so the complete password looks like this: Td9<|b8#f2!j C!3p#6t i!2j# 
+Lets say I want 4 letters and create a github account using the example password. The base looks like this, if you take the letters in the beginning: Gith. The first step looks like this: Hjui. The second like this: Hj21i. The last two like this: #j2!i, i!2j#. I'm jus adding them to the end, so the complete password looks like this: Td9<|b8#f2!j C!3p#6t i!2j# 
