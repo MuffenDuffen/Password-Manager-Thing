@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text.Encodings;
+using System.Security.Cryptography;
 
 namespace PasswordManger
 {
@@ -8,27 +10,38 @@ namespace PasswordManger
         public static void LogIn()
         {
             Console.WriteLine("PasswordManger Program by Nanojaw studios");
-            Console.Write("Enter Master password: ");
-            string input = Console.ReadLine();
-            // Implement Maltes encryptor
+            if (File.Exists(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt"))
+            {
+                Console.Write("Enter Master password: ");
+                string input = Console.ReadLine();
+                // return a hashed value that we compare to the masterPassword
+                string hashedInput = Hash(input);
             
-            // return a hashed value that we compare to the masterPassword
-            
-            // Get heavily encrypted master password from a file
-            const string masterPassword = "PASSWORD";
+                // Get heavily encrypted master password from a file
+                string[] lines = File.ReadAllLines(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
+                string masterPassword = lines[0];
             
            
-            if (input == masterPassword)
-            {
-                GetPasswords();
+                if (hashedInput == masterPassword)
+                {
+                    GetCredentials();
+                }
             }
+            CreateProfile();
         }
 
-        private static void GetPasswords()
+        private static void CreateProfile()
+        {
+            //ToDo Make the function create a file in which it stores the master password and the other passwords
+            Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
+            string masterPassword = AskQuestion("Enter a secure Master password: ");
+        }
+
+        private static void GetCredentials()
         {
             Console.WriteLine("\nYou are successfully logged in!");
             Console.WriteLine("Type 'done' to exit, type 'help' for more information");
-            Console.WriteLine(File.Exists(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt")); 
+            
             var done = false;
 
             while (!done)
@@ -79,13 +92,30 @@ namespace PasswordManger
             Console.Write(question);
             string answer = Console.ReadLine();
 
-            while (answer == null)
+            while (string.IsNullOrEmpty(answer))
             {
                 Console.Write(question);
                 answer = Console.ReadLine();
             }
             
             return answer.ToLower();
+        }
+
+        private static string Hash(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return string.Empty;
+            }
+
+            var sha256 = new SHA256Managed();
+            var sha512 = new SHA512Managed();
+            
+            byte[] textBytes = System.Text.Encoding.UTF8.GetBytes(input);
+            byte[] hash256 = sha256.ComputeHash(textBytes);
+            byte[] hash512 = sha512.ComputeHash(hash256);
+
+            return BitConverter.ToString(hash512);
         }
     }
 }
