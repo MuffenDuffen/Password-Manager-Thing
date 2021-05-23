@@ -27,7 +27,10 @@ namespace PasswordManger
                     GetCredentials();
                 }
             }
-            CreateProfile();
+            else
+            {
+                CreateProfile(); 
+            }
         }
 
         private static void CreateProfile()
@@ -35,6 +38,8 @@ namespace PasswordManger
             //ToDo Make the function create a file in which it stores the master password and the other passwords
             Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
             string masterPassword = AskQuestion("Enter a secure Master password: ");
+            File.Create(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
+            File.AppendText(Hash(masterPassword));
         }
 
         private static void GetCredentials()
@@ -63,6 +68,7 @@ namespace PasswordManger
                         Console.WriteLine("To create login credentials, write 'create login'");
                         Console.WriteLine("**********************************");
                         break;
+                    
                     case "get login":
                         input = AskQuestion("What do you want to search with?");
                         switch (input)
@@ -85,6 +91,7 @@ namespace PasswordManger
                         break;
                 }
             }
+            Console.WriteLine("Successfully logged out.");
         }
 
         private static string AskQuestion(string question)
@@ -108,6 +115,7 @@ namespace PasswordManger
                 return string.Empty;
             }
 
+            // Double hashing because why not
             var sha256 = new SHA256Managed();
             var sha512 = new SHA512Managed();
             
