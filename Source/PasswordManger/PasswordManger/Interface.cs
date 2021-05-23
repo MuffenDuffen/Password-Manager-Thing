@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text.Encodings;
 using System.Security.Cryptography;
 
 namespace PasswordManger
@@ -19,7 +18,7 @@ namespace PasswordManger
             
                 // Get heavily encrypted master password from a file
                 string[] lines = File.ReadAllLines(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
-                string masterPassword = lines[0];
+                string masterPassword = lines[1];
             
            
                 if (hashedInput == masterPassword)
@@ -35,17 +34,28 @@ namespace PasswordManger
 
         private static void CreateProfile()
         {
-            //ToDo Make the function create a file in which it stores the master password and the other passwords
             Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
             string masterPassword = AskQuestion("Enter a secure Master password: ");
+            
             File.Create(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
             File.AppendText(Hash(masterPassword));
+            
+            Console.WriteLine("To get started, you need to add some credentials");
+            CreateCredentials();
+        }
+
+        private static void CreateCredentials()
+        {
+            var credential = new Credential(AskQuestion("Enter App name: "), AskQuestion("Enter Email used"), CreatePassword());
+            
         }
 
         private static void GetCredentials()
         {
             Console.WriteLine("\nYou are successfully logged in!");
             Console.WriteLine("Type 'done' to exit, type 'help' for more information");
+            
+            var profile = new Profile();
             
             var done = false;
 
@@ -67,6 +77,9 @@ namespace PasswordManger
                         Console.WriteLine("To find login credentials, write 'get login'");
                         Console.WriteLine("To create login credentials, write 'create login'");
                         Console.WriteLine("**********************************");
+                        break;
+                    case "test":
+                        CreateCredentials();
                         break;
                     
                     case "get login":
@@ -124,6 +137,14 @@ namespace PasswordManger
             byte[] hash512 = sha512.ComputeHash(hash256);
 
             return BitConverter.ToString(hash512);
+        }
+        private static string CreatePassword()
+        {
+            var rng = new RNGCryptoServiceProvider();
+            var rand = new Random();
+            var password = new byte[rand.Next(16, 64)];
+            rng.GetBytes(password);
+            return System.Text.Encoding.UTF8.GetString(password);
         }
     }
 }

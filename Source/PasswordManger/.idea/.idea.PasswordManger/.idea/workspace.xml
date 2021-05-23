@@ -7,14 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbf3dc69-fbaa-44b1-ba63-277ed7cd8532" name="Default Changelist" comment="">
+    <list default="true" id="cbf3dc69-fbaa-44b1-ba63-277ed7cd8532" name="Default Changelist" comment="You are now able to log in with the password PASSWORD.">
+      <change afterPath="$PROJECT_DIR$/PasswordManger/Classes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Interface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +32,9 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/PasswordManger/Program.cs" />
       <option value="$USER_HOME$/.ideavimrc" />
+      <option value="$PROJECT_DIR$/PasswordManger/Data.txt" />
       <option value="$PROJECT_DIR$/PasswordManger/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/Classes.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -82,7 +88,7 @@
       <workItem from="1621526058276" duration="2805000" />
       <workItem from="1621761478573" duration="535000" />
       <workItem from="1621762167229" duration="119000" />
-      <workItem from="1621762327078" duration="1287000" />
+      <workItem from="1621762327078" duration="8645000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -114,7 +120,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1621529501859</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="You are now able to log in with the password PASSWORD.">
+      <created>1621768116579</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1621768116579</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,25 +153,7 @@
     <MESSAGE value="Started working on user input." />
     <MESSAGE value="some more input and start on saving data" />
     <MESSAGE value="Made a Hash function and started on creating profile function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a Hash function and started on creating profile function" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManger/Interface.cs</url>
-          <line>17</line>
-          <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Interface.cs" initialLine="17" containingFunctionPresentation="method 'LogIn'">
-            <startOffsets>
-              <option value="613" />
-            </startOffsets>
-            <endOffsets>
-              <option value="646" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="You are now able to log in with the password PASSWORD." />
+    <option name="LAST_COMMIT_MESSAGE" value="You are now able to log in with the password PASSWORD." />
   </component>
 </project>
