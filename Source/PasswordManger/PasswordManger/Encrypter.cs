@@ -54,12 +54,5 @@ namespace PasswordManger
             stringToReverseBits = finalString;
             return stringToReverseBits;
         }
-
-        public static string pSats(string inputString)
-        {
-            var lengthOfString = inputString.Length;
-            
-            
-        }
     }
 }
