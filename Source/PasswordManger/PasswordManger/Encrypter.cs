@@ -6,11 +6,23 @@ namespace PasswordManger
 {
     internal static class Encryptor
     {
+        public static string EncryptCredential(Credential credential, int[] key)
+        {
+            var encrypted = EncryptString(credential.AppName, key) + EncryptString(credential.Email, key) + EncryptString(credential.Password, key);
+            return encrypted;
+        }
+
+        private static string EncryptString(string encrypt, int[] key) //ToDo mek function us key
+        {
+            var encrypted = NextChar(encrypt);
+            encrypted = InvertBits(encrypted);
+            return encrypted;
+        }
         //Gets next char and replaces old one
 
         //encryptions, replacecharwithnextchar, toandinvertbinary, tooctal
 
-        internal static string addOneToUTF8value(string masterPassword)
+        private static string NextChar(string masterPassword) // adds one to the UTF-8 value
         {
             foreach (var c in masterPassword)
             {
@@ -24,11 +36,11 @@ namespace PasswordManger
             return masterPassword;
         }
 
-        public static string ConvertToBinaryThenInvertBitsAndBackToString(string stringToReverseBits)
+        private static string InvertBits(string stringToInvert) // converts each characters UTF-8 value into bits and inverts it, then converts back to chars. China warning
         {
             var finalString = "";
 
-            foreach (var charValue in stringToReverseBits.Select(Convert.ToUInt32))
+            foreach (var charValue in stringToInvert.Select(Convert.ToUInt32))
             {
                 var charValueInBinary = Convert.ToString(charValue, 2);
                 var charValueInBinaryArray = new char[charValueInBinary.Length];
@@ -51,8 +63,8 @@ namespace PasswordManger
                 finalString = finalString.Insert(0, charFromInvertedBinary.ToString());
             }
 
-            stringToReverseBits = finalString;
-            return stringToReverseBits;
+            stringToInvert = finalString;
+            return stringToInvert;
         }
     }
 }

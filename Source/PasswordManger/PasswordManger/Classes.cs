@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
@@ -6,8 +7,9 @@ namespace PasswordManger
 {
     public class Profile
     {
-        public string Name, MasterPassword, EncryptionKey;
+        public string Name, MasterPassword;
 
+        public int[] EncryptionKey;
         public IEnumerable<Credential> Credentials;
 
         public Profile GetFromFile(string path)
@@ -24,18 +26,21 @@ namespace PasswordManger
             return profile;
         }
 
-        private static string GetEncryptionKey(string masterPassword)
+        private static int[] GetEncryptionKey(string masterPassword)
         {
             var rand = new Random(masterPassword.Length);
             
-            string encryptionKey = masterPassword.Length + ",";
-            encryptionKey += masterPassword[rand.Next(masterPassword.Length)] + ",";
-            return encryptionKey;
+            var encryptionKey = new List<int>();
+
+            encryptionKey.Add(masterPassword.Length);
+            encryptionKey.Add(masterPassword[rand.Next(masterPassword.Length)]);
+            return encryptionKey.ToArray();
         }
     }
-    public class Credential
+
+    public sealed class Credential
     {
-        public string AppName, Email, Password ; 
+        public string AppName, Email, Password;
 
         public Credential(string appName, string email, string password)
         {

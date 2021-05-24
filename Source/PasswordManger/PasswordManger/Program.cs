@@ -6,7 +6,11 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            Interface.LogIn();
+            //Interface.LogIn();
+
+
+            var cred = new Credential("test", "test", "test");
+            Encryptor.EncryptCredential(cred, "test");
         }
     }
 }
