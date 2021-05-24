@@ -1,45 +1,44 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
 
 namespace PasswordManger
 {
-    internal static class Encryptor
+    public class Decryptor
     {
-        public static Credential EncryptCredential(Credential credential, int[] key)
+        public static Credential DecryptCredential(Credential credential, int[] key)
         {
-            var encrypted = new Credential(EncryptString(credential.AppName, key), EncryptString(credential.Email, key), EncryptString(credential.Password, key));
-            return encrypted;
+            credential.AppName = DecryptString(credential.AppName, key);
+            credential.Email = DecryptString(credential.Email, key);
+            credential.Password = DecryptString(credential.Password, key);
+            return credential;
         }
 
-        private static string EncryptString(string encrypt, int[] key) //ToDo mek function us key
+        private static string DecryptString(string decrypt, int[] key)
         {
-            string encrypted = NextChar(encrypt);
-            encrypted = InvertBits(encrypted);
-            encrypted = InvertBits(encrypted);
-            return encrypted;
+            string decrypted = InvertBits(decrypt);
+            decrypted = PreviousChar(decrypted);
+            return decrypted;
         }
-        //Gets next char and replaces old one
-
-        //encryptions, replacecharwithnextchar, toandinvertbinary, tooctal
-
-        private static string NextChar(string masterPassword) // adds one to the UTF-8 value
+        
+        // functions
+        private static string PreviousChar(string masterPassword) // adds one to the UTF-8 value
         {
-            char[] masterArray = masterPassword.ToCharArray();
-            for (var i = 0; i < masterPassword.Length; i++)
+            foreach (char c in masterPassword)
             {
-                var utf8ValueFromChar = Convert.ToUInt64(masterArray[i]);
-                var charFromUtf8ValueAddOne = (char) (utf8ValueFromChar + 1);
-                masterArray[i] = charFromUtf8ValueAddOne;
+                var utf8ValueFromChar = Convert.ToUInt64(c);
+
+                var charFromUtf8ValueAddOne = (char) (utf8ValueFromChar - 1);
+
+                masterPassword = masterPassword.Replace(c, charFromUtf8ValueAddOne);
             }
-            return string.Concat(masterArray);
+
+            return masterPassword;
         }
 
         private static string InvertBits(string stringToInvert) // converts each characters UTF-8 value into bits and inverts it, then converts back to chars. China warning
         {
             var finalString = "";
 
-            /*
             foreach (uint charValue in stringToInvert.Select(Convert.ToUInt32))
             {
                 var charValueInBinary = Convert.ToString(charValue, 2);
@@ -61,13 +60,6 @@ namespace PasswordManger
 
                 var charFromInvertedBinary = (char) Convert.ToUInt64(charValueInBinary);
                 finalString = finalString.Insert(0, charFromInvertedBinary.ToString());
-            }
-            
-            */
-
-            foreach (char c in stringToInvert)
-            {
-                //ToDo make function better
             }
 
             stringToInvert = finalString;

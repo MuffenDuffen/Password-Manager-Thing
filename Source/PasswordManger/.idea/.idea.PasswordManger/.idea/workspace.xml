@@ -7,7 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="Haha malte bad yes" />
+    <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="Haha malte bad yes">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/Decrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Decryptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Interface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,10 +51,11 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/PasswordManger/Data.txt" />
-      <option value="$PROJECT_DIR$/PasswordManger/Interface.cs" />
-      <option value="$PROJECT_DIR$/PasswordManger/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Classes.cs" />
       <option value="$USER_HOME$/.ideavimrc" />
+      <option value="$PROJECT_DIR$/PasswordManger/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/Program.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/Decryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Encrypter.cs" />
     </changedPaths>
   </component>
@@ -62,7 +76,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Inspections-C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -106,7 +120,7 @@
       <workItem from="1621762327078" duration="8645000" />
       <workItem from="1621862717273" duration="3415000" />
       <workItem from="1621866558528" duration="261000" />
-      <workItem from="1621866836830" duration="1383000" />
+      <workItem from="1621866836830" duration="4066000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -181,5 +195,37 @@
     <MESSAGE value="You are now able to log in with the password PASSWORD." />
     <MESSAGE value="Haha malte bad yes" />
     <option name="LAST_COMMIT_MESSAGE" value="Haha malte bad yes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PasswordManger/Program.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Program.cs" initialLine="12" containingFunctionPresentation="method 'Main'">
+            <startOffsets>
+              <option value="250" />
+            </startOffsets>
+            <endOffsets>
+              <option value="305" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PasswordManger/Encrypter.cs</url>
+          <line>16</line>
+          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Encrypter.cs" initialLine="16" containingFunctionPresentation="method 'EncryptString'">
+            <startOffsets>
+              <option value="548" />
+            </startOffsets>
+            <endOffsets>
+              <option value="585" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

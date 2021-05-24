@@ -47,7 +47,6 @@ namespace PasswordManger
         private static void CreateCredentials()
         {
             var credential = new Credential(AskQuestion("Enter App name: "), AskQuestion("Enter Email used"), CreatePassword());
-            
         }
 
         private static void GetCredentials()
