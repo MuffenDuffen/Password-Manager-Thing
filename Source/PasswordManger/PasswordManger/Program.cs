@@ -6,8 +6,7 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            //Interface.LogIn();
-            Console.WriteLine(MegaEncryptorThatIsakHatesLol.Encrypt("Hello, world!", "testPass"));
+            Interface.LogIn();
         }
     }
 }

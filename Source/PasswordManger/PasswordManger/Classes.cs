@@ -10,7 +10,6 @@ namespace PasswordManger
         public string Name, MasterPassword;
 
         public int[] EncryptionKey;
-        public IEnumerable<Credential> Credentials;
         public List<Credential> Credentials;
 
         public Profile GetFromFile(string path)

@@ -21,7 +21,7 @@ namespace PasswordManger
                     string hashedInput = Hash(input);
             
                     // Get heavily encrypted master password from a file
-                    string[] lines = File.ReadAllLines(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
+                    string[] lines = File.ReadAllLines(path);
                     string masterPassword = lines[1];
                     
                     if (hashedInput == masterPassword )
@@ -112,7 +112,7 @@ namespace PasswordManger
                         {
                             case "index":
                                 string index = AskQuestion("Enter index: ");
-                                string[] lines = File.ReadAllLines(Path.GetFullPath("Data.txt"));
+                                string[] lines = File.ReadAllLines(path);
                                 
                                 break;
                             case "email":
@@ -129,6 +129,7 @@ namespace PasswordManger
                 }
             }
             Console.WriteLine("Successfully logged out.");
+            Environment.Exit(0);
         }
 
         private static string AskQuestion(string question)
