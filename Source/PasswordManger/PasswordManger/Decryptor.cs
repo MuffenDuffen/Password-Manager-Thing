@@ -15,7 +15,7 @@ namespace PasswordManger
 
         private static string DecryptString(string decrypt, int[] key)
         {
-            string decrypted = InvertBits(decrypt);
+            string decrypted = Encryptor.InvertBits(decrypt);
             decrypted = PreviousChar(decrypted);
             return decrypted;
         }
@@ -33,37 +33,6 @@ namespace PasswordManger
             }
 
             return masterPassword;
-        }
-
-        private static string InvertBits(string stringToInvert) // converts each characters UTF-8 value into bits and inverts it, then converts back to chars. China warning
-        {
-            var finalString = "";
-
-            foreach (uint charValue in stringToInvert.Select(Convert.ToUInt32))
-            {
-                var charValueInBinary = Convert.ToString(charValue, 2);
-                var charValueInBinaryArray = new char[charValueInBinary.Length];
-                var indexInCharArray = 0;
-
-                for (var i = 0; i < charValueInBinary.Length; i++) charValueInBinaryArray[i] = charValueInBinary[i];
-
-                foreach (char cc in charValueInBinaryArray)
-                {
-                    charValueInBinaryArray[indexInCharArray] = cc switch
-                    {
-                        '1' => '0',
-                        '0' => '1',
-                        _ => charValueInBinaryArray[indexInCharArray]
-                    };
-                    indexInCharArray++;
-                }
-
-                var charFromInvertedBinary = (char) Convert.ToUInt64(charValueInBinary);
-                finalString = finalString.Insert(0, charFromInvertedBinary.ToString());
-            }
-
-            stringToInvert = finalString;
-            return stringToInvert;
         }
     }
 }
