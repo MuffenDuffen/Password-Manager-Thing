@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 
@@ -9,51 +10,74 @@ namespace PasswordManger
         public static void LogIn()
         {
             Console.WriteLine("PasswordManger Program by Nanojaw studios");
-            if (File.Exists(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt"))
+            string path = Directory.GetCurrentDirectory() + @"\data.txt";
+            if (File.Exists(path))
             {
-                Console.Write("Enter Master password: ");
-                string input = Console.ReadLine();
-                // return a hashed value that we compare to the masterPassword
-                string hashedInput = Hash(input);
-            
-                // Get heavily encrypted master password from a file
-                string[] lines = File.ReadAllLines(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
-                string masterPassword = lines[1];
-            
-           
-                if (hashedInput == masterPassword)
+                var tries = 0;
+                while (tries != 64) //ToDo add a timer 
                 {
-                    GetCredentials();
+                    string input = AskQuestion("Enter Master password: ");
+                    // return a hashed value that we compare to the stored masterPassword
+                    string hashedInput = Hash(input);
+            
+                    // Get heavily encrypted master password from a file
+                    string[] lines = File.ReadAllLines(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
+                    string masterPassword = lines[1];
+                    
+                    if (hashedInput == masterPassword )
+                    {
+                        Console.WriteLine("\nYou are successfully logged in!");
+                        GetCredentials(path);
+                    }
+                    
+                    Console.WriteLine("Wrong password, you have {0} tries left", 64 - tries);
+                    tries++;    
                 }
+                
+                File.Delete(path); // Delete the file containing passwords if you fail too many times, then create a new profile
             }
-            else
-            {
-                CreateProfile(); 
-            }
+            CreateProfile(path); 
         }
 
-        private static void CreateProfile()
+        private static void CreateProfile(string path)
         {
             Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
             string masterPassword = AskQuestion("Enter a secure Master password: ");
-            
-            File.Create(@"F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManger\data.txt");
-            File.AppendText(Hash(masterPassword));
+
+            string name = AskQuestion("What is your name: ");
+
+            File.WriteAllText(path, name + "\n" + Hash(masterPassword));
             
             Console.WriteLine("To get started, you need to add some credentials");
-            CreateCredentials();
-        }
-
-        private static void CreateCredentials()
-        {
-            var credential = new Credential(AskQuestion("Enter App name: "), AskQuestion("Enter Email used"), CreatePassword());
             
+            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {CreateCredential()}, Name = name};
+            
+            var done = false;
+            while (!done)
+            {
+                string input = AskQuestion("Do you want to add more credentials: ");
+                switch (input)
+                {
+                    case "yes":
+                        profile.Credentials.Add(CreateCredential());
+                        break;
+                    case "no":
+                        done = true;
+                        break;
+                }
+            }
+            GetCredentials(path);
         }
 
-        private static void GetCredentials()
+        private static Credential CreateCredential()
         {
-            Console.WriteLine("\nYou are successfully logged in!");
-            Console.WriteLine("Type 'done' to exit, type 'help' for more information");
+            return new(AskQuestion("Enter App name: "), AskQuestion("Enter Email used: "), CreatePassword());
+        }
+
+        private static void GetCredentials(string path)
+        {
+            
+            Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
             
             var profile = new Profile();
             
@@ -66,20 +90,20 @@ namespace PasswordManger
                 switch (input)
                 {
                     // Direct Actions
-                    case "done":
+                    case "exit":
                         done = true;
                         break;
                     case "help":
                         Console.WriteLine("**********************************");
                         Console.WriteLine("Help menu");
                         Console.WriteLine("");
-                        Console.WriteLine("Type 'done' to exit");
+                        Console.WriteLine("Type 'exit' to exit");
                         Console.WriteLine("To find login credentials, write 'get login'");
                         Console.WriteLine("To create login credentials, write 'create login'");
                         Console.WriteLine("**********************************");
                         break;
                     case "test":
-                        CreateCredentials();
+                        CreateCredential();
                         break;
                     
                     case "get login":
@@ -88,7 +112,7 @@ namespace PasswordManger
                         {
                             case "index":
                                 string index = AskQuestion("Enter index: ");
-                                File.ReadAllLines(Path.GetFullPath("Data.txt"));
+                                string[] lines = File.ReadAllLines(Path.GetFullPath("Data.txt"));
                                 
                                 break;
                             case "email":

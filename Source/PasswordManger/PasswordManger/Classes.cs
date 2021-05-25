@@ -8,7 +8,7 @@ namespace PasswordManger
     {
         public string Name, MasterPassword, EncryptionKey;
 
-        public IEnumerable<Credential> Credentials;
+        public List<Credential> Credentials;
 
         public Profile GetFromFile(string path)
         {
@@ -30,6 +30,8 @@ namespace PasswordManger
             
             string encryptionKey = masterPassword.Length + ",";
             encryptionKey += masterPassword[rand.Next(masterPassword.Length)] + ",";
+            
+            //ToDo make the key longer
             return encryptionKey;
         }
     }
