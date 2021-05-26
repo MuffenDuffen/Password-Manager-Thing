@@ -50,7 +50,7 @@ namespace PasswordManger
             
             Console.WriteLine("To get started, you need to add some credentials");
             
-            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {CreateCredential()}, Name = name};
+            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword)};
             
             var done = false;
             while (!done)
@@ -59,7 +59,7 @@ namespace PasswordManger
                 switch (input)
                 {
                     case "yes":
-                        profile.Credentials.Add(CreateCredential());
+                        profile.Credentials.Add(Credential.CreateCredential());
                         break;
                     case "no":
                         done = true;
@@ -69,17 +69,12 @@ namespace PasswordManger
             GetCredentials(path);
         }
 
-        private static Credential CreateCredential()
-        {
-            return new(AskQuestion("Enter App name: "), AskQuestion("Enter Email used: "), CreatePassword());
-        }
-
         private static void GetCredentials(string path)
         {
             
             Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
             
-            var profile = new Profile();
+            Profile profile = Profile.GetFromFile(path);
             
             var done = false;
 
@@ -91,6 +86,7 @@ namespace PasswordManger
                 {
                     // Direct Actions
                     case "exit":
+                        Profile.SaveToFile(profile, path);
                         done = true;
                         break;
                     case "help":
@@ -102,18 +98,14 @@ namespace PasswordManger
                         Console.WriteLine("To create login credentials, write 'create login'");
                         Console.WriteLine("**********************************");
                         break;
-                    case "test":
-                        CreateCredential();
-                        break;
-                    
                     case "get login":
                         input = AskQuestion("What do you want to search with?");
                         switch (input)
                         {
                             case "index":
-                                string index = AskQuestion("Enter index: ");
-                                string[] lines = File.ReadAllLines(path);
-                                
+                                var index = Convert.ToInt32(AskQuestion("Enter index: "));
+                                Credential credential = profile.Credentials[index];
+                                Console.WriteLine();
                                 break;
                             case "email":
                                 string email = AskQuestion("Enter email: ");
@@ -126,13 +118,16 @@ namespace PasswordManger
                                 break;
                         }
                         break;
+                    case "create login":
+                        profile.Credentials.Add(Credential.CreateCredential());
+                        break;
                 }
             }
             Console.WriteLine("Successfully logged out.");
             Environment.Exit(0);
         }
 
-        private static string AskQuestion(string question)
+        public static string AskQuestion(string question)
         {
             Console.Write(question);
             string answer = Console.ReadLine();
@@ -144,6 +139,16 @@ namespace PasswordManger
             }
             
             return answer.ToLower();
+        }
+
+        public static void OutputCredentials(Credential credential)
+        {
+            Console.WriteLine("Login information:");
+            Console.WriteLine("App name: " + credential.AppName);
+            Console.WriteLine("Email used: " + credential.Email);
+            Console.WriteLine("Password used: " + credential.Password);
+            Console.WriteLine("Username used: " + credential.UserName);
+            Console.WriteLine("");
         }
 
         private static string Hash(string input)
@@ -163,7 +168,7 @@ namespace PasswordManger
 
             return BitConverter.ToString(hash512);
         }
-        private static string CreatePassword()
+        public static string CreatePassword()
         {
             var rng = new RNGCryptoServiceProvider();
             var rand = new Random();

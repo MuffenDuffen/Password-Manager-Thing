@@ -12,7 +12,7 @@ namespace PasswordManger
             return encrypted;
         }
 
-        private static string EncryptString(string encrypt, int[] key) //ToDo mek function us key
+        public static string EncryptString(string encrypt, int[] key) //ToDo mek function us key
         {
             string encrypted = NextChar(encrypt);
             encrypted = InvertBits(encrypted);
