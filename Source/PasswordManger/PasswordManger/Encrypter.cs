@@ -22,18 +22,19 @@ namespace PasswordManger
 
         //encryptions, replacecharwithnextchar, toandinvertbinary,
 
-        private static string NextChar(string masterPassword) // adds one to the UTF-8 value
+        public static string NextChar(string stringToNextChar) // adds one to the UTF-8 value
         {
-            foreach (char c in masterPassword)
+            char[] stringToNextCharArray = stringToNextChar.ToCharArray();
+            var indexInString = 0; 
+            
+            foreach (char charFromUtf8ValueAddOne in stringToNextCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + 1)))
             {
-                var utf8ValueFromChar = Convert.ToUInt64(c);
-
-                var charFromUtf8ValueAddOne = (char) (utf8ValueFromChar + 1);
-
-                masterPassword = masterPassword.Replace(c, charFromUtf8ValueAddOne);
+                stringToNextCharArray[indexInString] = charFromUtf8ValueAddOne;
+                
+                indexInString++;
             }
 
-            return masterPassword;
+            return stringToNextCharArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
         public static string InvertBits(string stringToInvert) // converts each characters UTF-8 value into bits and inverts it, then converts back to chars. China warning

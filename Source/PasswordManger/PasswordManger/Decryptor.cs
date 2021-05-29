@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Linq;
 
 namespace PasswordManger
 {
-    public class Decryptor
+    internal static class Decryptor
     {
         public static Credential DecryptCredential(Credential credential, int[] key)
         {
@@ -20,18 +21,20 @@ namespace PasswordManger
         }
         
         // functions
-        private static string PreviousChar(string masterPassword) // Removes one to the UTF-8 value
+        internal static string PreviousChar(string stringToPrevChar) // Removes one from the UTF-8 value
         {
-            foreach (char c in masterPassword)
+            char[] stringToPrevCharArray = stringToPrevChar.ToCharArray();
+
+            var indexInStringg = 0;
+            
+            foreach (char charFromUtf8ValueRemoveOne in stringToPrevCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar - 1)))
             {
-                var utf8ValueFromChar = Convert.ToUInt64(c);
+                stringToPrevCharArray[indexInStringg] = charFromUtf8ValueRemoveOne;
 
-                var charFromUtf8ValueAddOne = (char) (utf8ValueFromChar - 1);
-
-                masterPassword = masterPassword.Replace(c, charFromUtf8ValueAddOne);
+                indexInStringg++;
             }
 
-            return masterPassword;
+            return stringToPrevCharArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
     }
 }

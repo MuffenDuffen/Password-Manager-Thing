@@ -6,7 +6,12 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            Interface.LogIn();
+            string encryptedString = Encryptor.InvertBits(Encryptor.NextChar("test"));
+            
+            string decrytedString = Decryptor.PreviousChar(Encryptor.InvertBits(encryptedString));
+
+
+            Console.WriteLine("{0} {1}", encryptedString, decrytedString);
         }
     }
 }
