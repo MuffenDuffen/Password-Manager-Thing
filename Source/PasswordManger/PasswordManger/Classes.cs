@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace PasswordManger
 {
@@ -10,9 +11,9 @@ namespace PasswordManger
         public string Name, MasterPassword;
 
         public int[] EncryptionKey;
-        public IEnumerable<Credential> Credentials;
+        public List<Credential> Credentials;
 
-        public Profile GetFromFile(string path)
+        public static Profile GetFromFile(string path)
         {
             var profile = new Profile();
             
@@ -26,7 +27,19 @@ namespace PasswordManger
             return profile;
         }
 
-        private static int[] GetEncryptionKey(string masterPassword)
+        public static void SaveToFile(Profile profile, string path)
+        {
+            var text = new List<string>
+            {
+                [0] = Encryptor.EncryptString(profile.Name, profile.EncryptionKey),
+                [1] = Encryptor.EncryptString(profile.MasterPassword, profile.EncryptionKey)
+            };
+            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey)));
+
+            File.WriteAllLines(path, text);
+        }
+
+        public static int[] GetEncryptionKey(string masterPassword)
         {
             var rand = new Random(masterPassword.Length);
             
@@ -40,13 +53,23 @@ namespace PasswordManger
 
     public sealed class Credential
     {
-        public string AppName, Email, Password;
+        public string AppName, Email, Password, UserName;
 
-        public Credential(string appName, string email, string password)
-        {
+        private Credential(string appName, string email, string password, string userName)  {
             AppName = appName;
             Email = email;
             Password = password;
+            UserName = userName;
+        }
+
+        public static Credential CreateCredential()
+        {
+            // ReSharper disable once ConvertIfStatementToReturnStatement Because the line becomes too long
+            if (Interface.AskQuestion("Do you want to enter your own password? ").Contains("yes"))
+            {
+                return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.AskQuestion("Enter Password: "), Interface.AskQuestion("Enter Username used: "));
+            }
+            return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword(), Interface.AskQuestion("Enter Username used: "));
         }
     }
 }

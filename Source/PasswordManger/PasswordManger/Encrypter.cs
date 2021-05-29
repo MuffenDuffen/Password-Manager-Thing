@@ -1,24 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using System.Text;
-using static System.Convert;
 
 namespace PasswordManger
 {
     internal static class Encryptor
     {
-        public static Credential EncryptCredential(Credential credential, int[] key)
+        public static string EncryptCredential(Credential credential, int[] key)
         {
-            var encrypted = new Credential(EncryptString(credential.AppName, key), EncryptString(credential.Email, key),
-                EncryptString(credential.Password, key));
+            string encrypted = EncryptString(credential.AppName, key) + EncryptString(credential.Email, key) + EncryptString(credential.Password, key);
             return encrypted;
         }
 
-        private static string EncryptString(string encrypt, int[] key) //ToDo mek function us key
+        public static string EncryptString(string encrypt, int[] key) //ToDo mek function us key
         {
             string encrypted = NextChar(encrypt);
-            encrypted = InvertBits(encrypted);
             encrypted = InvertBits(encrypted);
             return encrypted;
         }
@@ -28,19 +24,27 @@ namespace PasswordManger
 
         private static string NextChar(string masterPassword) // adds one to the UTF-8 value
         {
-            char[] masterArray = masterPassword.ToCharArray();
-            for (var i = 0; i < masterPassword.Length; i++)
+            foreach (char c in masterPassword)
             {
-                var utf8ValueFromChar = ToUInt64(masterArray[i]);
+                var utf8ValueFromChar = Convert.ToUInt64(c);
+
                 var charFromUtf8ValueAddOne = (char) (utf8ValueFromChar + 1);
-                masterArray[i] = charFromUtf8ValueAddOne;
+
+                masterPassword = masterPassword.Replace(c, charFromUtf8ValueAddOne);
             }
 
-            return string.Concat(masterArray);
+            return masterPassword;
         }
 
         public static string InvertBits(string stringToInvert) // converts each characters UTF-8 value into bits and inverts it, then converts back to chars. China warning
         {
+            char[] inverted = stringToInvert.ToCharArray();
+            for (var i = 0; i < inverted.Length; i++)
+            {
+                inverted[i] = (char) ~Convert.ToInt64(inverted[i]);
+            }
             
+            return new string(inverted);
         }
+    }
 }
