@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace PasswordManger
 {
-    public static class Interface
+    internal static class Interface
     {
         public static void LogIn()
         {
@@ -24,7 +24,7 @@ namespace PasswordManger
                     string[] lines = File.ReadAllLines(path);
                     string masterPassword = lines[1];
                     
-                    if (hashedInput == masterPassword )
+                    if (hashedInput == masterPassword)
                     {
                         Console.WriteLine("\nYou are successfully logged in!");
                         GetCredentials(path);
@@ -36,6 +36,11 @@ namespace PasswordManger
                 
                 File.Delete(path); // Delete the file containing passwords if you fail too many times, then create a new profile
             }
+            else
+            {
+                CreateProfile(path);
+            }
+
             CreateProfile(path); 
         }
 
@@ -66,15 +71,15 @@ namespace PasswordManger
                         break;
                 }
             }
+
             GetCredentials(path);
         }
 
         private static void GetCredentials(string path)
         {
-            
             Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
             
-            Profile profile = Profile.GetFromFile(path);
+            var profile = Profile.GetFromFile(path);
             
             var done = false;
 
@@ -117,12 +122,14 @@ namespace PasswordManger
                                 string password = AskQuestion("Enter password: ");
                                 break;
                         }
+
                         break;
                     case "create login":
                         profile.Credentials.Add(Credential.CreateCredential());
                         break;
                 }
             }
+
             Console.WriteLine("Successfully logged out.");
             Environment.Exit(0);
         }
@@ -168,6 +175,7 @@ namespace PasswordManger
 
             return BitConverter.ToString(hash512);
         }
+
         public static string CreatePassword()
         {
             var rng = new RNGCryptoServiceProvider();

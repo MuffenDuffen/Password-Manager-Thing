@@ -8,10 +8,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Classes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Decryptor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManger/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Interface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/MegaEncryptorThatIsakHatesLOL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/MegaEncryptorThatIsakHatesLOL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/PasswordManger.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,15 +44,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54F90929-7468-4089-A97D-F22DDF809D08/23/File.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ACA7B55-3F8E-4F20-AC57-47AA98D503A5/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/3F/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/006EA922-6884-4797-9933-F140F2309715/B/HashAlgorithm.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/6B/BitConverter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7BA9A6C5-80C1-4DDE-BEF1-EB8C124E3B7A/70/RijndaelManaged.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/PasswordManger/Data.txt" />
       <option value="$USER_HOME$/.ideavimrc" />
-      <option value="$PROJECT_DIR$/PasswordManger/MegaEncryptorThatIsakHatesLOL.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Encrypter.cs" />
-      <option value="$PROJECT_DIR$/PasswordManger/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/Classes.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/MegaEncryptorThatIsakHatesLOL.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/Decryptor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -95,6 +127,8 @@
       <workItem from="1621866558528" duration="261000" />
       <workItem from="1621866836830" duration="1038000" />
       <workItem from="1622037958206" duration="3358000" />
+      <workItem from="1622280148480" duration="26000" />
+      <workItem from="1622280200113" duration="1005000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -168,5 +202,24 @@
     <MESSAGE value="You are now able to log in with the password PASSWORD." />
     <MESSAGE value="Changed password to QWERTY and program now exits the app on exit." />
     <option name="LAST_COMMIT_MESSAGE" value="Changed password to QWERTY and program now exits the app on exit." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PasswordManger/Program.cs</url>
+          <line>8</line>
+          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Program.cs" initialLine="8" containingFunctionPresentation="method 'Main'">
+            <startOffsets>
+              <option value="152" />
+            </startOffsets>
+            <endOffsets>
+              <option value="170" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

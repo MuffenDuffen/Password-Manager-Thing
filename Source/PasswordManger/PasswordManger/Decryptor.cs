@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace PasswordManger
 {
@@ -21,7 +20,7 @@ namespace PasswordManger
         }
         
         // functions
-        private static string PreviousChar(string masterPassword) // adds one to the UTF-8 value
+        private static string PreviousChar(string masterPassword) // Removes one to the UTF-8 value
         {
             foreach (char c in masterPassword)
             {

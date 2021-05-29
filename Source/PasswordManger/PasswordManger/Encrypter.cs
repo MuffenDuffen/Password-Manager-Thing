@@ -20,7 +20,7 @@ namespace PasswordManger
         }
         //Gets next char and replaces old one
 
-        //encryptions, replacecharwithnextchar, toandinvertbinary, tooctal
+        //encryptions, replacecharwithnextchar, toandinvertbinary,
 
         private static string NextChar(string masterPassword) // adds one to the UTF-8 value
         {

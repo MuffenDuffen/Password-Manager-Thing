@@ -6,14 +6,14 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    public class Profile
+    public sealed class Profile
     {
-        public string Name, MasterPassword;
+        internal string Name, MasterPassword;
 
-        public int[] EncryptionKey;
-        public List<Credential> Credentials;
+        internal int[] EncryptionKey;
+        internal List<Credential> Credentials;
 
-        public static Profile GetFromFile(string path)
+        internal static Profile GetFromFile(string path)
         {
             var profile = new Profile();
             
@@ -27,7 +27,7 @@ namespace PasswordManger
             return profile;
         }
 
-        public static void SaveToFile(Profile profile, string path)
+        internal static void SaveToFile(Profile profile, string path)
         {
             var text = new List<string>
             {
@@ -39,21 +39,20 @@ namespace PasswordManger
             File.WriteAllLines(path, text);
         }
 
-        public static int[] GetEncryptionKey(string masterPassword)
+        internal static int[] GetEncryptionKey(string masterPassword)
         {
             var rand = new Random(masterPassword.Length);
-            
-            var encryptionKey = new List<int>();
 
-            encryptionKey.Add(masterPassword.Length);
-            encryptionKey.Add(masterPassword[rand.Next(masterPassword.Length)]);
+            var encryptionKey = new List<int> {masterPassword.Length, masterPassword[rand.Next(masterPassword.Length)]};
+
             return encryptionKey.ToArray();
         }
     }
 
     public sealed class Credential
     {
-        public string AppName, Email, Password, UserName;
+        internal string AppName, Email, Password;
+        internal readonly string UserName;
 
         private Credential(string appName, string email, string password, string userName)  {
             AppName = appName;
@@ -62,13 +61,14 @@ namespace PasswordManger
             UserName = userName;
         }
 
-        public static Credential CreateCredential()
+        internal static Credential CreateCredential()
         {
             // ReSharper disable once ConvertIfStatementToReturnStatement Because the line becomes too long
             if (Interface.AskQuestion("Do you want to enter your own password? ").Contains("yes"))
             {
                 return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.AskQuestion("Enter Password: "), Interface.AskQuestion("Enter Username used: "));
             }
+
             return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword(), Interface.AskQuestion("Enter Username used: "));
         }
     }
