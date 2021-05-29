@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    public sealed class Profile
+    internal sealed class Profile
     {
         internal string Name, MasterPassword;
 
@@ -49,16 +49,15 @@ namespace PasswordManger
         }
     }
 
-    public sealed class Credential
+    internal sealed class Credential
     {
         internal string AppName, Email, Password;
-        internal readonly string UserName;
 
-        private Credential(string appName, string email, string password, string userName)  {
+        internal Credential(string appName, string email, string password)
+        {
             AppName = appName;
             Email = email;
             Password = password;
-            UserName = userName;
         }
 
         internal static Credential CreateCredential()
@@ -66,10 +65,10 @@ namespace PasswordManger
             // ReSharper disable once ConvertIfStatementToReturnStatement Because the line becomes too long
             if (Interface.AskQuestion("Do you want to enter your own password? ").Contains("yes"))
             {
-                return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.AskQuestion("Enter Password: "), Interface.AskQuestion("Enter Username used: "));
+                return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.AskQuestion("Enter Password: "));
             }
 
-            return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword(), Interface.AskQuestion("Enter Username used: "));
+            return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword());
         }
     }
 }

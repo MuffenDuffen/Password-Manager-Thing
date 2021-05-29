@@ -8,7 +8,14 @@ namespace PasswordManger
     {
         public static string EncryptCredential(Credential credential, int[] key)
         {
-            string encrypted = EncryptString(credential.AppName, key) + EncryptString(credential.Email, key) + EncryptString(credential.Password, key);
+            string encrypted = EncryptString(credential.AppName, key).Length + "," +
+                               EncryptString(credential.Email, key).Length + "," +
+                               EncryptString(credential.Password, key).Length + " " +
+
+                               EncryptString(credential.AppName, key) +
+                               EncryptString(credential.Email, key) +
+                               EncryptString(credential.Password, key);
+
             return encrypted;
         }
 
@@ -22,7 +29,7 @@ namespace PasswordManger
 
         //encryptions, replacecharwithnextchar, toandinvertbinary,
 
-        public static string NextChar(string stringToNextChar) // adds one to the UTF-8 value
+        private static string NextChar(string stringToNextChar) // adds one to the UTF-8 value
         {
             char[] stringToNextCharArray = stringToNextChar.ToCharArray();
             var indexInString = 0; 

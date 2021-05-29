@@ -154,7 +154,6 @@ namespace PasswordManger
             Console.WriteLine("App name: " + credential.AppName);
             Console.WriteLine("Email used: " + credential.Email);
             Console.WriteLine("Password used: " + credential.Password);
-            Console.WriteLine("Username used: " + credential.UserName);
             Console.WriteLine("");
         }
 
