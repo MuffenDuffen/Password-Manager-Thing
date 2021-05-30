@@ -35,15 +35,18 @@ namespace PasswordManger
 
         internal static void SaveToFile(Profile profile, string path)
         {
-            var text = new List<string> ();
+            var text = new List<string>
+            {
+                Encryptor.EncryptString(profile.Name, new[] {0}),
+                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), new[] {0})
+            };
 
-            text.Add(Encryptor.EncryptString(profile.Name, new[] {0}));
-            text.Add(Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), new[] {0}));
-            
+
             foreach (var credential in profile.Credentials)
             {
-                text.Add(Encryptor.EncryptCredential(credential, new [] {0}));
+                text.Add(Encryptor.EncryptCredential(credential, new[] {0}));
             }
+
             File.WriteAllLines(path, text);
         }
 
@@ -86,10 +89,11 @@ namespace PasswordManger
             Console.WriteLine("Email: " + credential.Email);
             Console.WriteLine("Password: " + credential.Password);
             Console.Write("\nPress 'c' to copy password to clipboard: ");
-            if (Console.ReadKey().Key == ConsoleKey.C) { 
+            if (Console.ReadKey().Key == ConsoleKey.C)
+            { 
                 Clippy.PushStringToClipboard(credential.Password);
-                
             }
+
             Console.WriteLine("\n**************************************************************************");
         }
     }
