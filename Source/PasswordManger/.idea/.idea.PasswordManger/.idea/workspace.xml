@@ -7,15 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,23 +17,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54F90929-7468-4089-A97D-F22DDF809D08/23/File.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PasswordManager/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ACA7B55-3F8E-4F20-AC57-47AA98D503A5/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/3F/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/37/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/40/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7BA9A6C5-80C1-4DDE-BEF1-EB8C124E3B7A/70/RijndaelManaged.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/E2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/B7/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/006EA922-6884-4797-9933-F140F2309715/B/HashAlgorithm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PasswordManager/Classes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Reps/Password-Manager-Thing/Source/PasswordManger/PasswordManager/Decryptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/41/String.Searching.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PasswordManager/Decryptor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/6B/BitConverter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/75/Convert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PasswordManager/Classes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PasswordManager/Encrypter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/B7/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PasswordManager/Interface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PasswordManager/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/E2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/Reps/Password-Manager-Thing/Source/PasswordManger/PasswordManager/Classes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -54,10 +42,10 @@
       <option value="$PROJECT_DIR$/PasswordManger/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Encrypter.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Decryptor.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Encrypter.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Clippy.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -67,7 +55,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34989858" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -126,7 +114,6 @@
       <workItem from="1622280148480" duration="26000" />
       <workItem from="1622280200113" duration="1005000" />
       <workItem from="1622305093717" duration="4341000" />
-      <workItem from="1622361751287" duration="5488000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -182,7 +169,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1622359857056</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="tried to implement clippy">
+      <created>1622367991382</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1622367991382</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,23 +206,43 @@
     <MESSAGE value="Changed password to QWERTY and program now exits the app on exit." />
     <MESSAGE value="Fixed NextChar" />
     <MESSAGE value="Fixed PreviousChar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed PreviousChar" />
+    <MESSAGE value="tried to implement clippy" />
+    <option name="LAST_COMMIT_MESSAGE" value="tried to implement clippy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManager/Decryptor.cs</url>
-          <line>28</line>
-          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Decryptor.cs" initialLine="28" containingFunctionPresentation="method 'DecryptCredential'">
+          <url>file://$PROJECT_DIR$/PasswordManager/Program.cs</url>
+          <line>10</line>
+          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Program.cs" initialLine="8" containingFunctionPresentation="method 'Main'" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PasswordManager/Classes.cs</url>
+          <line>39</line>
+          <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Classes.cs" initialLine="31" containingFunctionPresentation="method 'SaveToFile'">
             <startOffsets>
-              <option value="1356" />
+              <option value="1058" />
             </startOffsets>
             <endOffsets>
-              <option value="1419" />
+              <option value="1089" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PasswordManager/Classes.cs</url>
+          <line>88</line>
+          <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Classes.cs" initialLine="88" containingFunctionPresentation="method 'OutputCredentials'">
+            <startOffsets>
+              <option value="3057" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3111" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

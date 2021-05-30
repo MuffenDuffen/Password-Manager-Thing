@@ -19,12 +19,14 @@ namespace PasswordManger
                     string input = AskQuestion("Enter Master password: ");
                     // return a hashed value that we compare to the stored masterPassword
                     string hashedInput = Hash(input);
+
+                    string encryptedInput = Encryptor.EncryptString(hashedInput, new []{0});
             
                     // Get heavily encrypted master password from a file
                     string[] lines = File.ReadAllLines(path);
                     string masterPassword = lines[1];
                     
-                    if (hashedInput == masterPassword)
+                    if (encryptedInput == masterPassword)
                     {
                         Console.WriteLine("\nYou are successfully logged in!");
                         GetCredentials(path);
@@ -40,8 +42,6 @@ namespace PasswordManger
             {
                 CreateProfile(path);
             }
-
-            CreateProfile(path); 
         }
 
         private static void CreateProfile(string path)
@@ -51,8 +51,6 @@ namespace PasswordManger
 
             string name = AskQuestion("What is your name: ");
 
-            File.WriteAllText(path, name + "\n" + Hash(masterPassword));
-            
             Console.WriteLine("To get started, you need to add some credentials");
             
             var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword)};
@@ -71,6 +69,8 @@ namespace PasswordManger
                         break;
                 }
             }
+
+            Profile.SaveToFile(profile, path);
 
             GetCredentials(path);
         }
@@ -110,7 +110,7 @@ namespace PasswordManger
                             case "index":
                                 var index = Convert.ToInt32(AskQuestion("Enter index: "));
                                 Credential credential = profile.Credentials[index];
-                                Console.WriteLine();
+                                Credential.OutputCredentials(credential);
                                 break;
                             case "email":
                                 string email = AskQuestion("Enter email: ");
@@ -133,6 +133,8 @@ namespace PasswordManger
             Console.WriteLine("Successfully logged out.");
             Environment.Exit(0);
         }
+
+        #region Non-Interface functions
 
         public static string AskQuestion(string question)
         {
@@ -157,7 +159,7 @@ namespace PasswordManger
             Console.WriteLine("");
         }
 
-        private static string Hash(string input)
+        public static string Hash(string input)
         {
             if (string.IsNullOrEmpty(input))
             {
@@ -182,6 +184,8 @@ namespace PasswordManger
             var password = new byte[rand.Next(16, 64)];
             rng.GetBytes(password);
             return System.Text.Encoding.UTF8.GetString(password);
-        }
+        } 
+
+        #endregion
     }
 }

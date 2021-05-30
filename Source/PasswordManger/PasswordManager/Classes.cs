@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Kolibri;
 
 namespace PasswordManger
 {
@@ -24,18 +25,25 @@ namespace PasswordManger
             profile.EncryptionKey = GetEncryptionKey(profile.MasterPassword);
             profile.Credentials = new List<Credential>();
 
+            for (int i = 2; i < text.Length; i++)
+            {
+                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey));
+            }
+            
             return profile;
         }
 
         internal static void SaveToFile(Profile profile, string path)
         {
-            var text = new List<string>
-            {
-                [0] = Encryptor.EncryptString(profile.Name, profile.EncryptionKey),
-                [1] = Encryptor.EncryptString(profile.MasterPassword, profile.EncryptionKey)
-            };
-            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey)));
+            var text = new List<string> ();
 
+            text.Add(Encryptor.EncryptString(profile.Name, new[] {0}));
+            text.Add(Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), new[] {0}));
+            
+            foreach (var credential in profile.Credentials)
+            {
+                text.Add(Encryptor.EncryptCredential(credential, new [] {0}));
+            }
             File.WriteAllLines(path, text);
         }
 
@@ -69,6 +77,20 @@ namespace PasswordManger
             }
 
             return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword());
+        }
+
+        public static void OutputCredentials(Credential credential)
+        {
+            Console.WriteLine("**************************************************************************");
+            Console.WriteLine("App Name: " + credential.AppName);
+            Console.WriteLine("Email: " + credential.Email);
+            Console.WriteLine("Password: " + credential.Password);
+            Console.Write("\nPress 'c' to copy password to clipboard: ");
+            if (Console.ReadKey().Key == ConsoleKey.C) { 
+                Clippy.PushStringToClipboard(credential.Password);
+                
+            }
+            Console.WriteLine("\n**************************************************************************");
         }
     }
 }
