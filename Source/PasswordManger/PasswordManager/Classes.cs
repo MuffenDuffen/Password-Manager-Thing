@@ -30,8 +30,6 @@ namespace PasswordManger
                 profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey));
             }
             
-            
-
             return profile;
         }
 
