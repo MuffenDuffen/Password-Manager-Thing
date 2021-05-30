@@ -36,7 +36,7 @@ namespace PasswordManger
                 {"4hundredth", "Quadrigenti"},
                 {"5hundredth", "Quingenti"},
                 {"6hundredth", "Sescenti"},
-                {"7hundredth", "Septigenti"},
+                {"7hundredth", "Septingenti"},
                 {"8hundredth", "Octingenti"},
                 {"9hundredth", "Nongenti"},
                 
@@ -175,7 +175,7 @@ namespace PasswordManger
                 {"Quadrigenti", 400},
                 {"Quingenti", 500},
                 {"Sescenti", 600},
-                {"Septigenti", 700},
+                {"Septingenti", 700},
                 {"Octingenti", 800},
                 {"Nongenti", 900},
                 
