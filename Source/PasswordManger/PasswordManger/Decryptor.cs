@@ -45,17 +45,11 @@ namespace PasswordManger
         // functions
         private static string PreviousChar(string stringToPrevChar) // Removes one from the UTF-8 value
         {
-            char[] stringToPrevCharArray = stringToPrevChar.ToCharArray();
-            var indexInStringg = 0;
-            
-            foreach (char charFromUtf8ValueRemoveOne in stringToPrevCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar - 1)))
-            {
-                stringToPrevCharArray[indexInStringg] = charFromUtf8ValueRemoveOne;
+            char[] prevCharArray = stringToPrevChar.ToCharArray();
 
-                indexInStringg++;
-            }
-
-            return stringToPrevCharArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
+            prevCharArray = prevCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar - 1)).ToArray();
+                        
+            return prevCharArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
     }
 }

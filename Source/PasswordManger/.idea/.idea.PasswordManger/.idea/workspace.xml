@@ -7,21 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Decryptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Interface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/bin/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/PasswordManger.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/obj/Debug/net5.0/ref/PasswordManger.dll" afterDir="false" />
-    </list>
+    <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="Fixed NextChar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,18 +17,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54F90929-7468-4089-A97D-F22DDF809D08/23/File.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/E2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ACA7B55-3F8E-4F20-AC57-47AA98D503A5/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/B7/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/3F/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/006EA922-6884-4797-9933-F140F2309715/B/HashAlgorithm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/6B/BitConverter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/37/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/75/Convert.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/40/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7BA9A6C5-80C1-4DDE-BEF1-EB8C124E3B7A/70/RijndaelManaged.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -51,10 +28,10 @@
       <option value="$PROJECT_DIR$/PasswordManger/MegaEncryptorThatIsakHatesLOL.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/latinizeLOL.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Interface.cs" />
-      <option value="$PROJECT_DIR$/PasswordManger/Encrypter.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Decryptor.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/Encrypter.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -166,7 +143,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1621964268225</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Fixed NextChar">
+      <created>1622359640821</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1622359640821</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +178,8 @@
     <MESSAGE value="Made a Hash function and started on creating profile function" />
     <MESSAGE value="You are now able to log in with the password PASSWORD." />
     <MESSAGE value="Changed password to QWERTY and program now exits the app on exit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed password to QWERTY and program now exits the app on exit." />
+    <MESSAGE value="Fixed NextChar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed NextChar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -203,14 +187,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PasswordManger/Program.cs</url>
           <line>8</line>
-          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Program.cs" initialLine="8" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="152" />
-            </startOffsets>
-            <endOffsets>
-              <option value="216" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManger\Program.cs" initialLine="8" containingFunctionPresentation="method 'Main'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
