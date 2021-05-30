@@ -15,11 +15,11 @@ namespace PasswordManger
             string appNameLengthh = credentialString.Substring(0, firstComma);
             int appNameLength = Convert.ToInt16(credentialString.Substring(0, firstComma));
 
-            string emailLengthh = credentialString.Substring(firstComma + 1, credentialString.IndexOf(',', firstComma));
-            int emailLength = Convert.ToInt16(credentialString.Substring(firstComma + 1, firstComma));
+            string emailLengthh = credentialString.Substring(firstComma + 1, secondComma - firstComma - 1);
+            int emailLength = Convert.ToInt16(credentialString.Substring(firstComma + 1, secondComma - firstComma - 1));
 
-            string passwordLengthh = credentialString.Substring(secondComma + 1, credentialString.IndexOf(',', secondComma - 2));
-            int passwordLength = Convert.ToInt16(credentialString.Substring(secondComma + 1, credentialString.IndexOf(',', secondComma - 2)));
+            string passwordLengthh = credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1);
+            int passwordLength = Convert.ToInt16(credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1));
 
             string encrypted = credentialString[(credentialString.IndexOf(' ') + 1)..];
             

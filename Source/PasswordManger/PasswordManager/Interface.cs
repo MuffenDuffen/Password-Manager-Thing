@@ -9,7 +9,7 @@ namespace PasswordManger
     {
         public static void LogIn()
         {
-            Console.WriteLine("PasswordManger Program by Nanojaw studios");
+            Console.WriteLine("PasswordManager Program by Nanojaw studios");
             string path = Directory.GetCurrentDirectory() + @"\data.txt";
             if (File.Exists(path))
             {
