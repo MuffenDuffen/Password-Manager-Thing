@@ -32,15 +32,9 @@ namespace PasswordManger
         private static string NextChar(string stringToNextChar) // adds one to the UTF-8 value
         {
             char[] stringToNextCharArray = stringToNextChar.ToCharArray();
-            var indexInString = 0; 
             
-            foreach (char charFromUtf8ValueAddOne in stringToNextCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + 1)))
-            {
-                stringToNextCharArray[indexInString] = charFromUtf8ValueAddOne;
-                
-                indexInString++;
-            }
-
+            stringToNextCharArray = stringToNextCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + 1)).ToArray();
+            
             return stringToNextCharArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
