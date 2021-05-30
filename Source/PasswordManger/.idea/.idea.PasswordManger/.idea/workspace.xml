@@ -9,9 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Encrypter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManger/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManger/Interface.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +25,8 @@
       <option value="$PROJECT_DIR$/PasswordManger/MegaEncryptorThatIsakHatesLOL.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Encrypter.cs" />
-      <option value="$PROJECT_DIR$/PasswordManger/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManger/Classes.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -94,7 +91,8 @@
       <workItem from="1621862717273" duration="3415000" />
       <workItem from="1621866558528" duration="261000" />
       <workItem from="1621866836830" duration="1038000" />
-      <workItem from="1622037958206" duration="3358000" />
+      <workItem from="1622037958206" duration="3626000" />
+      <workItem from="1622293914020" duration="648000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -138,7 +136,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1621964268225</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Made changes to classes and interface. Code has bugs that i need to fix tomorrow.">
+      <created>1622041807230</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1622041807230</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +171,7 @@
     <MESSAGE value="Made a Hash function and started on creating profile function" />
     <MESSAGE value="You are now able to log in with the password PASSWORD." />
     <MESSAGE value="Changed password to QWERTY and program now exits the app on exit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed password to QWERTY and program now exits the app on exit." />
+    <MESSAGE value="Made changes to classes and interface. Code has bugs that i need to fix tomorrow." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made changes to classes and interface. Code has bugs that i need to fix tomorrow." />
   </component>
 </project>
