@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    internal static class Encryptor
+    internal abstract class Encryptor
     {
         public static string EncryptCredential(Credential credential, int[] key)
         {

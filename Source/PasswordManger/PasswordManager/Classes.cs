@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace PasswordManger
     {
         internal string Name, MasterPassword;
 
-        internal int[] EncryptionKey;
+        public int[] EncryptionKey;
         internal List<Credential> Credentials;
 
         internal static Profile GetFromFile(string path)
@@ -36,10 +35,10 @@ namespace PasswordManger
         {
             var text = new List<string>
             {
-                Encryptor.EncryptString(profile.Name, new int[] {0}),
-                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), new int[] {0})
+                Encryptor.EncryptString(profile.Name, profile.EncryptionKey),
+                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey)
             };
-            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, new int[] {0})));
+            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey)));
 
 
             File.WriteAllLines(path, text);
@@ -49,7 +48,7 @@ namespace PasswordManger
         {
             var rand = new Random(masterPassword.Length);
 
-            var encryptionKey = new List<int> {masterPassword.Length, masterPassword[rand.Next(masterPassword.Length)]};
+            var encryptionKey = new List<int> {rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5)};
 
             return encryptionKey.ToArray();
         }

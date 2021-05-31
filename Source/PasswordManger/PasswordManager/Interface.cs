@@ -22,7 +22,7 @@ namespace PasswordManger
                     // return a hashed value that we compare to the stored masterPassword
                     string hashedInput = Hash(input);
 
-                    string encryptedInput = Encryptor.EncryptString(hashedInput, new int[] {0});
+                    string encryptedInput = Encryptor.EncryptString(hashedInput, Profile.EncryptionKey);
             
                     // Get heavily encrypted master password from a file
                     string[] lines = File.ReadAllLines(path);
@@ -105,8 +105,20 @@ namespace PasswordManger
                         Console.WriteLine("Type 'exit' to exit");
                         Console.WriteLine("To find login credentials, write 'get login'");
                         Console.WriteLine("To create login credentials, write 'create login'");
+                        Console.WriteLine("To list all credentials, write 'list creds'");
+                        Console.WriteLine("To clear console, write 'cls'");
                         Console.WriteLine("**********************************");
                         break;
+                    
+                    case "cls":
+                        Console.Clear();
+                        break;
+                        
+                    case "list creds":
+                        Console.Clear();
+                        foreach (var cred in profile.Credentials) OutputCredentials(cred);
+                        break;
+                    
                     case "get login":
                         input = AskQuestion("What do you want to search with? ");
                         switch (input)
@@ -163,7 +175,7 @@ namespace PasswordManger
             return answer.ToLower();
         }
 
-        public static void OutputCredentials(Credential credential)
+        private static void OutputCredentials(Credential credential)
         {
             Console.WriteLine("Login information:");
             Console.WriteLine("App name: " + credential.AppName);

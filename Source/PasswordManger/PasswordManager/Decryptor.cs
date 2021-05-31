@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    internal static class Decryptor
+    internal class Decryptor
     {
         public static Credential DecryptCredential(string credentialString, int[] key)
         {
@@ -12,21 +12,17 @@ namespace PasswordManger
             int firstComma = credentialString.IndexOf(',', 0);
             int secondComma = credentialString.IndexOf(',', firstComma + 1);
 
-            string appNameLengthh = credentialString[..firstComma];
             int appNameLength = Convert.ToInt16(credentialString[..firstComma]);
 
-            string emailLengthh = credentialString.Substring(firstComma + 1, secondComma - firstComma - 1); 
             int emailLength = Convert.ToInt16(credentialString.Substring(firstComma + 1, secondComma - firstComma - 1));
 
-            string passwordLengthh = credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1);
             int passwordLength = Convert.ToInt16(credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1));
 
             string encrypted = credentialString[(credentialString.IndexOf(' ') + 1)..];
             
             credential.AppName = encrypted[..appNameLength];
             credential.Email = encrypted.Substring(appNameLength, emailLength);
-            
-            string test = encrypted[(appNameLength + emailLength)..];
+
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
 
 
