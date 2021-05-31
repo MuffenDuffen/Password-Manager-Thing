@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 
 namespace PasswordManger
@@ -16,11 +17,12 @@ namespace PasswordManger
                 var tries = 0;
                 while (tries != 64) //ToDo add a timer 
                 {
-                    string input = AskQuestion("Enter Master password: ");
+                    Console.WriteLine("Enter Master Password: ");
+                    string input = Console.ReadLine();
                     // return a hashed value that we compare to the stored masterPassword
                     string hashedInput = Hash(input);
 
-                    string encryptedInput = Encryptor.EncryptString(hashedInput, new []{0});
+                    string encryptedInput = Encryptor.EncryptString(hashedInput, new int[] {0});
             
                     // Get heavily encrypted master password from a file
                     string[] lines = File.ReadAllLines(path);
@@ -47,9 +49,11 @@ namespace PasswordManger
         private static void CreateProfile(string path)
         {
             Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
-            string masterPassword = AskQuestion("Enter a secure Master password: ");
+            Console.WriteLine("Enter a secure Master password: ");
+            string masterPassword = Console.ReadLine();
 
-            string name = AskQuestion("What is your name: ");
+            Console.WriteLine("What is your name: ");
+            string name = Console.ReadLine();
 
             Console.WriteLine("To get started, you need to add some credentials");
             
@@ -104,22 +108,31 @@ namespace PasswordManger
                         Console.WriteLine("**********************************");
                         break;
                     case "get login":
-                        input = AskQuestion("What do you want to search with?");
+                        input = AskQuestion("What do you want to search with? ");
                         switch (input)
                         {
                             case "index":
                                 var index = Convert.ToInt32(AskQuestion("Enter index: "));
-                                Credential credential = profile.Credentials[index];
+                                var credential = profile.Credentials[index];
                                 Credential.OutputCredentials(credential);
                                 break;
+                            
                             case "email":
                                 string email = AskQuestion("Enter email: ");
+                                foreach (var t in profile.Credentials.Where(t => t.Email == email))
+                                {
+                                    Credential.OutputCredentials(t);
+                                }
+                                
                                 break;
+                            
                             case "app name":
                                 string appName = AskQuestion("Enter app name: ");
-                                break;
-                            case "password":
-                                string password = AskQuestion("Enter password: ");
+                                foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName))
+                                {
+                                    Credential.OutputCredentials(tt);
+                                }
+
                                 break;
                         }
 
@@ -166,13 +179,15 @@ namespace PasswordManger
                 return string.Empty;
             }
 
-            // Double hashing because why not
+            // Triple hashing because why not
             var sha256 = new SHA256Managed();
+            var sha384 = new SHA384Managed();
             var sha512 = new SHA512Managed();
-            
+
             byte[] textBytes = System.Text.Encoding.UTF8.GetBytes(input);
             byte[] hash256 = sha256.ComputeHash(textBytes);
-            byte[] hash512 = sha512.ComputeHash(hash256);
+            byte[] hash384 = sha384.ComputeHash(hash256);
+            byte[] hash512 = sha512.ComputeHash(hash384);
 
             return BitConverter.ToString(hash512);
         }

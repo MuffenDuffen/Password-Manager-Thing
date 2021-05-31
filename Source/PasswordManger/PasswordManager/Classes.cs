@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Kolibri;
 
 namespace PasswordManger
 {
@@ -25,7 +24,7 @@ namespace PasswordManger
             profile.EncryptionKey = GetEncryptionKey(profile.MasterPassword);
             profile.Credentials = new List<Credential>();
 
-            for (int i = 2; i < text.Length; i++)
+            for (var i = 2; i < text.Length; i++)
             {
                 profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey));
             }
@@ -37,15 +36,11 @@ namespace PasswordManger
         {
             var text = new List<string>
             {
-                Encryptor.EncryptString(profile.Name, new[] {0}),
-                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), new[] {0})
+                Encryptor.EncryptString(profile.Name, new int[] {0}),
+                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), new int[] {0})
             };
+            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, new int[] {0})));
 
-
-            foreach (var credential in profile.Credentials)
-            {
-                text.Add(Encryptor.EncryptCredential(credential, new[] {0}));
-            }
 
             File.WriteAllLines(path, text);
         }
@@ -74,12 +69,14 @@ namespace PasswordManger
         internal static Credential CreateCredential()
         {
             // ReSharper disable once ConvertIfStatementToReturnStatement Because the line becomes too long
-            if (Interface.AskQuestion("Do you want to enter your own password? ").Contains("yes"))
-            {
-                return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.AskQuestion("Enter Password: "));
-            }
+            if (!Interface.AskQuestion("Do you want to enter your own password? ").Contains("yes"))
+                return new Credential(Interface.AskQuestion("Enter App name: "),
+                    Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword());
 
-            return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword());
+            Console.WriteLine("Enter a Password: ");
+            string password = Console.ReadLine();
+                
+            return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), password);
         }
 
         public static void OutputCredentials(Credential credential)
@@ -88,11 +85,6 @@ namespace PasswordManger
             Console.WriteLine("App Name: " + credential.AppName);
             Console.WriteLine("Email: " + credential.Email);
             Console.WriteLine("Password: " + credential.Password);
-            Console.Write("\nPress 'c' to copy password to clipboard: ");
-            if (Console.ReadKey().Key == ConsoleKey.C)
-            { 
-                Clippy.PushStringToClipboard(credential.Password);
-            }
 
             Console.WriteLine("\n**************************************************************************");
         }
