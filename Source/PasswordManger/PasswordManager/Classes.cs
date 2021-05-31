@@ -47,8 +47,8 @@ namespace PasswordManger
         internal static int[] GetEncryptionKey(string masterPassword)
         {
             var rand = new Random(masterPassword.Length);
-
-            var encryptionKey = new List<int> {rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5)};
+            
+            var encryptionKey = new List<int> {rand.Next(), rand.Next(), rand.Next(), rand.Next(), rand.Next()};
 
             foreach (int encryptionKeyInt in encryptionKey) Console.WriteLine(encryptionKeyInt);
             return encryptionKey.ToArray();
