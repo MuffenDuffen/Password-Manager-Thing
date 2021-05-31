@@ -8,10 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Interface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
@@ -27,6 +32,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54F90929-7468-4089-A97D-F22DDF809D08/23/File.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PasswordManager/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/41/String.Searching.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ACA7B55-3F8E-4F20-AC57-47AA98D503A5/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/3F/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PasswordManager/Classes.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,10 +56,10 @@
       <option value="$PROJECT_DIR$/PasswordManger/Decryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Clippy.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Encrypter.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
     </changedPaths>
   </component>

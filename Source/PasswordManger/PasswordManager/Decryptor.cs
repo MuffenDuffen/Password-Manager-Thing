@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PasswordManger
@@ -33,11 +34,28 @@ namespace PasswordManger
             return credential;
         }
 
-        private static string DecryptString(string decrypt, int[] key)
+        private static string DecryptString(string decrypt, IEnumerable<int> key) //ToDo mek function us key but reverse
         {
-            string decrypted = Encryptor.InvertBits(decrypt);
-            decrypted = PreviousChar(decrypted);
-            return decrypted;
+            foreach (int keyAtIndex in key.Reverse())
+            {
+                switch (keyAtIndex)
+                {
+                    case 1:
+                        decrypt = PreviousChar(decrypt);
+                        break;
+                    case 2:
+                        decrypt = Encryptor.InvertBits(decrypt);
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                }
+            }
+
+            return decrypt;
         }
         
         // functions

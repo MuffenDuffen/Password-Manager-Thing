@@ -33,12 +33,13 @@ namespace PasswordManger
                         Console.WriteLine("\nYou are successfully logged in!");
                         GetCredentials(path);
                     }
-                    
-                    Console.WriteLine("Wrong password, you have {0} tries left", 64 - tries);
-                    tries++;    
+                    else
+                    {
+                        Console.WriteLine("Wrong password, you have {0} tries left", 64 - tries);
+                        tries++;
+                        if (tries == 64) File.Delete(path); // Delete the file containing passwords if you fail too many times, then create a new profile
+                    }
                 }
-                
-                File.Delete(path); // Delete the file containing passwords if you fail too many times, then create a new profile
             }
             else
             {

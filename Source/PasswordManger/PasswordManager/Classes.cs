@@ -50,6 +50,7 @@ namespace PasswordManger
 
             var encryptionKey = new List<int> {rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5), rand.Next(1, 5)};
 
+            foreach (int encryptionKeyInt in encryptionKey) Console.WriteLine(encryptionKeyInt);
             return encryptionKey.ToArray();
         }
     }
