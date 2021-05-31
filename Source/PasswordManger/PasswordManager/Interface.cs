@@ -22,7 +22,7 @@ namespace PasswordManger
                     // return a hashed value that we compare to the stored masterPassword
                     string hashedInput = Hash(input);
 
-                    string encryptedInput = Encryptor.EncryptString(hashedInput, Profile.EncryptionKey);
+                    string encryptedInput = Encryptor.EncryptString(hashedInput, Profile.GetEncryptionKey(Profile.GetFromFile(path).MasterPassword));
             
                     // Get heavily encrypted master password from a file
                     string[] lines = File.ReadAllLines(path);
@@ -120,16 +120,19 @@ namespace PasswordManger
                         break;
                     
                     case "get login":
+                        Console.Clear();
                         input = AskQuestion("What do you want to search with? ");
                         switch (input)
                         {
                             case "index":
+                                Console.Clear();
                                 var index = Convert.ToInt32(AskQuestion("Enter index: "));
                                 var credential = profile.Credentials[index];
                                 Credential.OutputCredentials(credential);
                                 break;
                             
                             case "email":
+                                Console.Clear();
                                 string email = AskQuestion("Enter email: ");
                                 foreach (var t in profile.Credentials.Where(t => t.Email == email))
                                 {
@@ -139,6 +142,7 @@ namespace PasswordManger
                                 break;
                             
                             case "app name":
+                                Console.Clear();
                                 string appName = AskQuestion("Enter app name: ");
                                 foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName))
                                 {
@@ -150,6 +154,7 @@ namespace PasswordManger
 
                         break;
                     case "create login":
+                        Console.Clear();
                         profile.Credentials.Add(Credential.CreateCredential());
                         break;
                 }
