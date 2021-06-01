@@ -4,39 +4,32 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    public class latinizeLOL
+    public class LatinizeLol
     {
-        private static string ReverseConvertStringToLatinNumber(string numberInStrings) {
-		string finalString = "";
-		string[] numbers = numberInStrings.Split(new string[] { " , " }, StringSplitOptions.None);
-		foreach (string test in numbers) {
-			var numberBackFromLatin = ReversePrintNumberInLatin(test);
-			finalString += ((char) numberBackFromLatin).ToString();
-		}
-		
-		return finalString;
-	}
-	
-	private static string ConvertStringToLatinNumber(string numberInString) {
-		int[] IntArrayWithCharsInNumberForm = new int[numberInString.Length];
-		int indexInArray = 0;
-		string finalString = "";
-		
-		foreach (char c in numberInString) {
-			IntArrayWithCharsInNumberForm[indexInArray] = Convert.ToInt16(c);	
-			indexInArray++;
-		}
-		
-		foreach (int number in IntArrayWithCharsInNumberForm) {
-			string numberInLatin = PrintLatinNumber(number.ToString());
-			
-			finalString += numberInLatin + " , ";
-		}
-		
-		finalString = finalString[..^3];
-		return finalString;
-	}
-        public static string PrintLatinNumber(string numberString)
+        internal static string ReverseConvertStringToLatinNumber(string numberInStrings)
+        {
+            string[] numbers = numberInStrings.Split(new[] {" , "}, StringSplitOptions.None);
+
+            return numbers.Select(ReversePrintNumberInLatin).Aggregate("", (current, numberBackFromLatin) => current + ((char) numberBackFromLatin));
+        }
+
+        internal static string ConvertStringToLatinNumber(string numberInString)
+        {
+            var intArrayWithCharsInNumberForm = new int[numberInString.Length];
+            var indexInArray = 0;
+
+            foreach (char c in numberInString) {
+                intArrayWithCharsInNumberForm[indexInArray] = Convert.ToInt16(c);   
+                indexInArray++;
+            }
+
+            string finalString = intArrayWithCharsInNumberForm.Select(number => PrintLatinNumber(number.ToString())).Aggregate("", (current, numberInLatin) => current + (numberInLatin + " , "));
+
+            finalString = finalString[..^3];
+            return finalString;
+        }
+
+        private static string PrintLatinNumber(string numberString)
         {
             var numbersInLatin = new Dictionary<string, string>
             {
@@ -154,15 +147,11 @@ namespace PasswordManger
                         alteredNumberString += cc.ToString() + "hundredthousandth";
                         break;
                     }
-                }
-
-                if (indexInNumber == 7 && cc == '1')
-                {
-                    alteredNumberString += cc.ToString() + "million";
-                }
-                else if (indexInNumber == 7 && cc != '1')
-                {
-                    return "Error 1: To high of a number, cant exceed 1999999";
+                    case 7 when cc == '1':
+                        alteredNumberString += cc.ToString() + "million";
+                        break;
+                    case 7 when cc != '1':
+                        return "Error 1: To high of a number, cant exceed 1999999";
                 }
 
                 stringOfNumberInLatin += numbersInLatin[alteredNumberString] + ",";
@@ -175,7 +164,7 @@ namespace PasswordManger
             return stringOfNumberInLatin;
         }
 
-        internal static ulong ReversePrintNumberInLatin(string stringOfNumberInLatin)
+        private static ulong ReversePrintNumberInLatin(string stringOfNumberInLatin)
         {
             var reverseNumbersInLatin = new Dictionary<string, int>
             {

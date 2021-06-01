@@ -47,6 +47,7 @@ namespace PasswordManger
                         decrypt = Encryptor.InvertBits(decrypt);
                         break;
                     case 3:
+                        decrypt = LatinizeLol.ReverseConvertStringToLatinNumber(decrypt);
                         break;
                     case 4:
                         break;

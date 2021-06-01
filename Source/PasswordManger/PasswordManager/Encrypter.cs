@@ -33,6 +33,7 @@ namespace PasswordManger
                         encrypt = InvertBits(encrypt);
                         break;
                     case 3:
+                        encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
                         break;
                     case 4:
                         break;
