@@ -40,18 +40,18 @@ namespace PasswordManger
             {
                 switch (keyAtIndex)
                 {
-                    case 1:
+                    case 0:
                         decrypt = PreviousChar(decrypt);
                         break;
-                    case 2:
+                    case 1:
                         decrypt = Encryptor.InvertBits(decrypt);
                         break;
-                    case 3:
+                    case 2:
                         decrypt = LatinizeLol.ReverseConvertStringToLatinNumber(decrypt);
                         break;
-                    case 4:
+                    case 3:
                         break;
-                    case 5:
+                    case 4:
                         break;
                 }
             }
