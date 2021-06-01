@@ -6,8 +6,7 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine();
-            //Interface.LogIn();
+            Interface.LogIn();
         }
     }
 }

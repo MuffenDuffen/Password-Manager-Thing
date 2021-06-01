@@ -17,7 +17,7 @@ namespace PasswordManger
                 var tries = 0;
                 while (tries != 64) //ToDo add a timer 
                 {
-                    Console.WriteLine("Enter Master Password: ");
+                    Console.Write("Enter Master Password: ");
                     string input = Console.ReadLine();
                     // return a hashed value that we compare to the stored masterPassword
                     string hashedInput = Hash(input);
@@ -50,11 +50,10 @@ namespace PasswordManger
         private static void CreateProfile(string path)
         {
             Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
-            Console.WriteLine("Enter a secure Master password: ");
+            Console.Write("Enter a secure Master password: ");
             string masterPassword = Console.ReadLine();
 
-            Console.WriteLine("What is your name: ");
-            string name = Console.ReadLine();
+            string name = AskQuestion("What is your name: ");
 
             Console.WriteLine("To get started, you need to add some credentials");
             
@@ -106,34 +105,30 @@ namespace PasswordManger
                         Console.WriteLine("Type 'exit' to exit");
                         Console.WriteLine("To find login credentials, write 'get login'");
                         Console.WriteLine("To create login credentials, write 'create login'");
-                        Console.WriteLine("To list all credentials, write 'list creds'");
-                        Console.WriteLine("To clear console, write 'cls'");
+                        Console.WriteLine("To list all credentials, write 'list logins'");
+                        Console.WriteLine("To clear console, write 'clear'");
                         Console.WriteLine("**********************************");
                         break;
                     
-                    case "cls":
+                    case "clear":
                         Console.Clear();
                         break;
                         
-                    case "list creds":
-                        Console.Clear();
+                    case "list logins":
                         foreach (var cred in profile.Credentials) OutputCredentials(cred);
                         break;
                     
                     case "get login":
-                        Console.Clear();
                         input = AskQuestion("What do you want to search with? ");
                         switch (input)
                         {
                             case "index":
-                                Console.Clear();
                                 var index = Convert.ToInt32(AskQuestion("Enter index: "));
                                 var credential = profile.Credentials[index];
                                 Credential.OutputCredentials(credential);
                                 break;
                             
                             case "email":
-                                Console.Clear();
                                 string email = AskQuestion("Enter email: ");
                                 foreach (var t in profile.Credentials.Where(t => t.Email == email))
                                 {
@@ -143,7 +138,6 @@ namespace PasswordManger
                                 break;
                             
                             case "app name":
-                                Console.Clear();
                                 string appName = AskQuestion("Enter app name: ");
                                 foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName))
                                 {
@@ -155,7 +149,6 @@ namespace PasswordManger
 
                         break;
                     case "create login":
-                        Console.Clear();
                         profile.Credentials.Add(Credential.CreateCredential());
                         break;
                 }
