@@ -22,7 +22,7 @@ namespace PasswordManger
                     // return a hashed value that we compare to the stored masterPassword
                     string hashedInput = Hash(input);
 
-                    string encryptedInput = Encryptor.EncryptString(hashedInput, Profile.GetEncryptionKey(Profile.GetFromFile(path).MasterPassword));
+                    string encryptedInput = Encryptor.EncryptString(hashedInput, Profile.GetEncryptionKey(input));
             
                     // Get heavily encrypted master password from a file
                     string[] lines = File.ReadAllLines(path);
