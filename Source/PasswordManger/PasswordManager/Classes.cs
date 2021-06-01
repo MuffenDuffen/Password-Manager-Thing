@@ -54,11 +54,11 @@ namespace PasswordManger
 
             char randChar = masterPassword[rand.Next(masterPassword.Length)];
 
-            int randInt = rand.Next(1, 5);
+            int randInt = rand.Next(5);
 
             var random = new Random(length * randInt);
 
-            int randomInt = random.Next(1, 5);
+            int randomInt = random.Next(5);
             
             char randomChar = masterPassword[random.Next(masterPassword.Length)];
 
