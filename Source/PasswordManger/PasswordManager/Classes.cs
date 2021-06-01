@@ -47,10 +47,53 @@ namespace PasswordManger
         internal static int[] GetEncryptionKey(string masterPassword)
         {
             var rand = new Random(masterPassword.Length);
-            
-            var encryptionKey = new List<int> {rand.Next(), rand.Next(), rand.Next(), rand.Next(), rand.Next()};
 
-            foreach (int encryptionKeyInt in encryptionKey) Console.WriteLine(encryptionKeyInt);
+            int length = rand.Next(4, 16);
+
+            char randChar = masterPassword[rand.Next(masterPassword.Length)];
+
+            int randInt = rand.Next(1, 5);
+
+            var encryptionKey = new List<int> ();
+            
+            var random = new Random();
+
+            int randomInt = random.Next(1, 5);
+            
+            char randomChar = masterPassword[random.Next(masterPassword.Length)];
+
+            for (var i = 0; i < length; i++)
+            {
+                switch (rand.Next(8))
+                {
+                    case 0: 
+                        encryptionKey.Add(masterPassword.Length % 5);
+                        break;
+                    case 1: 
+                        encryptionKey.Add(Convert.ToInt32(randChar));
+                        break;
+                    case 2: 
+                        encryptionKey.Add(randInt);
+                        break;
+                    case 3: 
+                        
+                        encryptionKey.Add(random.Next() % 5);
+                        break;
+                    case 4: 
+                        encryptionKey.Add(length % 5);
+                        break;
+                    case 5:
+                        encryptionKey.Add(Convert.ToInt32(randomChar));
+                        break;
+                    case 6: 
+                        encryptionKey.Add((randInt + Convert.ToInt32(randChar)) % 5);
+                        break;
+                    case 7: 
+                        encryptionKey.Add((randomInt + Convert.ToInt32(randomChar)) % 5);
+                        break;
+                }
+            }
+
             return encryptionKey.ToArray();
         }
     }
