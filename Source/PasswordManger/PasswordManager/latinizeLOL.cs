@@ -6,6 +6,36 @@ namespace PasswordManger
 {
     public class latinizeLOL
     {
+        private static string ReverseConvertStringToLatinNumber(string numberInStrings) {
+		string finalString = "";
+		string[] numbers = numberInStrings.Split(new string[] { " , " }, StringSplitOptions.None);
+		foreach (string test in numbers) {
+			var numberBackFromLatin = ReversePrintNumberInLatin(test);
+			finalString += ((char) numberBackFromLatin).ToString();
+		}
+		
+		return finalString;
+	}
+	
+	private static string ConvertStringToLatinNumber(string numberInString) {
+		int[] IntArrayWithCharsInNumberForm = new int[numberInString.Length];
+		int indexInArray = 0;
+		string finalString = "";
+		
+		foreach (char c in numberInString) {
+			IntArrayWithCharsInNumberForm[indexInArray] = Convert.ToInt16(c);	
+			indexInArray++;
+		}
+		
+		foreach (int number in IntArrayWithCharsInNumberForm) {
+			string numberInLatin = PrintLatinNumber(number.ToString());
+			
+			finalString += numberInLatin + " , ";
+		}
+		
+		finalString = finalString[..^3];
+		return finalString;
+	}
         public static string PrintLatinNumber(string numberString)
         {
             var numbersInLatin = new Dictionary<string, string>
