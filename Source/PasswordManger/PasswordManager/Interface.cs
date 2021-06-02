@@ -114,6 +114,7 @@ namespace PasswordManger
                     
                     case "clear":
                         Console.Clear();
+                        Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
                         break;
                         
                     case "list logins":

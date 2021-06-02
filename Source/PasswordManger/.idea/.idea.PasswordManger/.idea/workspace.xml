@@ -10,8 +10,6 @@
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="FIXED ERROR IN LATINIZELOL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Interface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
@@ -63,6 +61,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/B7/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PasswordManager/Interface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PasswordManager/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/Reps/Password-Manager-Thing/Source/PasswordManger/PasswordManager/Classes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://F:/Reps/Password-Manager-Thing/Source/PasswordManger/PasswordManager/Classes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61F5185B-E9CF-48B9-8487-181D7861EB9C/66/Array.Enumerators.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/600469FE-AED5-4EDD-806E-09990EB885A4/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
@@ -299,40 +298,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManager/Interface.cs</url>
-          <line>80</line>
-          <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Interface.cs" initialLine="78" containingFunctionPresentation="method 'CreateProfile'">
-            <startOffsets>
-              <option value="3144" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3188" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManager/Interface.cs</url>
-          <line>22</line>
-          <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Interface.cs" initialLine="22" containingFunctionPresentation="method 'LogIn'">
-            <startOffsets>
-              <option value="767" />
-            </startOffsets>
-            <endOffsets>
-              <option value="800" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PasswordManager/Classes.cs</url>
           <line>95</line>
           <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Classes.cs" initialLine="95" containingFunctionPresentation="method 'GetEncryptionKey'">
             <startOffsets>
-              <option value="3189" />
+              <option value="3192" />
             </startOffsets>
             <endOffsets>
-              <option value="3220" />
+              <option value="3223" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="44" />
@@ -352,16 +325,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PasswordManager/Interface.cs</url>
-          <line>85</line>
-          <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Interface.cs" initialLine="83" containingFunctionPresentation="method 'GetCredentials'">
+          <line>26</line>
+          <properties documentPath="F:\Reps\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Interface.cs" initialLine="26" containingFunctionPresentation="method 'LogIn'">
             <startOffsets>
-              <option value="3299" />
+              <option value="898" />
             </startOffsets>
             <endOffsets>
-              <option value="3374" />
+              <option value="974" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="47" />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
