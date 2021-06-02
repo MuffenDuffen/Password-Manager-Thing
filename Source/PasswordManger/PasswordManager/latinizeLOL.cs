@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    public class LatinizeLol
+    internal static class LatinizeLol
     {
         internal static string ReverseConvertStringToLatinNumber(string numberInStrings)
         {

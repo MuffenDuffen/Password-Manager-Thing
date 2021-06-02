@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,14 +25,16 @@ namespace PasswordManger
             {
                 switch (keyAtIndex)
                 {
-                    case 1:
+                    case 0:
                         encrypt = NextChar(encrypt);
                         break;
-                    case 2:
+                    case 1:
                         encrypt = InvertBits(encrypt);
                         break;
-                    case 3:
+                    case 2:
                         encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
+                        break;
+                    case 3:
                         break;
                     case 4:
                         break;
@@ -50,8 +51,6 @@ namespace PasswordManger
                     case 10:
                         break;
                     case 11:
-                        break;
-                    case 12:
                         break;
                 }
             }

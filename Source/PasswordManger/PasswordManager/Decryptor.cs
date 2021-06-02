@@ -65,8 +65,6 @@ namespace PasswordManger
                         break;
                     case 11:
                         break;
-                    case 12:
-                        break;
                 }
             }
 
