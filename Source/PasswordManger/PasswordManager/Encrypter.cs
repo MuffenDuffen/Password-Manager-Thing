@@ -26,18 +26,32 @@ namespace PasswordManger
             {
                 switch (keyAtIndex)
                 {
-                    case 0:
+                    case 1:
                         encrypt = NextChar(encrypt);
                         break;
-                    case 1:
+                    case 2:
                         encrypt = InvertBits(encrypt);
                         break;
-                    case 2:
+                    case 3:
                         encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
                         break;
-                    case 3:
-                        break;
                     case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        break;
+                    case 11:
+                        break;
+                    case 12:
                         break;
                 }
             }

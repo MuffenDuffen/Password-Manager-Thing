@@ -12,7 +12,7 @@ namespace PasswordManger
         public int[] EncryptionKey;
         internal List<Credential> Credentials;
 
-        internal static Profile GetFromFile(string path)
+        internal static Profile GetFromFile(string path, int[] encryptionKey)
         {
             var profile = new Profile();
             
@@ -20,7 +20,7 @@ namespace PasswordManger
 
             profile.Name = text[0];
             profile.MasterPassword = text[1];
-            profile.EncryptionKey = GetEncryptionKey(profile.MasterPassword);
+            profile.EncryptionKey = encryptionKey;
             profile.Credentials = new List<Credential>();
 
             for (var i = 2; i < text.Length; i++)
