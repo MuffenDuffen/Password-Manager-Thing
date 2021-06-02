@@ -22,7 +22,9 @@ namespace PasswordManger
                     // return a hashed value that we compare to the stored masterPassword
                     string hashedInput = Hash(input);
 
-                    string encryptedInput = Encryptor.EncryptString(hashedInput, Profile.GetEncryptionKey(input));
+                    int[] encryptionKey = Profile.GetEncryptionKey(input);
+
+                    string encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey);
             
                     // Get heavily encrypted master password from a file
                     string[] lines = File.ReadAllLines(path);
@@ -31,7 +33,7 @@ namespace PasswordManger
                     if (encryptedInput == masterPassword)
                     {
                         Console.WriteLine("\nYou are successfully logged in!");
-                        GetCredentials(path);
+                        GetCredentials(encryptionKey, path);
                     }
                     else
                     {
@@ -76,14 +78,14 @@ namespace PasswordManger
 
             Profile.SaveToFile(profile, path);
 
-            GetCredentials(path);
+            GetCredentials(profile.EncryptionKey, path);
         }
 
-        private static void GetCredentials(string path)
+        private static void GetCredentials(int[] encryptionKey, string path)
         {
             Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
             
-            var profile = Profile.GetFromFile(path);
+            Profile profile = Profile.GetFromFile(path, encryptionKey);
             
             var done = false;
 
@@ -115,7 +117,7 @@ namespace PasswordManger
                         break;
                         
                     case "list logins":
-                        foreach (var cred in profile.Credentials) OutputCredentials(cred);
+                        foreach (Credential cred in profile.Credentials) OutputCredentials(cred);
                         break;
                     
                     case "get login":
@@ -130,7 +132,7 @@ namespace PasswordManger
                             
                             case "email":
                                 string email = AskQuestion("Enter email: ");
-                                foreach (var t in profile.Credentials.Where(t => t.Email == email))
+                                foreach (Credential t in profile.Credentials.Where(t => t.Email == email))
                                 {
                                     Credential.OutputCredentials(t);
                                 }
@@ -139,7 +141,7 @@ namespace PasswordManger
                             
                             case "app name":
                                 string appName = AskQuestion("Enter app name: ");
-                                foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName))
+                                foreach (Credential tt in profile.Credentials.Where(tt => tt.AppName == appName))
                                 {
                                     Credential.OutputCredentials(tt);
                                 }
