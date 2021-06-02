@@ -50,15 +50,15 @@ namespace PasswordManger
             
             var rand = new Random(masterPassword.Length);
 
-            int length = rand.Next(4, 16);
+            int length = rand.Next(16, 32);
 
             char randChar = masterPassword[rand.Next(masterPassword.Length)];
 
-            int randInt = rand.Next(1, 5);
+            int randInt = rand.Next(12);
 
             var random = new Random(length * randInt);
 
-            int randomInt = random.Next(1, 5);
+            int randomInt = random.Next(12);
             
             char randomChar = masterPassword[random.Next(masterPassword.Length)];
 
@@ -67,10 +67,10 @@ namespace PasswordManger
                 switch (rand.Next(8))
                 {
                     case 0: 
-                        encryptionKey.Add(masterPassword.Length % 5);
+                        encryptionKey.Add(masterPassword.Length % 12);
                         break;
                     case 1: 
-                        encryptionKey.Add(Convert.ToInt32(randChar) % 5);
+                        encryptionKey.Add(Convert.ToInt32(randChar) % 12);
                         break;
                     case 2: 
                         encryptionKey.Add(randInt);
@@ -79,16 +79,16 @@ namespace PasswordManger
                         encryptionKey.Add(randomInt);
                         break;
                     case 4: 
-                        encryptionKey.Add(length % 5);
+                        encryptionKey.Add(length % 12);
                         break;
                     case 5:
-                        encryptionKey.Add(Convert.ToInt32(randomChar) % 5);
+                        encryptionKey.Add(Convert.ToInt32(randomChar) % 12);
                         break;
                     case 6: 
-                        encryptionKey.Add((randInt + Convert.ToInt32(randChar)) % 5);
+                        encryptionKey.Add((randInt + Convert.ToInt32(randChar)) % 12);
                         break;
                     case 7: 
-                        encryptionKey.Add((randomInt + Convert.ToInt32(randomChar)) % 5);
+                        encryptionKey.Add((randomInt + Convert.ToInt32(randomChar)) % 12);
                         break;
                 }
             }
