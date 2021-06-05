@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -8,6 +9,7 @@ namespace PasswordManger
 {
     internal static class Interface
     {
+        [SuppressMessage("ReSharper.DPA", "DPA0002: Excessive memory allocations in SOH", MessageId = "type: System.String")]
         public static void LogIn()
         {
             Console.WriteLine("PasswordManager Program by Nanojaw studios");
@@ -61,8 +63,10 @@ namespace PasswordManger
             string name = AskQuestion("What is your name: ");
 
             Console.WriteLine("To get started, you need to add some credentials");
+
+            ulong shiftt = Profile.GetShift(masterPassword);
             
-            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword)};
+            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword), Shift = shiftt};
             
             var done = false;
             while (!done)

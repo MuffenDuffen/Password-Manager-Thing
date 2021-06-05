@@ -36,7 +36,7 @@ namespace PasswordManger
         {
             var text = new List<string>
             {
-                Encryptor.EncryptString(profile.Name, profile.EncryptionKey, shift),
+                profile.Name,
                 Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey, shift)
             };
             text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey, shift)));
@@ -122,7 +122,7 @@ namespace PasswordManger
                 if (encryptionKey[ii] == 2) encryptionKey[ii] = 0;
             }
             
-            foreach (int key in encryptionKey) Console.WriteLine(key);
+            //foreach (int key in encryptionKey) Console.WriteLine(key);
 
             return encryptionKey.ToArray();
         }

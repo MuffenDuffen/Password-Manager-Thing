@@ -8,25 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Interface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csprojAssemblyReference.cache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,9 +101,9 @@
       <option value="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Encrypter.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -197,7 +186,7 @@
       <workItem from="1622828645498" duration="4403000" />
       <workItem from="1622879518477" duration="65000" />
       <workItem from="1622893853207" duration="1204000" />
-      <workItem from="1622910425695" duration="2606000" />
+      <workItem from="1622910425695" duration="4111000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -338,16 +327,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PasswordManager/Program.cs</url>
-          <line>10</line>
-          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Program.cs" initialLine="10" containingFunctionPresentation="method 'Main'">
+          <line>8</line>
+          <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Program.cs" initialLine="8" containingFunctionPresentation="method 'Main'">
             <startOffsets>
-              <option value="221" />
+              <option value="152" />
             </startOffsets>
             <endOffsets>
-              <option value="275" />
+              <option value="170" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
