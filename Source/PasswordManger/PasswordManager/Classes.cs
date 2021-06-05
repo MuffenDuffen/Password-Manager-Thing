@@ -8,11 +8,12 @@ namespace PasswordManger
     internal sealed class Profile
     {
         internal string Name, MasterPassword;
+        public ulong Shift; 
 
         public int[] EncryptionKey;
         internal List<Credential> Credentials;
 
-        internal static Profile GetFromFile(string path, int[] encryptionKey)
+        internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift)
         {
             var profile = new Profile();
             
@@ -25,20 +26,20 @@ namespace PasswordManger
 
             for (var i = 2; i < text.Length; i++)
             {
-                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey));
+                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift));
             }
             
             return profile;
         }
 
-        internal static void SaveToFile(Profile profile, string path)
+        internal static void SaveToFile(Profile profile, string path, ulong shift)
         {
             var text = new List<string>
             {
-                Encryptor.EncryptString(profile.Name, profile.EncryptionKey),
-                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey)
+                Encryptor.EncryptString(profile.Name, profile.EncryptionKey, shift),
+                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey, shift)
             };
-            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey)));
+            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey, shift)));
 
 
             File.WriteAllLines(path, text);
@@ -106,9 +107,31 @@ namespace PasswordManger
                 }
             }
 
+            var indexOfFirstTwo = 0;
+            
+            for (var i = 0; i < encryptionKey.Count; i++)
+            {
+                if (encryptionKey[i] != 2) continue;
+
+                indexOfFirstTwo = i;
+                break;
+            }
+            
+            for (int ii = indexOfFirstTwo + 1; ii < encryptionKey.Count; ii++)
+            {
+                if (encryptionKey[ii] == 2) encryptionKey[ii] = 0;
+            }
+            
             foreach (int key in encryptionKey) Console.WriteLine(key);
 
             return encryptionKey.ToArray();
+        }
+
+        internal static ulong GetShift(string encrypt)
+        {
+            var randTest = new Random(encrypt.Length);
+            
+            return (ulong) randTest.Next(2, encrypt.Length);
         }
     }
 

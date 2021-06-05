@@ -6,15 +6,14 @@ namespace PasswordManger
 {
     internal abstract class Encryptor
     {
-        public static string EncryptCredential(Credential credential, int[] key)
+        public static string EncryptCredential(Credential credential, int[] key, ulong shift)
         {
-            string encrypted = EncryptString(credential.AppName, key).Length + "," +
-                               EncryptString(credential.Email, key).Length + "," +
-                               EncryptString(credential.Password, key).Length + " " +
-
-                               EncryptString(credential.AppName, key) +
-                               EncryptString(credential.Email, key) +
-                               EncryptString(credential.Password, key);
+            string encrypted = EncryptString(credential.AppName, key, shift).Length + "," +
+                               EncryptString(credential.Email, key, shift).Length + "," +
+                               EncryptString(credential.Password, key, shift).Length + " " +
+                               EncryptString(credential.AppName, key, shift) +
+                               EncryptString(credential.Email, key, shift) +
+                               EncryptString(credential.Password, key, shift);
 
             return encrypted;
         }
@@ -28,9 +27,8 @@ namespace PasswordManger
             return encryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        public static string EncryptString(string encrypt, IEnumerable<int> key) //ToDo mek function us key
+        public static string EncryptString(string encrypt, IEnumerable<int> key, ulong encryptShift) //ToDo mek function us key
         {
-            var randTest = new Random(encrypt.Length);
             foreach (int keyAtIndex in key)
             {
                 switch (keyAtIndex)
@@ -45,7 +43,7 @@ namespace PasswordManger
                         encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
                         break;
                     case 3:
-                        encrypt = Caesarion(encrypt, (ulong) randTest.Next());
+                        encrypt = Caesarion(encrypt, encryptShift);
                         break;
                     case 4:
                         break;

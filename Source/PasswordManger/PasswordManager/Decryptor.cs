@@ -6,7 +6,7 @@ namespace PasswordManger
 {
     internal class Decryptor
     {
-        public static Credential DecryptCredential(string credentialString, int[] key)
+        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift)
         {
             var credential = new Credential("", "", "");
 
@@ -27,9 +27,9 @@ namespace PasswordManger
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
 
 
-            credential.AppName = DecryptString(credential.AppName, key);
-            credential.Email = DecryptString(credential.Email, key);
-            credential.Password = DecryptString(credential.Password, key);
+            credential.AppName = DecryptString(credential.AppName, key, shift);
+            credential.Email = DecryptString(credential.Email, key, shift);
+            credential.Password = DecryptString(credential.Password, key, shift);
 
             return credential;
         }
@@ -43,9 +43,8 @@ namespace PasswordManger
             return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        internal static string DecryptString(string decrypt, IEnumerable<int> key) //ToDo mek function us key but reverse
+        internal static string DecryptString(string decrypt, IEnumerable<int> key, ulong decryptShift) //ToDo mek function us key but reverse
         {
-            var randTestT = new Random(decrypt.Length);
             foreach (int keyAtIndex in key.Reverse())
             {
                 switch (keyAtIndex)
@@ -60,7 +59,7 @@ namespace PasswordManger
                         decrypt = LatinizeLol.ReverseConvertStringToLatinNumber(decrypt);
                         break;
                     case 3:
-                        decrypt = ReverseCaesarion(decrypt, (ulong) randTestT.Next());
+                        decrypt = ReverseCaesarion(decrypt, decryptShift);
                         break;
                     case 4:
                         break;
