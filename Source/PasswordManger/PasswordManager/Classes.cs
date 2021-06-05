@@ -47,51 +47,66 @@ namespace PasswordManger
         internal static int[] GetEncryptionKey(string masterPassword)
         {
             var encryptionKey = new List<int>();
+            Console.WriteLine(masterPassword.Length);
             
-            var rand = new Random(masterPassword.Length);
-
-            int length = rand.Next(16, 32);
-
-            char randChar = masterPassword[rand.Next(masterPassword.Length)];
-
-            int randInt = rand.Next(12);
-
-            var random = new Random(length * randInt);
-
-            int randomInt = random.Next(12);
+            var baseRand = new Random(masterPassword.Length);
+            var rand0 = new Random(baseRand.Next() * masterPassword[0]);
+            var rand1 = new Random(baseRand.Next() * masterPassword[1]);
+            var rand2 = new Random(baseRand.Next() * masterPassword[2]);
+            var rand3 = new Random(baseRand.Next() * masterPassword[3]);
+            var rand4 = new Random(baseRand.Next() * masterPassword[^7]);
+            var rand5 = new Random(baseRand.Next() * masterPassword[^7]);
+            var rand6 = new Random(baseRand.Next() * masterPassword[^7]);
+            var rand7 = new Random(baseRand.Next() * masterPassword[^7]);
+            var rand8 = new Random(baseRand.Next() * masterPassword[^3]);
+            var rand9 = new Random(baseRand.Next() * masterPassword[^2]);
+            var rand10 = new Random(baseRand.Next() * masterPassword[^1]);
+            var rand11 = new Random(baseRand.Next() * masterPassword[^1]);
             
-            char randomChar = masterPassword[random.Next(masterPassword.Length)];
-
-            for (var i = 0; i < length; i++)
-                switch (rand.Next(8))
+            for (var i = 0; i < baseRand.Next(16, 32); i++)
+            {
+                switch (baseRand.Next(12))
                 {
-                    case 0: 
-                        encryptionKey.Add(masterPassword.Length % 12);
+                    case 0:
+                        encryptionKey.Add(rand0.Next(12));
                         break;
-                    case 1: 
-                        encryptionKey.Add(Convert.ToInt32(randChar) % 12);
+                    case 1:
+                        encryptionKey.Add(rand1.Next(12));
                         break;
-                    case 2: 
-                        encryptionKey.Add(randInt);
+                    case 2:
+                        encryptionKey.Add(rand2.Next(12));
                         break;
                     case 3:
-                        encryptionKey.Add(randomInt);
+                        encryptionKey.Add(rand3.Next(12));
                         break;
-                    case 4: 
-                        encryptionKey.Add(length % 12);
+                    case 4:
+                        encryptionKey.Add(rand4.Next(12));
                         break;
                     case 5:
-                        encryptionKey.Add(Convert.ToInt32(randomChar) % 12);
+                        encryptionKey.Add(rand5.Next(12));
                         break;
-                    case 6: 
-                        encryptionKey.Add((randInt + Convert.ToInt32(randChar)) % 12);
+                    case 6:
+                        encryptionKey.Add(rand6.Next(12));
                         break;
-                    case 7: 
-                        encryptionKey.Add((randomInt + Convert.ToInt32(randomChar)) % 12);
+                    case 7:
+                        encryptionKey.Add(rand7.Next(12));
+                        break;
+                    case 8:
+                        encryptionKey.Add(rand8.Next(12));
+                        break;
+                    case 9:
+                        encryptionKey.Add(rand9.Next(12));
+                        break;
+                    case 10:
+                        encryptionKey.Add(rand10.Next(12));
+                        break;
+                    case 11:
+                        encryptionKey.Add(rand11.Next(12));
                         break;
                 }
+            }
 
-            foreach (int keyTest in encryptionKey) Console.WriteLine(keyTest);
+            foreach (int key in encryptionKey) Console.WriteLine(key);
 
             return encryptionKey.ToArray();
         }

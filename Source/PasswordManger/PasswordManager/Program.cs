@@ -6,19 +6,14 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            var alpha = "abcdefghijklmnopqrstuvwxyz";
+            const string mPass = "testPassTestPassTTT";
+            
+            int[] encryptionKey = Profile.GetEncryptionKey(mPass);
 
-            foreach (char c in alpha)
-            {
-                foreach (char cc in alpha)
-                {
-                    foreach (char ccc in alpha)
-                    {
-                        Console.WriteLine(c.ToString() + cc.ToString() + ccc.ToString());
-                    }
-                }
-            }
-            //Interface.LogIn();
+            string encryptString = Encryptor.EncryptString(mPass, encryptionKey);
+            string decryptString = Decryptor.DecryptString(encryptString, encryptionKey);
+            
+            Console.WriteLine("{0} {1}", encryptString, decryptString);
         }
     }
 }

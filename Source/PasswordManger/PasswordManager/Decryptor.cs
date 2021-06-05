@@ -34,8 +34,18 @@ namespace PasswordManger
             return credential;
         }
 
-        private static string DecryptString(string decrypt, IEnumerable<int> key) //ToDo mek function us key but reverse
+        private static string ReverseCaesarion(string decrypt, ulong shift)
         {
+            char[] decryptArray = decrypt.ToCharArray();
+            
+            decryptArray = decryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar - shift)).ToArray();
+            
+            return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
+        }
+
+        internal static string DecryptString(string decrypt, IEnumerable<int> key) //ToDo mek function us key but reverse
+        {
+            var randTestT = new Random(decrypt.Length);
             foreach (int keyAtIndex in key.Reverse())
             {
                 switch (keyAtIndex)
@@ -50,6 +60,7 @@ namespace PasswordManger
                         decrypt = LatinizeLol.ReverseConvertStringToLatinNumber(decrypt);
                         break;
                     case 3:
+                        decrypt = ReverseCaesarion(decrypt, (ulong) randTestT.Next());
                         break;
                     case 4:
                         break;

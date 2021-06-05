@@ -19,8 +19,18 @@ namespace PasswordManger
             return encrypted;
         }
 
+        private static string Caesarion(string encrypt, ulong shift)
+        {
+            char[] encryptArray = encrypt.ToCharArray();
+            
+            encryptArray = encryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + shift)).ToArray();
+            
+            return encryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
+        }
+
         public static string EncryptString(string encrypt, IEnumerable<int> key) //ToDo mek function us key
         {
+            var randTest = new Random(encrypt.Length);
             foreach (int keyAtIndex in key)
             {
                 switch (keyAtIndex)
@@ -35,6 +45,7 @@ namespace PasswordManger
                         encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
                         break;
                     case 3:
+                        encrypt = Caesarion(encrypt, (ulong) randTest.Next());
                         break;
                     case 4:
                         break;

@@ -18,7 +18,8 @@ namespace PasswordManger
             var intArrayWithCharsInNumberForm = new int[numberInString.Length];
             var indexInArray = 0;
 
-            foreach (char c in numberInString) {
+            foreach (char c in numberInString)
+            {
                 intArrayWithCharsInNumberForm[indexInArray] = Convert.ToInt32(c);   
                 indexInArray++;
             }
