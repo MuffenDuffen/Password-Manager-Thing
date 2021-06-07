@@ -8,7 +8,7 @@ namespace PasswordManger
     internal sealed class Profile
     {
         internal string Name, MasterPassword;
-        public ulong Shift; 
+        public ulong Shift;
 
         public int[] EncryptionKey;
         internal List<Credential> Credentials;
@@ -16,8 +16,8 @@ namespace PasswordManger
         internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift)
         {
             var profile = new Profile();
-            
-            string[] text = File.ReadAllLines(path);
+
+            var text = File.ReadAllLines(path);
 
             profile.Name = text[0];
             profile.MasterPassword = text[1];
@@ -28,7 +28,7 @@ namespace PasswordManger
             {
                 profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift));
             }
-            
+
             return profile;
         }
 
@@ -48,8 +48,11 @@ namespace PasswordManger
         internal static int[] GetEncryptionKey(string masterPassword)
         {
             var encryptionKey = new List<int>();
+            var runLatinize = true;
+            var randNumber = 0;
+
             Console.WriteLine(masterPassword.Length);
-            
+
             var baseRand = new Random(masterPassword.Length);
             var rand0 = new Random(baseRand.Next() * masterPassword[0]);
             var rand1 = new Random(baseRand.Next() * masterPassword[1]);
@@ -63,7 +66,7 @@ namespace PasswordManger
             var rand9 = new Random(baseRand.Next() * masterPassword[^2]);
             var rand10 = new Random(baseRand.Next() * masterPassword[^1]);
             var rand11 = new Random(baseRand.Next() * masterPassword[^1]);
-            
+
             for (var i = 0; i < baseRand.Next(16, 32); i++)
             {
                 switch (baseRand.Next(12))
@@ -75,7 +78,19 @@ namespace PasswordManger
                         encryptionKey.Add(rand1.Next(12));
                         break;
                     case 2:
-                        encryptionKey.Add(rand2.Next(12));
+                        if (runLatinize)
+                        {
+                            encryptionKey.Add(rand2.Next(12));
+                            runLatinize = false;
+                        }
+                        else
+                        {
+                            while (randNumber != 2)
+                            {
+                                randNumber = rand2.Next(12);
+                            }
+                        }
+
                         break;
                     case 3:
                         encryptionKey.Add(rand3.Next(12));
@@ -107,21 +122,6 @@ namespace PasswordManger
                 }
             }
 
-            var indexOfFirstTwo = 0;
-            
-            for (var i = 0; i < encryptionKey.Count; i++)
-            {
-                if (encryptionKey[i] != 2) continue;
-
-                indexOfFirstTwo = i;
-                break;
-            }
-            
-            for (int ii = indexOfFirstTwo + 1; ii < encryptionKey.Count; ii++)
-            {
-                if (encryptionKey[ii] == 2) encryptionKey[ii] = 0;
-            }
-            
             //foreach (int key in encryptionKey) Console.WriteLine(key);
 
             return encryptionKey.ToArray();
@@ -130,7 +130,7 @@ namespace PasswordManger
         internal static ulong GetShift(string encrypt)
         {
             var randTest = new Random(encrypt.Length);
-            
+
             return (ulong) randTest.Next(2, encrypt.Length);
         }
     }
@@ -154,8 +154,8 @@ namespace PasswordManger
                     Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword());
 
             Console.WriteLine("Enter a Password: ");
-            string password = Console.ReadLine();
-                
+            var password = Console.ReadLine();
+
             return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), password);
         }
 

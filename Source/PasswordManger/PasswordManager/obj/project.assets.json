@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManager\\PasswordManager.csproj",
+      "projectUniqueName": "D:\\Repos\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManager\\PasswordManager.csproj",
       "projectName": "PasswordManager",
-      "projectPath": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManager\\PasswordManager.csproj",
+      "projectPath": "D:\\Repos\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManager\\PasswordManager.csproj",
       "packagesPath": "C:\\Users\\malte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\malte\\GitStuff\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManager\\obj\\",
+      "outputPath": "D:\\Repos\\Password-Manager-Thing\\Source\\PasswordManger\\PasswordManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

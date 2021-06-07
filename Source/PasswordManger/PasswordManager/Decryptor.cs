@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    internal class Decryptor
+    internal static class Decryptor
     {
         public static Credential DecryptCredential(string credentialString, int[] key, ulong shift)
         {
             var credential = new Credential("", "", "");
 
-            int firstComma = credentialString.IndexOf(',', 0);
-            int secondComma = credentialString.IndexOf(',', firstComma + 1);
+            var firstComma = credentialString.IndexOf(',', 0);
+            var secondComma = credentialString.IndexOf(',', firstComma + 1);
 
             int appNameLength = Convert.ToInt16(credentialString[..firstComma]);
 
@@ -19,8 +19,8 @@ namespace PasswordManger
 
             int passwordLength = Convert.ToInt16(credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1));
 
-            string encrypted = credentialString[(credentialString.IndexOf(' ') + 1)..];
-            
+            var encrypted = credentialString[(credentialString.IndexOf(' ') + 1)..];
+
             credential.AppName = encrypted[..appNameLength];
             credential.Email = encrypted.Substring(appNameLength, emailLength);
 
@@ -36,16 +36,16 @@ namespace PasswordManger
 
         private static string ReverseCaesarion(string decrypt, ulong shift)
         {
-            char[] decryptArray = decrypt.ToCharArray();
-            
+            var decryptArray = decrypt.ToCharArray();
+
             decryptArray = decryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar - shift)).ToArray();
-            
+
             return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        internal static string DecryptString(string decrypt, IEnumerable<int> key, ulong decryptShift) //ToDo mek function us key but reverse
+        private static string DecryptString(string decrypt, IEnumerable<int> key, ulong decryptShift) //ToDo mek function us key but reverse
         {
-            foreach (int keyAtIndex in key.Reverse())
+            foreach (var keyAtIndex in key.Reverse())
             {
                 switch (keyAtIndex)
                 {
@@ -80,14 +80,14 @@ namespace PasswordManger
 
             return decrypt;
         }
-        
+
         // functions
         private static string PreviousChar(string stringToPrevChar) // Removes one from the UTF-8 value
         {
-            char[] prevCharArray = stringToPrevChar.ToCharArray();
+            var prevCharArray = stringToPrevChar.ToCharArray();
 
             prevCharArray = prevCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar - 1)).ToArray();
-                        
+
             return prevCharArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
     }

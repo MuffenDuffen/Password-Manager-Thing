@@ -21,9 +21,9 @@ namespace PasswordManger
         private static string Caesarion(string encrypt, ulong shift)
         {
             char[] encryptArray = encrypt.ToCharArray();
-            
+
             encryptArray = encryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + shift)).ToArray();
-            
+
             return encryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
@@ -63,7 +63,7 @@ namespace PasswordManger
                         break;
                 }
             }
-            
+
             return encrypt;
         }
         //Gets next char and replaces old one
@@ -73,9 +73,9 @@ namespace PasswordManger
             private static string NextChar(string stringToNextChar) // adds one to the UTF-8 value
             {
                 char[] stringToNextCharArray = stringToNextChar.ToCharArray();
-            
+
                 stringToNextCharArray = stringToNextCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + 1)).ToArray();
-            
+
                 return stringToNextCharArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
             }
 
@@ -86,7 +86,7 @@ namespace PasswordManger
                 {
                     inverted[i] = (char) ~Convert.ToInt64(inverted[i]);
                 }
-            
+
                 return new string(inverted);
             }
     }

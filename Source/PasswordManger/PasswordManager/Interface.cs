@@ -17,7 +17,7 @@ namespace PasswordManger
             if (File.Exists(path))
             {
                 var tries = 0;
-                while (tries != 64) //ToDo add a timer 
+                while (tries != 64) //ToDo add a timer
                 {
                     Console.Write("Enter Master Password: ");
                     string input = Console.ReadLine();
@@ -28,13 +28,13 @@ namespace PasswordManger
                     int[] encryptionKey = Profile.GetEncryptionKey(input);
 
                     ulong shift = Profile.GetShift(input);
-                    
+
                     string encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift);
-            
+
                     // Get heavily encrypted master password from a file
                     string[] lines = File.ReadAllLines(path);
                     string masterPassword = lines[1];
-                    
+
                     if (encryptedInput == masterPassword)
                     {
                         Console.WriteLine("\nYou are successfully logged in!");
@@ -65,9 +65,9 @@ namespace PasswordManger
             Console.WriteLine("To get started, you need to add some credentials");
 
             ulong shiftt = Profile.GetShift(masterPassword);
-            
+
             var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword), Shift = shiftt};
-            
+
             var done = false;
             while (!done)
             {
@@ -95,13 +95,13 @@ namespace PasswordManger
             var profile = Profile.GetFromFile(path, encryptionKey, shift);
             profile.MasterPassword = masterPassword;
             profile.Shift = shift;
-            
+
             var done = false;
 
             while (!done)
             {
                 string input = AskQuestion("What would you like to do? ");
-                
+
                 switch (input)
                 {
                     // Direct Actions
@@ -120,16 +120,16 @@ namespace PasswordManger
                         Console.WriteLine("To clear console, write 'clear'");
                         Console.WriteLine("**********************************");
                         break;
-                    
+
                     case "clear":
                         Console.Clear();
                         Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
                         break;
-                        
+
                     case "list logins":
                         foreach (var cred in profile.Credentials) OutputCredentials(cred);
                         break;
-                    
+
                     case "get login":
                         input = AskQuestion("What do you want to search with? ");
                         switch (input)
@@ -139,16 +139,16 @@ namespace PasswordManger
                                 var credential = profile.Credentials[index];
                                 Credential.OutputCredentials(credential);
                                 break;
-                            
+
                             case "email":
                                 string email = AskQuestion("Enter email: ");
                                 foreach (var t in profile.Credentials.Where(t => t.Email == email))
                                 {
                                     Credential.OutputCredentials(t);
                                 }
-                                
+
                                 break;
-                            
+
                             case "app name":
                                 string appName = AskQuestion("Enter app name: ");
                                 foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName))
@@ -182,7 +182,7 @@ namespace PasswordManger
                 Console.Write(question);
                 answer = Console.ReadLine();
             }
-            
+
             return answer.ToLower();
         }
 
@@ -222,7 +222,7 @@ namespace PasswordManger
             var password = new byte[rand.Next(16, 64)];
             rng.GetBytes(password);
             return System.Text.Encoding.UTF8.GetString(password);
-        } 
+        }
 
         #endregion
     }

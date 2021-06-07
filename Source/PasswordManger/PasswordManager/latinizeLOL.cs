@@ -20,7 +20,7 @@ namespace PasswordManger
 
             foreach (char c in numberInString)
             {
-                intArrayWithCharsInNumberForm[indexInArray] = Convert.ToInt32(c);   
+                intArrayWithCharsInNumberForm[indexInArray] = Convert.ToInt32(c);
                 indexInArray++;
             }
 
@@ -43,7 +43,7 @@ namespace PasswordManger
                 {"7s", "Septem"},
                 {"8s", "Octo"},
                 {"9s", "Novem"},
-                
+
                 {"1tenth", "Decem"},
                 {"2tenth", "Viginti"},
                 {"3tenth", "Triginta"},
@@ -53,7 +53,7 @@ namespace PasswordManger
                 {"7tenth", "Septuaginta"},
                 {"8tenth", "Octoginta"},
                 {"9tenth", "Nonaginta"},
-                
+
                 {"1hundredth", "Centum"},
                 {"2hundredth", "Ducenti"},
                 {"3hundredth", "Trecenti"},
@@ -63,7 +63,7 @@ namespace PasswordManger
                 {"7hundredth", "Septingenti"},
                 {"8hundredth", "Octingenti"},
                 {"9hundredth", "Nongenti"},
-                
+
                 {"1thousandth", "Mille"},
                 {"2thousandth", "Duo Mille"},
                 {"3thousandth", "Tres Mille"},
@@ -73,7 +73,7 @@ namespace PasswordManger
                 {"7thousandth", "Septem Milia"},
                 {"8thousandth", "Octo Milia"},
                 {"9thousandth", "Novem Milia"},
-                
+
                 {"1tenthousandth", "Decem Milia"},
                 {"2tenthousandth", "Viginti Milia"},
                 {"3tenthousandth", "triginta Milia"},
@@ -83,7 +83,7 @@ namespace PasswordManger
                 {"7tenthousandth", "Septuaginta Milia"},
                 {"8tenthousandth", "Octoginta Milia"},
                 {"9tenthousandth", "Nonaginta Milia"},
-                
+
                 {"1hundredthousandth", "Centum Milia"},
                 {"2hundredthousandth", "Ducenti Milia"},
                 {"3hundredthousandth", "Trecenta Millia"},
@@ -93,14 +93,14 @@ namespace PasswordManger
                 {"7hundredthousandth", "Septigenti Milia"},
                 {"8hundredthousandth", "Octingenti Milia"},
                 {"9hundredthousandth", "Nongenti Milia"},
-                
+
                 {"1million", "Deciec centena milia"}
             };
-            
+
             int indexInNumber = numberString.Length;
 
             var stringOfNumberInLatin = "";
-            
+
             if (indexInNumber == 1 && numberString[0] == '0')
             {
                 return "Nihil";
@@ -115,7 +115,7 @@ namespace PasswordManger
                     indexInNumber--;
                     continue;
                 }
-                
+
                 switch (indexInNumber)
                 {
                     case 1:
@@ -159,7 +159,7 @@ namespace PasswordManger
 
                 indexInNumber--;
             }
-            
+
             stringOfNumberInLatin = stringOfNumberInLatin[..^1];
 
             return stringOfNumberInLatin;
@@ -178,7 +178,7 @@ namespace PasswordManger
                 {"Septem", 7},
                 {"Octo", 8},
                 {"Novem", 9},
-                
+
                 {"Decem", 10},
                 {"Viginti", 20},
                 {"Triginta", 30},
@@ -188,7 +188,7 @@ namespace PasswordManger
                 {"Septuaginta", 70},
                 {"Octoginta", 80},
                 {"Nonaginta", 90},
-                
+
                 {"Centum", 100},
                 {"Ducenti", 200},
                 {"Trecenti", 300},
@@ -198,7 +198,7 @@ namespace PasswordManger
                 {"Septingenti", 700},
                 {"Octingenti", 800},
                 {"Nongenti", 900},
-                
+
                 {"Mille", 1000},
                 {"Duo Mille", 2000},
                 {"Tres Mille", 3000},
@@ -208,7 +208,7 @@ namespace PasswordManger
                 {"Septem Milia", 7000},
                 {"Octo Milia", 8000},
                 {"Novem Milia", 9000},
-                
+
                 {"Decem Milia", 10000},
                 {"Viginti Milia", 20000},
                 {"triginta Milia", 30000},
@@ -218,7 +218,7 @@ namespace PasswordManger
                 {"Septuaginta Milia", 70000},
                 {"Octoginta Milia", 80000},
                 {"Nonaginta Milia", 90000},
-                
+
                 {"Centum Milia", 100000},
                 {"Ducenti Milia", 200000},
                 {"Trecenta Millia", 300000},
@@ -228,11 +228,11 @@ namespace PasswordManger
                 {"Septigenti Milia", 700000},
                 {"Octingenti Milia", 800000},
                 {"Nongenti Milia", 900000},
-                
+
                 {"Deciec centena milia", 1000000}
             };
-            
-            
+
+
             string[] backToNumberFromLatin = stringOfNumberInLatin.Split(',');
 
             for (var i = 0; i < backToNumberFromLatin.Length; i++)
