@@ -48,10 +48,6 @@ namespace PasswordManger
         internal static int[] GetEncryptionKey(string masterPassword)
         {
             var encryptionKey = new List<int>();
-            var runLatinize = true;
-            var randNumber = 0;
-
-            Console.WriteLine(masterPassword.Length);
 
             var baseRand = new Random(masterPassword.Length);
             var rand0 = new Random(baseRand.Next() * masterPassword[0]);
@@ -78,19 +74,7 @@ namespace PasswordManger
                         encryptionKey.Add(rand1.Next(12));
                         break;
                     case 2:
-                        if (runLatinize)
-                        {
-                            encryptionKey.Add(rand2.Next(12));
-                            runLatinize = false;
-                        }
-                        else
-                        {
-                            while (randNumber != 2)
-                            {
-                                randNumber = rand2.Next(12);
-                            }
-                        }
-
+                        encryptionKey.Add(rand2.Next(12));
                         break;
                     case 3:
                         encryptionKey.Add(rand3.Next(12));

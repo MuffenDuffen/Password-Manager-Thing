@@ -8,31 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/PasswordManger1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/apphost.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/project.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/shelf/Uncommitted_changes_before_Update_at_2021-05-30_09_21__Default_Changelist_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/dictionaries/malte.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Interface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +78,8 @@
       <option value="$PROJECT_DIR$/PasswordManager/Encrypter.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -116,7 +102,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Inspections-C#" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -181,6 +167,8 @@
       <workItem from="1622910425695" duration="4111000" />
       <workItem from="1623069383695" duration="615000" />
       <workItem from="1623075431622" duration="34000" />
+      <workItem from="1623080904312" duration="137000" />
+      <workItem from="1623159688867" duration="1014000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -324,19 +312,6 @@
           <line>8</line>
           <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Program.cs" initialLine="8" containingFunctionPresentation="method 'Main'" />
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManager/Classes.cs</url>
-          <line>49</line>
-          <properties documentPath="D:\Repos\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Classes.cs" initialLine="49" containingFunctionPresentation="method 'GetEncryptionKey'">
-            <startOffsets>
-              <option value="1513" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1549" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
