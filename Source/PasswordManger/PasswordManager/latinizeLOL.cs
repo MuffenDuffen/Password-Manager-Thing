@@ -8,7 +8,7 @@ namespace PasswordManger
     {
         internal static string ReverseConvertStringToLatinNumber(string numberInStrings)
         {
-            string[] numbers = numberInStrings.Split(new[] {" , "}, StringSplitOptions.None);
+            var numbers = numberInStrings.Split(new[] {" , "}, StringSplitOptions.None);
 
             return numbers.Select(ReversePrintNumberInLatin).Aggregate("", (current, numberBackFromLatin) => current + ((char) numberBackFromLatin));
         }
@@ -18,13 +18,13 @@ namespace PasswordManger
             var intArrayWithCharsInNumberForm = new int[numberInString.Length];
             var indexInArray = 0;
 
-            foreach (char c in numberInString)
+            foreach (var c in numberInString)
             {
                 intArrayWithCharsInNumberForm[indexInArray] = Convert.ToInt32(c);
                 indexInArray++;
             }
 
-            string finalString = intArrayWithCharsInNumberForm.Select(number => PrintLatinNumber(number.ToString())).Aggregate("", (current, numberInLatin) => current + (numberInLatin + " , "));
+            var finalString = intArrayWithCharsInNumberForm.Select(number => PrintLatinNumber(number.ToString())).Aggregate("", (current, numberInLatin) => current + (numberInLatin + " , "));
 
             finalString = finalString[..^3];
             return finalString;
@@ -97,7 +97,7 @@ namespace PasswordManger
                 {"1million", "Deciec centena milia"}
             };
 
-            int indexInNumber = numberString.Length;
+            var indexInNumber = numberString.Length;
 
             var stringOfNumberInLatin = "";
 
@@ -106,7 +106,7 @@ namespace PasswordManger
                 return "Nihil";
             }
 
-            foreach (char cc in numberString)
+            foreach (var cc in numberString)
             {
                 var alteredNumberString = "";
 
@@ -233,7 +233,7 @@ namespace PasswordManger
             };
 
 
-            string[] backToNumberFromLatin = stringOfNumberInLatin.Split(',');
+            var backToNumberFromLatin = stringOfNumberInLatin.Split(',');
 
             for (var i = 0; i < backToNumberFromLatin.Length; i++)
             {

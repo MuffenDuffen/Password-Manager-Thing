@@ -9,31 +9,30 @@ namespace PasswordManger
 {
     internal static class Interface
     {
-        [SuppressMessage("ReSharper.DPA", "DPA0002: Excessive memory allocations in SOH", MessageId = "type: System.String")]
         public static void LogIn()
         {
             Console.WriteLine("PasswordManager Program by Nanojaw studios");
-            string path = Directory.GetCurrentDirectory() + @"\data.txt";
+            var path = Directory.GetCurrentDirectory() + @"\data.txt";
             if (File.Exists(path))
             {
                 var tries = 0;
                 while (tries != 64) //ToDo add a timer
                 {
                     Console.Write("Enter Master Password: ");
-                    string input = Console.ReadLine();
+                    var input = Console.ReadLine();
 
                     // return a hashed value that we compare to the stored masterPassword
-                    string hashedInput = Hash(input);
+                    var hashedInput = Hash(input);
 
-                    int[] encryptionKey = Profile.GetEncryptionKey(input);
+                    var encryptionKey = Profile.GetEncryptionKey(input);
 
-                    ulong shift = Profile.GetShift(input);
+                    var shift = Profile.GetShift(input);
 
-                    string encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift);
+                    var encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift);
 
                     // Get heavily encrypted master password from a file
-                    string[] lines = File.ReadAllLines(path);
-                    string masterPassword = lines[1];
+                    var lines = File.ReadAllLines(path);
+                    var masterPassword = lines[1];
 
                     if (encryptedInput == masterPassword)
                     {
@@ -58,20 +57,20 @@ namespace PasswordManger
         {
             Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
             Console.Write("Enter a secure Master password: ");
-            string masterPassword = Console.ReadLine();
+            var masterPassword = Console.ReadLine();
 
-            string name = AskQuestion("What is your name: ");
+            var name = AskQuestion("What is your name: ");
 
             Console.WriteLine("To get started, you need to add some credentials");
 
-            ulong shiftt = Profile.GetShift(masterPassword);
+            var shiftt = Profile.GetShift(masterPassword);
 
             var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword), Shift = shiftt};
 
             var done = false;
             while (!done)
             {
-                string input = AskQuestion("Do you want to add more credentials: ");
+                var input = AskQuestion("Do you want to add more credentials: ");
                 switch (input)
                 {
                     case "yes":
@@ -100,7 +99,7 @@ namespace PasswordManger
 
             while (!done)
             {
-                string input = AskQuestion("What would you like to do? ");
+                var input = AskQuestion("What would you like to do? ");
 
                 switch (input)
                 {
@@ -141,7 +140,7 @@ namespace PasswordManger
                                 break;
 
                             case "email":
-                                string email = AskQuestion("Enter email: ");
+                                var email = AskQuestion("Enter email: ");
                                 foreach (var t in profile.Credentials.Where(t => t.Email == email))
                                 {
                                     Credential.OutputCredentials(t);
@@ -150,7 +149,7 @@ namespace PasswordManger
                                 break;
 
                             case "app name":
-                                string appName = AskQuestion("Enter app name: ");
+                                var appName = AskQuestion("Enter app name: ");
                                 foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName))
                                 {
                                     Credential.OutputCredentials(tt);
@@ -175,7 +174,7 @@ namespace PasswordManger
         public static string AskQuestion(string question)
         {
             Console.Write(question);
-            string answer = Console.ReadLine();
+            var answer = Console.ReadLine();
 
             while (string.IsNullOrEmpty(answer))
             {
@@ -207,10 +206,10 @@ namespace PasswordManger
             var sha384 = new SHA384Managed();
             var sha512 = new SHA512Managed();
 
-            byte[] textBytes = System.Text.Encoding.UTF8.GetBytes(input);
-            byte[] hash256 = sha256.ComputeHash(textBytes);
-            byte[] hash384 = sha384.ComputeHash(hash256);
-            byte[] hash512 = sha512.ComputeHash(hash384);
+            var textBytes = System.Text.Encoding.UTF8.GetBytes(input);
+            var hash256 = sha256.ComputeHash(textBytes);
+            var hash384 = sha384.ComputeHash(hash256);
+            var hash512 = sha512.ComputeHash(hash384);
 
             return BitConverter.ToString(hash512);
         }

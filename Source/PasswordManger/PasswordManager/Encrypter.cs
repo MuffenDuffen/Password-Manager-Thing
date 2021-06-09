@@ -8,19 +8,19 @@ namespace PasswordManger
     {
         public static string EncryptCredential(Credential credential, int[] key, ulong shift)
         {
-            string encrypted = EncryptString(credential.AppName, key, shift).Length + "," +
-                               EncryptString(credential.Email, key, shift).Length + "," +
-                               EncryptString(credential.Password, key, shift).Length + " " +
-                               EncryptString(credential.AppName, key, shift) +
-                               EncryptString(credential.Email, key, shift) +
-                               EncryptString(credential.Password, key, shift);
+            var encrypted = EncryptString(credential.AppName, key, shift).Length + "," +
+                            EncryptString(credential.Email, key, shift).Length + "," +
+                            EncryptString(credential.Password, key, shift).Length + " " +
+                            EncryptString(credential.AppName, key, shift) +
+                            EncryptString(credential.Email, key, shift) +
+                            EncryptString(credential.Password, key, shift);
 
             return encrypted;
         }
 
         private static string Caesarion(string encrypt, ulong shift)
         {
-            char[] encryptArray = encrypt.ToCharArray();
+            var encryptArray = encrypt.ToCharArray();
 
             encryptArray = encryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + shift)).ToArray();
 
@@ -29,7 +29,7 @@ namespace PasswordManger
 
         public static string EncryptString(string encrypt, IEnumerable<int> key, ulong encryptShift) //ToDo mek function us key
         {
-            foreach (int keyAtIndex in key)
+            foreach (var keyAtIndex in key)
             {
                 switch (keyAtIndex)
                 {
@@ -72,7 +72,7 @@ namespace PasswordManger
 
             private static string NextChar(string stringToNextChar) // adds one to the UTF-8 value
             {
-                char[] stringToNextCharArray = stringToNextChar.ToCharArray();
+                var stringToNextCharArray = stringToNextChar.ToCharArray();
 
                 stringToNextCharArray = stringToNextCharArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + 1)).ToArray();
 
@@ -81,7 +81,7 @@ namespace PasswordManger
 
             public static string InvertBits(string stringToInvert) // converts each characters UTF-8 value into bits and inverts it, then converts back to chars. China warning
             {
-                char[] inverted = stringToInvert.ToCharArray();
+                var inverted = stringToInvert.ToCharArray();
                 for (var i = 0; i < inverted.Length; i++)
                 {
                     inverted[i] = (char) ~Convert.ToInt64(inverted[i]);
