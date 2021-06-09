@@ -9,9 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encrypter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Interface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Classes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,11 +70,11 @@
       <option value="$PROJECT_DIR$/PasswordManger/Decryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Clippy.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Encrypter.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -94,7 +97,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -161,7 +164,7 @@
       <workItem from="1623075431622" duration="34000" />
       <workItem from="1623080904312" duration="137000" />
       <workItem from="1623159688867" duration="1063000" />
-      <workItem from="1623252259054" duration="299000" />
+      <workItem from="1623252259054" duration="1321000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -305,6 +308,19 @@
           <line>8</line>
           <properties documentPath="C:\Users\malte\GitStuff\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Program.cs" initialLine="8" containingFunctionPresentation="method 'Main'" />
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PasswordManager/Program.cs</url>
+          <line>9</line>
+          <properties documentPath="D:\Repos\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Program.cs" initialLine="9" containingFunctionPresentation="method 'Main'">
+            <startOffsets>
+              <option value="185" />
+            </startOffsets>
+            <endOffsets>
+              <option value="228" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

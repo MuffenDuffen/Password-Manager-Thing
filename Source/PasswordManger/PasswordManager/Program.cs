@@ -6,7 +6,11 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            Interface.LogIn();
+            //Interface.LogIn();
+            const string mPass = "testPassTestPassTtT";
+
+            var encryptionKey = Profile.GetEncryptionKey(mPass);
+            foreach (var key in encryptionKey) Console.WriteLine(key);
         }
     }
 }

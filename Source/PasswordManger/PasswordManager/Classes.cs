@@ -106,6 +106,30 @@ namespace PasswordManger
                 }
             }
 
+            var indexOfFirstTwo = 0;
+            var indexOfSecondTwo = 0;
+
+            for (var ii = 0; ii < encryptionKey.Count; ii++)
+            {
+                if (encryptionKey[ii] != 2) continue;
+
+                indexOfFirstTwo = ii;
+                break;
+            }
+
+            for (var iii = (indexOfFirstTwo + 1); iii < encryptionKey.Count; iii++)
+            {
+                if (encryptionKey[iii] != 2) continue;
+
+                indexOfSecondTwo = iii;
+                break;
+            }
+
+            for (var j = (indexOfSecondTwo + 1); j < encryptionKey.Count; j++)
+            {
+                if (encryptionKey[j] == 2) encryptionKey[j] = 0;
+            }
+
             //foreach (int key in encryptionKey) Console.WriteLine(key);
 
             return encryptionKey.ToArray();
