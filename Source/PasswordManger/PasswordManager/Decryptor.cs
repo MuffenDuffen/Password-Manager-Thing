@@ -43,7 +43,7 @@ namespace PasswordManger
             return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        private static string DecryptString(string decrypt, IEnumerable<int> key, ulong decryptShift) //ToDo mek function us key but reverse
+        public static string DecryptString(string decrypt, IEnumerable<int> key, ulong decryptShift) //ToDo mek function us key but reverse
         {
             foreach (var keyAtIndex in key.Reverse())
             {
@@ -62,7 +62,7 @@ namespace PasswordManger
                         decrypt = ReverseCaesarion(decrypt, decryptShift);
                         break;
                     case 4:
-                        decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
+                        //decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 6:
                         decrypt = PrimeStuff.ReverseConvertWordToPrimeAtThatIndexToChar(decrypt);
