@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace PasswordManger
 {
@@ -6,26 +7,12 @@ namespace PasswordManger
     {
         public static string ConvertWordToPrimeAtThatIndexToChar(string word)
         {
-            var finalString = "";
-
-            foreach (var c in word)
-            {
-                finalString += ConvertCharToPrimeAtThatIndexToChar(c);
-            }
-
-            return finalString;
+            return word.Aggregate("", (current, c) => current + ConvertCharToPrimeAtThatIndexToChar(c));
         }
 
         public static string ReverseConvertWordToPrimeAtThatIndexToChar(string word)
         {
-            var finalString = "";
-
-            foreach (var c in word)
-            {
-                finalString += ReverseConvertCharToPrimeAtThatIndex(c);
-            }
-
-            return finalString;
+            return word.Aggregate("", (current, c) => current + ReverseConvertCharToPrimeAtThatIndex(c));
         }
 
         private static char ConvertCharToPrimeAtThatIndexToChar(char c)

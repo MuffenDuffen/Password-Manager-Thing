@@ -27,7 +27,7 @@ namespace PasswordManger
     ///     foreach (UInt32 luiPrime in lpPrimes)
     ///         Console.WriteLine(luiPrime);
     /// </example>
-    public class Eratosthenes : IEnumerable<PrimeType>
+    internal class Eratosthenes : IEnumerable<PrimeType>
     {
         #region Constants
 
