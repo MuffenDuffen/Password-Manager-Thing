@@ -46,6 +46,7 @@ namespace PasswordManger
                         encrypt = Caesarion(encrypt, encryptShift);
                         break;
                     case 4:
+                        encrypt = RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(encrypt);
                         break;
                     case 5:
                         break;

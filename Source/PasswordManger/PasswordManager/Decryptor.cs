@@ -62,6 +62,7 @@ namespace PasswordManger
                         decrypt = ReverseCaesarion(decrypt, decryptShift);
                         break;
                     case 4:
+                        decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 6:
                         break;

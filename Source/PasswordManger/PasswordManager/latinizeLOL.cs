@@ -242,39 +242,5 @@ namespace PasswordManger
 
             return backToNumberFromLatin.Aggregate<string, ulong>(0, (current, t) => current + (ulong) Convert.ToInt64(t));
         }
-
-        public static string ToRoman(int number)
-        {
-            return number switch
-            {
-                < 0 or > 1999999 => throw new ArgumentOutOfRangeException("Insert value betwheen 1 and 3999"),
-                < 1 => string.Empty,
-                >= 1000000 => "M(|)" + "," + ToRoman(number - 1000000),
-                >= 900000 => "CM(|)" + "," + ToRoman(number - 900000),
-                >= 500000 => "D(|)" + "," + ToRoman(number - 500000),
-                >= 400000 => "CD(|)" + "," + ToRoman(number - 400000),
-                >= 100000 => "C(|)" + "," + ToRoman(number - 100000),
-                >= 90000 => "XC" + "," + ToRoman(number - 90000),
-                >= 50000 => "L" + "," + ToRoman(number - 50000),
-                >= 40000 => "XL" + "," + ToRoman(number - 40000),
-                >= 10000 => "X" + "," + ToRoman(number - 10000),
-                >= 9000 => "IX" + "," + ToRoman(number - 9000),
-                >= 5000 => "V" + "," + ToRoman(number - 5000),
-                >= 4000 => "IV" + "," + ToRoman(number - 4000),
-                >= 1000 => "M" + "," + ToRoman(number - 1000),
-                >= 900 => "CM" + "," + ToRoman(number - 900),
-                >= 500 => "D" + "," + ToRoman(number - 500),
-                >= 400 => "CD" + "," + ToRoman(number - 400),
-                >= 100 => "C" + "," + ToRoman(number - 100),
-                >= 90 => "XC" + "," + ToRoman(number - 90),
-                >= 50 => "L" + "," + ToRoman(number - 50),
-                >= 40 => "XL" + "," + ToRoman(number - 40),
-                >= 10 => "X" + "," + ToRoman(number - 10),
-                >= 9 => "IX" + "," + ToRoman(number - 9),
-                >= 5 => "V" + "," + ToRoman(number - 5),
-                >= 4 => "IV" + "," + ToRoman(number - 4),
-                _ => "I" + "," + ToRoman(number - 1)
-            };
-        }
     }
 }
