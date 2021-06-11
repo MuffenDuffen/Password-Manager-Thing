@@ -34,22 +34,22 @@ namespace PasswordManger
                 switch (keyAtIndex)
                 {
                     case 0:
-                        //encrypt = NextChar(encrypt);
+                        encrypt = NextChar(encrypt);
                         break;
                     case 1:
-                        //encrypt = InvertBits(encrypt);
+                        encrypt = InvertBits(encrypt);
                         break;
                     case 2:
                         encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
                         break;
                     case 3:
-                        //encrypt = Caesarion(encrypt, encryptShift);
+                        encrypt = Caesarion(encrypt, encryptShift);
                         break;
                     case 4:
-                        //encrypt = RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(encrypt);
+                        encrypt = RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(encrypt);
                         break;
                     case 5:
-                        //encrypt = PrimeStuff.ConvertWordToPrimeAtThatIndexToChar(encrypt);
+                        encrypt = PrimeStuff.ConvertWordToPrimeAtThatIndexToChar(encrypt);
                         break;
                     case 6:
                         break;

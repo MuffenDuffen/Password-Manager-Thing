@@ -7,48 +7,71 @@ namespace PasswordManger
     {
         public static string ConvertWordToPrimeAtThatIndexToChar(string word)
         {
-            return word.Aggregate("", (current, c) => current + ConvertCharToPrimeAtThatIndexToChar(c));
+            return word.Aggregate("", (current, c) => current + PrimeFunctions.CharToCharAtIndexOfPrime(c));
         }
 
         public static string ReverseConvertWordToPrimeAtThatIndexToChar(string word)
         {
-            return word.Aggregate("", (current, c) => current + ReverseConvertCharToPrimeAtThatIndex(c));
+            return word.Aggregate("", (current, c) => current + PrimeFunctions.ReverseCharToCharAtIndexOfPrime(c));
+        }
+    }
+
+    internal static class PrimeList
+    {
+        internal static uint[] GetPrimeList()
+        {
+            var primesList = new Eratosthenes(1000000, true);
+
+            var primesListArray = primesList.ToArray();
+
+            return primesListArray;
         }
 
-        private static char ConvertCharToPrimeAtThatIndexToChar(char c)
+        internal static Dictionary<ulong, ulong> getPrimeListWithNumberAsIndex(uint[] primesList)
         {
-            var primeDictionary = new Dictionary<ulong, ulong>();
+            var primeDictionaryWithNumbersAsIndex = new Dictionary<ulong, ulong>();
 
-            var primeArray = new Eratosthenes(10000, true);
-            ulong indexInArray = 0;
-
-            foreach (var prime in primeArray)
+            for (ulong i = 0; i < (ulong) primesList.Length; i++)
             {
-                primeDictionary[indexInArray] = prime;
-                indexInArray++;
+                primeDictionaryWithNumbersAsIndex[i] = primesList[i];
             }
 
-            indexInArray = 0;
-
-            return (char) primeDictionary[c];
+            return primeDictionaryWithNumbersAsIndex;
         }
 
-        private static char ReverseConvertCharToPrimeAtThatIndex(char c)
+        internal static Dictionary<ulong, int> getPrimeListWithPrimesAsIndex(uint[] primesList)
         {
-            var primeDictionary = new Dictionary<ulong, ulong>();
+            var primeDictionaryWithPrimesAsIndex = new Dictionary<ulong, int>();
 
-            var primeArray = new Eratosthenes(10000, true);
-            ulong indexInArray = 0;
-
-            foreach (var prime in primeArray)
+            for (var i = primesList.Length - 1; i >= 0; i--)
             {
-                primeDictionary[prime] = indexInArray;
-                indexInArray++;
+                primeDictionaryWithPrimesAsIndex[primesList[i]] = i;
             }
 
-            indexInArray = 0;
+            return primeDictionaryWithPrimesAsIndex;
+        }
+    }
 
-            return (char) primeDictionary[c];
+    internal static class PrimeFunctions
+    {
+        internal static char CharToCharAtIndexOfPrime(char c)
+        {
+            var primesList = PrimeList.GetPrimeList();
+            var dictionary = PrimeList.getPrimeListWithNumberAsIndex(primesList);
+
+            var finalChar = (char) dictionary[c];
+
+            return finalChar;
+        }
+
+        internal static char ReverseCharToCharAtIndexOfPrime(char c)
+        {
+            var primesList = PrimeList.GetPrimeList();
+            var dictionary = PrimeList.getPrimeListWithPrimesAsIndex(primesList);
+
+            var finalChar = (char) dictionary[c];
+
+            return finalChar;
         }
     }
 }

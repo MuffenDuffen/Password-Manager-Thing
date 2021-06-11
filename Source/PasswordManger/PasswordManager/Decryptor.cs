@@ -51,22 +51,22 @@ namespace PasswordManger
                 switch (keys)
                 {
                     case 0:
-                        //decrypt = PreviousChar(decrypt);
+                        decrypt = PreviousChar(decrypt);
                         break;
                     case 1:
-                        //decrypt = Encryptor.InvertBits(decrypt);
+                        decrypt = Encryptor.InvertBits(decrypt);
                         break;
                     case 2:
                         decrypt = LatinizeLol.ReverseConvertStringToLatinNumber(decrypt);
                         break;
                     case 3:
-                        //decrypt = ReverseCaesarion(decrypt, decryptShift);
+                        decrypt = ReverseCaesarion(decrypt, decryptShift);
                         break;
                     case 4:
-                        //decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
+                        decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 5:
-                        //decrypt = PrimeStuff.ReverseConvertWordToPrimeAtThatIndexToChar(decrypt);
+                        decrypt = PrimeStuff.ReverseConvertWordToPrimeAtThatIndexToChar(decrypt);
                         break;
                     case 6:
                         break;
