@@ -6,17 +6,7 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            var mPass = "testPassTestPassTttT";
-
-            var encryptionKey = Profile.GetEncryptionKey(mPass);
-            var shift = Profile.GetShift(mPass);
-
-            const string sTring = "testPass";
-
-            var encrypted = Encryptor.EncryptString(sTring, encryptionKey, shift);
-            var decrypted = Decryptor.DecryptString(encrypted, encryptionKey, shift);
-
-            Console.WriteLine("{0}, {1}", encrypted, decrypted);
+            Interface.LogIn();
         }
     }
 }
