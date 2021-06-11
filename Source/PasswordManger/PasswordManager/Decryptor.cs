@@ -45,33 +45,30 @@ namespace PasswordManger
 
         public static string DecryptString(string decrypt, int[] key, ulong decryptShift) //ToDo mek function us key but reverse
         {
-            int[] reverse = new int[key.Length]();
+            var reversedKey = key.Reverse();
 
-            for (int i = 0; i < key.Length; i++)
-            {
-                reverse[i] = key[key.Length - i];
-            }
-            foreach (var keyAtIndex in reverse)
-            {
-                switch (keyAtIndex)
+            foreach (var keys in reversedKey)
+                switch (keys)
                 {
                     case 0:
-                        decrypt = PreviousChar(decrypt);
+                        //decrypt = PreviousChar(decrypt);
                         break;
                     case 1:
-                        decrypt = Encryptor.InvertBits(decrypt);
+                        //decrypt = Encryptor.InvertBits(decrypt);
                         break;
                     case 2:
                         decrypt = LatinizeLol.ReverseConvertStringToLatinNumber(decrypt);
                         break;
                     case 3:
-                        decrypt = ReverseCaesarion(decrypt, decryptShift);
+                        //decrypt = ReverseCaesarion(decrypt, decryptShift);
                         break;
                     case 4:
                         //decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
+                    case 5:
+                        //decrypt = PrimeStuff.ReverseConvertWordToPrimeAtThatIndexToChar(decrypt);
+                        break;
                     case 6:
-                        decrypt = PrimeStuff.ReverseConvertWordToPrimeAtThatIndexToChar(decrypt);
                         break;
                     case 7:
                         break;
@@ -84,7 +81,6 @@ namespace PasswordManger
                     case 11:
                         break;
                 }
-            }
 
             return decrypt;
         }

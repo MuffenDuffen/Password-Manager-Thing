@@ -27,29 +27,29 @@ namespace PasswordManger
             return encryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        public static string EncryptString(string encrypt, IEnumerable<int> key, ulong encryptShift) //ToDo mek function us key
+        public static string EncryptString(string encrypt, int[] key, ulong encryptShift) //ToDo mek function us key
         {
             foreach (var keyAtIndex in key)
             {
                 switch (keyAtIndex)
                 {
                     case 0:
-                        encrypt = NextChar(encrypt);
+                        //encrypt = NextChar(encrypt);
                         break;
                     case 1:
-                        encrypt = InvertBits(encrypt);
+                        //encrypt = InvertBits(encrypt);
                         break;
                     case 2:
                         encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
                         break;
                     case 3:
-                        encrypt = Caesarion(encrypt, encryptShift);
+                        //encrypt = Caesarion(encrypt, encryptShift);
                         break;
                     case 4:
                         //encrypt = RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(encrypt);
                         break;
                     case 5:
-                        encrypt = PrimeStuff.ConvertWordToPrimeAtThatIndexToChar(encrypt);
+                        //encrypt = PrimeStuff.ConvertWordToPrimeAtThatIndexToChar(encrypt);
                         break;
                     case 6:
                         break;
