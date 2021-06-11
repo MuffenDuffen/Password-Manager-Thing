@@ -24,8 +24,8 @@ namespace PasswordManger
 
             var encryptedWord = PrimeEncryptDecryptMethods.EncryptPrimeWord(word);
             var decryptedWord = PrimeEncryptDecryptMethods.DecryptPrimeWord(encryptedWord);
-            
-            Console.WriteLine("{0}, {1}", encryptedWord, decryptedWord);
+
+            Console.WriteLine(@"{0}, {1}", encryptedWord, decryptedWord);
         }
     }
 }
