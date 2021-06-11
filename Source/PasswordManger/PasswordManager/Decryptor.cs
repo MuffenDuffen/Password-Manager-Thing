@@ -66,7 +66,7 @@ namespace PasswordManger
                         decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 5:
-                        //decrypt = PrimeStuff.ReverseConvertWordToPrimeAtThatIndexToChar(decrypt);
+                        decrypt = PrimeStuff.ReverseConvertWordToPrimeAtThatIndexToChar(decrypt);
                         break;
                     case 6:
                         break;

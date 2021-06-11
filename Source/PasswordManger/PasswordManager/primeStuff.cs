@@ -20,35 +20,11 @@ namespace PasswordManger
     {
         internal static uint[] GetPrimeList()
         {
-            var primesList = new Eratosthenes(1000000, true);
+            var primesList = new Eratosthenes(10000, true);
 
             var primesListArray = primesList.ToArray();
 
             return primesListArray;
-        }
-
-        internal static Dictionary<ulong, ulong> getPrimeListWithNumberAsIndex(uint[] primesList)
-        {
-            var primeDictionaryWithNumbersAsIndex = new Dictionary<ulong, ulong>();
-
-            for (ulong i = 0; i < (ulong) primesList.Length; i++)
-            {
-                primeDictionaryWithNumbersAsIndex[i] = primesList[i];
-            }
-
-            return primeDictionaryWithNumbersAsIndex;
-        }
-
-        internal static Dictionary<ulong, int> getPrimeListWithPrimesAsIndex(uint[] primesList)
-        {
-            var primeDictionaryWithPrimesAsIndex = new Dictionary<ulong, int>();
-
-            for (var i = primesList.Length - 1; i >= 0; i--)
-            {
-                primeDictionaryWithPrimesAsIndex[primesList[i]] = i;
-            }
-
-            return primeDictionaryWithPrimesAsIndex;
         }
     }
 
@@ -57,9 +33,14 @@ namespace PasswordManger
         internal static char CharToCharAtIndexOfPrime(char c)
         {
             var primesList = PrimeList.GetPrimeList();
-            var dictionary = PrimeList.getPrimeListWithNumberAsIndex(primesList);
+            var primeDictionaryWithNumbersAsIndex = new Dictionary<ulong, ulong>();
 
-            var finalChar = (char) dictionary[c];
+            for (ulong i = 0; i < (ulong) primesList.Length; i++)
+            {
+                primeDictionaryWithNumbersAsIndex[i] = primesList[i];
+            }
+
+            var finalChar = (char) primeDictionaryWithNumbersAsIndex[c];
 
             return finalChar;
         }
@@ -67,9 +48,15 @@ namespace PasswordManger
         internal static char ReverseCharToCharAtIndexOfPrime(char c)
         {
             var primesList = PrimeList.GetPrimeList();
-            var dictionary = PrimeList.getPrimeListWithPrimesAsIndex(primesList);
 
-            var finalChar = (char) dictionary[c];
+            var primeDictionaryWithPrimesAsIndex = new Dictionary<ulong, int>();
+
+            for (var i = 0; i < primesList.Length; i++)
+            {
+                primeDictionaryWithPrimesAsIndex[primesList[i]] = i;
+            }
+
+            var finalChar = (char) primeDictionaryWithPrimesAsIndex[c];
 
             return finalChar;
         }
