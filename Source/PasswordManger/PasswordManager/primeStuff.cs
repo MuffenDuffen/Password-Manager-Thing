@@ -8,7 +8,7 @@ namespace PasswordManger
     {
         internal static uint[] GeneratePrimeList()
         {
-            var primeList = new Eratosthenes(1000000, true);
+            var primeList = new Eratosthenes(18000000, true);
 
             var array = primeList.ToArray();
 
