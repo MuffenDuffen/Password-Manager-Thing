@@ -22,7 +22,7 @@ namespace PasswordManger
 
             var text = File.ReadAllLines(path);
 
-            profile.Name = text[0];
+            profile.Name = Decryptor.DecryptString(text[0], encryptionKey, shift);
             profile.MasterPassword = text[1];
             profile.EncryptionKey = encryptionKey;
             profile.Credentials = new List<Credential>();

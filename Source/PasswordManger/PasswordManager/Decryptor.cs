@@ -38,7 +38,7 @@ namespace PasswordManger
             return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        public static string DecryptString(string decrypt, int[] key, ulong decryptShift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2) //ToDo mek function us key but reverse
+        public static string DecryptString(string decrypt, int[] key, ulong decryptShift) //ToDo mek function us key but reverse
         {
             var reversedKey = key.Reverse();
 
