@@ -23,7 +23,7 @@ namespace PasswordManger
 
             encryptArray = encryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + shift)).ToArray();
 
-            return encryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
+            return new string(encryptArray);
         }
 
         public static string EncryptString(string encrypt, int[] key, ulong encryptShift) //ToDo mek function us key

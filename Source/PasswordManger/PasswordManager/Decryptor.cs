@@ -35,7 +35,7 @@ namespace PasswordManger
 
             decryptArray = decryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar - shift)).ToArray();
 
-            return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
+            return new string(decryptArray);
         }
 
         public static string DecryptString(string decrypt, int[] key, ulong decryptShift) //ToDo mek function us key but reverse
