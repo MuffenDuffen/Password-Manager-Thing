@@ -6,7 +6,7 @@ namespace PasswordManger
 {
     internal static class Decryptor
     {
-        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2)
+        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift)
         {
             var credential = new Credential("", "", "");
 
@@ -25,11 +25,6 @@ namespace PasswordManger
             credential.Email = encrypted.Substring(appNameLength, emailLength);
 
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
-
-
-            credential.AppName = DecryptString(credential.AppName, key, shift, dict, dict2);
-            credential.Email = DecryptString(credential.Email, key, shift, dict, dict2);
-            credential.Password = DecryptString(credential.Password, key, shift, dict, dict2);
 
             return credential;
         }
@@ -66,7 +61,6 @@ namespace PasswordManger
                         decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 5:
-                        decrypt = PrimeConversionMethodWithWordsFactory.DecryptPrimeWord(decrypt, dict2);
                         break;
                     case 6:
                         break;

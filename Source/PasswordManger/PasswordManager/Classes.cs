@@ -16,7 +16,7 @@ namespace PasswordManger
         public Dictionary<uint, uint> Dictionary;
         public Dictionary<uint, uint> Dictionary2;
 
-        internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2)
+        internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift)
         {
             var profile = new Profile();
 
@@ -29,20 +29,20 @@ namespace PasswordManger
 
             for (var i = 2; i < text.Length; i++)
             {
-                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift, dict, dict2));
+                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift));
             }
 
             return profile;
         }
 
-        internal static void SaveToFile(Profile profile, string path, ulong shift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2)
+        internal static void SaveToFile(Profile profile, string path, ulong shift)
         {
             var text = new List<string>
             {
-                Encryptor.EncryptString(profile.Name, profile.EncryptionKey, shift, dict),
-                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey, shift, dict)
+                Encryptor.EncryptString(profile.Name, profile.EncryptionKey, shift),
+                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey, shift)
             };
-            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey, shift, dict)));
+            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey, shift)));
 
 
             File.WriteAllLines(path, text);
