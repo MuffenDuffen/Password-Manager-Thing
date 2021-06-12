@@ -29,6 +29,7 @@ namespace PasswordManger
 
                     var primeList = PrimeConversionHelperFactory.GeneratePrimeList();
                     var dictionary = PrimeConversionHelperFactory.CreateDictionaryWithNumbersAsKey(primeList);
+                    var dictionary2 = PrimeConversionHelperFactory.CreateDictionaryWithPrimesAsKey(dictionary);
 
                     var encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift, dictionary);
 
@@ -39,7 +40,7 @@ namespace PasswordManger
                     if (encryptedInput == masterPassword)
                     {
                         Console.WriteLine("\nYou are successfully logged in!");
-                        GetCredentials(encryptionKey, path, input, shift, dictionary);
+                        GetCredentials(encryptionKey, path, input, shift, dictionary, dictionary2);
                     }
                     else
                     {
@@ -69,8 +70,9 @@ namespace PasswordManger
 
             var primeList = PrimeConversionHelperFactory.GeneratePrimeList();
             var dict = PrimeConversionHelperFactory.CreateDictionaryWithNumbersAsKey(primeList);
+            var dict2 = PrimeConversionHelperFactory.CreateDictionaryWithPrimesAsKey(dict);
 
-            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword), Shift = shiftt, Dictionary = dict};
+            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword), Shift = shiftt, Dictionary = dict, Dictionary2 = dict2};
 
             var done = false;
             while (!done)
@@ -87,19 +89,20 @@ namespace PasswordManger
                 }
             }
 
-            Profile.SaveToFile(profile, path, profile.Shift, profile.Dictionary);
+            Profile.SaveToFile(profile, path, profile.Shift, profile.Dictionary, profile.Dictionary2);
 
-            GetCredentials(profile.EncryptionKey, path, masterPassword, profile.Shift, profile.Dictionary);
+            GetCredentials(profile.EncryptionKey, path, masterPassword, profile.Shift, profile.Dictionary, profile.Dictionary2);
         }
 
-        private static void GetCredentials(int[] encryptionKey, string path, string masterPassword, ulong shift, Dictionary<uint, uint> dict)
+        private static void GetCredentials(int[] encryptionKey, string path, string masterPassword, ulong shift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2)
         {
             Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
 
-            var profile = Profile.GetFromFile(path, encryptionKey, shift, dict);
+            var profile = Profile.GetFromFile(path, encryptionKey, shift, dict, dict2);
             profile.MasterPassword = masterPassword;
             profile.Shift = shift;
             profile.Dictionary = dict;
+            profile.Dictionary2 = dict2;
 
             var done = false;
 
@@ -111,7 +114,7 @@ namespace PasswordManger
                 {
                     // Direct Actions
                     case "exit":
-                        Profile.SaveToFile(profile, path, profile.Shift, profile.Dictionary);
+                        Profile.SaveToFile(profile, path, profile.Shift, profile.Dictionary, profile.Dictionary2);
                         done = true;
                         break;
                     case "help":

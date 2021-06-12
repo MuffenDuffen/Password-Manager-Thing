@@ -14,8 +14,9 @@ namespace PasswordManger
         internal List<Credential> Credentials;
 
         public Dictionary<uint, uint> Dictionary;
+        public Dictionary<uint, uint> Dictionary2;
 
-        internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift, Dictionary<uint, uint> dict)
+        internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2)
         {
             var profile = new Profile();
 
@@ -28,13 +29,13 @@ namespace PasswordManger
 
             for (var i = 2; i < text.Length; i++)
             {
-                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift, dict));
+                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift, dict, dict2));
             }
 
             return profile;
         }
 
-        internal static void SaveToFile(Profile profile, string path, ulong shift, Dictionary<uint, uint> dict)
+        internal static void SaveToFile(Profile profile, string path, ulong shift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2)
         {
             var text = new List<string>
             {

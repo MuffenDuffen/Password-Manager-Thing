@@ -8,9 +8,9 @@ namespace PasswordManger
     {
         internal static uint[] GeneratePrimeList()
         {
-            var primeList = new Eratosthenes(18000000, true);
+            var primeArray = new Eratosthenes(821610, true);
 
-            var array = primeList.ToArray();
+            var array = primeArray.ToArray();
 
             return array;
         }
@@ -51,9 +51,7 @@ namespace PasswordManger
 
         public static char DecryptPrimeChar(char c, Dictionary<uint, uint> dict)
         {
-            var dict2 = PrimeConversionHelperFactory.CreateDictionaryWithPrimesAsKey(dict);
-
-            var finalChar = (char) dict2[c];
+            var finalChar = (char) dict[c];
 
             return finalChar;
         }

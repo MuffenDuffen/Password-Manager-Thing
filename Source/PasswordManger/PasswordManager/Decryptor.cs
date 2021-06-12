@@ -6,7 +6,7 @@ namespace PasswordManger
 {
     internal static class Decryptor
     {
-        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift, Dictionary<uint, uint> dict)
+        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2)
         {
             var credential = new Credential("", "", "");
 
@@ -27,9 +27,9 @@ namespace PasswordManger
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
 
 
-            credential.AppName = DecryptString(credential.AppName, key, shift, dict);
-            credential.Email = DecryptString(credential.Email, key, shift, dict);
-            credential.Password = DecryptString(credential.Password, key, shift, dict);
+            credential.AppName = DecryptString(credential.AppName, key, shift, dict, dict2);
+            credential.Email = DecryptString(credential.Email, key, shift, dict, dict2);
+            credential.Password = DecryptString(credential.Password, key, shift, dict, dict2);
 
             return credential;
         }
@@ -43,7 +43,7 @@ namespace PasswordManger
             return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        public static string DecryptString(string decrypt, int[] key, ulong decryptShift, Dictionary<uint, uint> dict) //ToDo mek function us key but reverse
+        public static string DecryptString(string decrypt, int[] key, ulong decryptShift, Dictionary<uint, uint> dict, Dictionary<uint, uint> dict2) //ToDo mek function us key but reverse
         {
             var reversedKey = key.Reverse();
 
@@ -66,7 +66,7 @@ namespace PasswordManger
                         decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 5:
-                        decrypt = PrimeConversionMethodWithWordsFactory.DecryptPrimeWord(decrypt, dict);
+                        decrypt = PrimeConversionMethodWithWordsFactory.DecryptPrimeWord(decrypt, dict2);
                         break;
                     case 6:
                         break;

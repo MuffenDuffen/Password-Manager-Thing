@@ -9,9 +9,15 @@ namespace PasswordManger
         {
             //Interface.LogIn();
 
-            var primeArray = PrimeConversionHelperFactory.GeneratePrimeList();
+            Stopwatch sw = new Stopwatch();
 
-            Console.WriteLine(primeArray.Length);
+            sw.Start();
+            var reversedDict = PrimeConversionHelperFactory.CreateDictionaryWithPrimesAsKey(PrimeConversionHelperFactory.CreateDictionaryWithNumbersAsKey(PrimeConversionHelperFactory.GeneratePrimeList()));
+            sw.Stop();
+
+            TimeSpan ts = sw.Elapsed;
+
+            Console.WriteLine(ts);
         }
     }
 }
