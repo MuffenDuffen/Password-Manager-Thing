@@ -6,14 +6,14 @@ namespace PasswordManger
 {
     internal abstract class Encryptor
     {
-        public static string EncryptCredential(Credential credential, int[] key, ulong shift)
+        public static string EncryptCredential(Credential credential, int[] key, ulong shift, Dictionary<uint, uint> dict)
         {
-            var encrypted = EncryptString(credential.AppName, key, shift).Length + "," +
-                            EncryptString(credential.Email, key, shift).Length + "," +
-                            EncryptString(credential.Password, key, shift).Length + " " +
-                            EncryptString(credential.AppName, key, shift) +
-                            EncryptString(credential.Email, key, shift) +
-                            EncryptString(credential.Password, key, shift);
+            var encrypted = EncryptString(credential.AppName, key, shift, dict).Length + "," +
+                            EncryptString(credential.Email, key, shift, dict).Length + "," +
+                            EncryptString(credential.Password, key, shift, dict).Length + " " +
+                            EncryptString(credential.AppName, key, shift, dict) +
+                            EncryptString(credential.Email, key, shift, dict) +
+                            EncryptString(credential.Password, key, shift, dict);
 
             return encrypted;
         }
@@ -27,7 +27,7 @@ namespace PasswordManger
             return encryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        public static string EncryptString(string encrypt, int[] key, ulong encryptShift) //ToDo mek function us key
+        public static string EncryptString(string encrypt, int[] key, ulong encryptShift, Dictionary<uint, uint> dict) //ToDo mek function us key
         {
             foreach (var keyAtIndex in key)
             {
@@ -49,7 +49,7 @@ namespace PasswordManger
                         encrypt = RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(encrypt);
                         break;
                     case 5:
-                        encrypt = PrimeEncryptDecryptMethods.EncryptPrimeWord(encrypt);
+                        encrypt = PrimeConversionMethodWithWordsFactory.EncryptPrimeWord(encrypt, dict);
                         break;
                     case 6:
                         break;

@@ -4,81 +4,79 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    internal static class PrimeEncryptDecryptMethods
+    internal static class PrimeConversionHelperFactory
     {
-        public static string EncryptPrimeWord(string word)
+        internal static uint[] GeneratePrimeList()
         {
-            var finalString = "";
+            var primeList = new Eratosthenes(1000000, true);
 
-            foreach (var c in word)
-            {
-                finalString += EncryptPrimeChar(c, PrimeDictionaryCreationMethods.DictionaryWithNumbersAsIndex(PrimeListGenerator.GeneratePrimeList()));
-            }
+            var array = primeList.ToArray();
 
-            return finalString;
+            return array;
         }
 
-        public static string DecryptPrimeWord(string word)
-        {
-            var finalString = "";
-
-            foreach (var c in word)
-            {
-                finalString += DecryptPrimeChar(c, PrimeDictionaryCreationMethods.DictionaryWithPrimesAsIndex(PrimeListGenerator.GeneratePrimeList()));
-            }
-
-            return finalString;
-        }
-
-        private static char EncryptPrimeChar(char c, Dictionary<uint, uint> dict)
-        {
-            var finalChar = (char) dict[c];
-
-            return finalChar;
-        }
-
-        private static char DecryptPrimeChar(char c, Dictionary<uint, uint> dict)
-        {
-            var finalChar = (char) dict[c];
-
-            return finalChar;
-        }
-    }
-
-    internal static class PrimeDictionaryCreationMethods
-    {
-        public static Dictionary<uint, uint> DictionaryWithNumbersAsIndex(uint[] primesList)
+        internal static Dictionary<uint, uint> CreateDictionaryWithNumbersAsKey(uint[] primeList)
         {
             var dictionary = new Dictionary<uint, uint>();
 
-            for (uint i = 0; i < primesList.Length; i++)
+            for (uint i = 0; i < primeList.Length; i++)
             {
-                dictionary[i] = primesList[i];
+                dictionary[i] = primeList[i];
             }
 
             return dictionary;
         }
 
-        public static Dictionary<uint, uint> DictionaryWithPrimesAsIndex(uint[] primesList)
+        internal static Dictionary<uint, uint> CreateDictionaryWithPrimesAsKey(Dictionary<uint, uint> dictionaryWithNumbersAsKey)
         {
             var dictionary = new Dictionary<uint, uint>();
 
-            for (uint ii = 0; ii < primesList.Length; ii++)
+            foreach (var pair in dictionaryWithNumbersAsKey)
             {
-                dictionary[primesList[ii]] = (uint) ii;
+                dictionary[pair.Value] = pair.Key;
             }
 
             return dictionary;
         }
     }
 
-    internal static class PrimeListGenerator
+    internal static class PrimeConversionMethodWithCharsFactory
     {
-        public static uint[] GeneratePrimeList()
+        public static char EncryptPrimeChar(char c, Dictionary<uint, uint> dict)
         {
-            var primesList = new Eratosthenes(10000, true);
+            var finalChar = (char) dict[c];
 
-            return primesList.ToArray();
+            return finalChar;
+        }
+
+        public static char DecryptPrimeChar(char c, Dictionary<uint, uint> dict)
+        {
+            var dict2 = PrimeConversionHelperFactory.CreateDictionaryWithPrimesAsKey(dict);
+
+            var finalChar = (char) dict2[c];
+
+            return finalChar;
+        }
+    }
+
+    internal static class PrimeConversionMethodWithWordsFactory
+    {
+        public static string EncryptPrimeWord(string word, Dictionary<uint, uint> dict)
+        {
+            var finalString = "";
+
+            foreach (var c in word) finalString += (char) PrimeConversionMethodWithCharsFactory.EncryptPrimeChar(c, dict);
+
+            return finalString;
+        }
+
+        public static string DecryptPrimeWord(string word, Dictionary<uint, uint> dict)
+        {
+            var finalString = "";
+
+            foreach (var c in word) finalString += (char) PrimeConversionMethodWithCharsFactory.DecryptPrimeChar(c, dict);
+
+            return finalString;
         }
     }
 }

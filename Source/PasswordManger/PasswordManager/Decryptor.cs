@@ -6,7 +6,7 @@ namespace PasswordManger
 {
     internal static class Decryptor
     {
-        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift)
+        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift, Dictionary<uint, uint> dict)
         {
             var credential = new Credential("", "", "");
 
@@ -27,9 +27,9 @@ namespace PasswordManger
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
 
 
-            credential.AppName = DecryptString(credential.AppName, key, shift);
-            credential.Email = DecryptString(credential.Email, key, shift);
-            credential.Password = DecryptString(credential.Password, key, shift);
+            credential.AppName = DecryptString(credential.AppName, key, shift, dict);
+            credential.Email = DecryptString(credential.Email, key, shift, dict);
+            credential.Password = DecryptString(credential.Password, key, shift, dict);
 
             return credential;
         }
@@ -43,7 +43,7 @@ namespace PasswordManger
             return decryptArray.Aggregate("", (current, cc) => current.Insert(0, cc.ToString()));
         }
 
-        public static string DecryptString(string decrypt, int[] key, ulong decryptShift) //ToDo mek function us key but reverse
+        public static string DecryptString(string decrypt, int[] key, ulong decryptShift, Dictionary<uint, uint> dict) //ToDo mek function us key but reverse
         {
             var reversedKey = key.Reverse();
 
@@ -66,7 +66,7 @@ namespace PasswordManger
                         decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 5:
-                        decrypt = PrimeEncryptDecryptMethods.DecryptPrimeWord(decrypt);
+                        decrypt = PrimeConversionMethodWithWordsFactory.DecryptPrimeWord(decrypt, dict);
                         break;
                     case 6:
                         break;
