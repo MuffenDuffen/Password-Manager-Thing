@@ -48,6 +48,7 @@ namespace PasswordManger
                         encrypt = RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(encrypt);
                         break;
                     case 5:
+                        encrypt = Fibonacci.EncryptToFibonacci(encrypt);
                         break;
                     case 6:
                         break;

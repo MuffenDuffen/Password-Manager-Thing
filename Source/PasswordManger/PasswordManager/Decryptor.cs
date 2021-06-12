@@ -61,6 +61,7 @@ namespace PasswordManger
                         decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
                     case 5:
+                        decrypt = Fibonacci.DecryptFromFibonacci(decrypt);
                         break;
                     case 6:
                         break;
