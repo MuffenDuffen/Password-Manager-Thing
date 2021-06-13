@@ -67,7 +67,7 @@ namespace PasswordManger
                         decrypt = PrimeStuff.DecryptFromPrime(decrypt);
                         break;
                     case 7:
-                        decrypt = PythagoranTheorem.ReversepTheoremWWords(decrypt);
+                        decrypt = PythagoranTheorem.ReversePTheoremWWords(decrypt);
                         break;
                     case 8:
                         break;

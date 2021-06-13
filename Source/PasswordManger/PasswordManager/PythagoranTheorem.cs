@@ -2,29 +2,29 @@
 
 namespace PasswordManger
 {
-    public class PythagoranTheorem
+    internal static class PythagoranTheorem
     {
-        public static string pTheoremWWords(string encrypt)
+        public static string PTheoremWWords(string encrypt)
         {
             var encryptArray = encrypt.ToCharArray();
 
-            for (int i = 0; i < encryptArray.Length; i++)
+            for (var i = 0; i < encryptArray.Length; i++)
             {
-                encryptArray[i] = (char) Math.Sqrt(Math.Pow(encryptArray[i], 2) * 2);
+                encryptArray[i] = (char) (Math.Pow(encryptArray[i], 2) * 2);
             }
 
             return new string(encryptArray);
         }
 
-        public static string ReversepTheoremWWords(string decrypt)
+        public static string ReversePTheoremWWords(string decrypt)
         {
             var decryptArray = decrypt.ToCharArray();
 
-            for (int i = 0; i < decryptArray.Length; i++)
+            for (var i = 0; i < decryptArray.Length; i++)
             {
-                decryptArray[i] = (char) Math.Sqrt(Math.Pow(decryptArray[i], 2) / 2);
+                decryptArray[i] = (char) Math.Sqrt(decryptArray[i] / 2);
             }
-            
+
             return new string(decryptArray);
         }
     }

@@ -7,7 +7,14 @@ namespace PasswordManger
     {
         private static void Main(string[] args)
         {
-            Interface.LogIn();
+            //Interface.LogIn();
+
+            var test = "test";
+
+            var encrypted = PythagoranTheorem.PTheoremWWords(test);
+            var decrypted = PythagoranTheorem.ReversePTheoremWWords(encrypted);
+            
+            Console.WriteLine("{0}, {1}", encrypted, decrypted);
         }
     }
 }
