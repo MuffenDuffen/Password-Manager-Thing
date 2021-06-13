@@ -64,6 +64,7 @@ namespace PasswordManger
                         decrypt = Fibonacci.DecryptFromFibonacci(decrypt);
                         break;
                     case 6:
+                        decrypt = PrimeStuff.DecryptFromPrime(decrypt);
                         break;
                     case 7:
                         break;

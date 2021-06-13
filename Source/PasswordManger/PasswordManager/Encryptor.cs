@@ -51,6 +51,7 @@ namespace PasswordManger
                         encrypt = Fibonacci.EncryptToFibonacci(encrypt);
                         break;
                     case 6:
+                        encrypt = PrimeStuff.EncryptToPrime(encrypt);
                         break;
                     case 7:
                         break;
