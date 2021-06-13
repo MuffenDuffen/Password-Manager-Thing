@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    public class PrimeStuff
+    internal static class PrimeStuff
     {
         private static readonly IReadOnlyDictionary<uint, uint> Dict = GetPrime();
 

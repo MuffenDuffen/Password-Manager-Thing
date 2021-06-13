@@ -3,9 +3,10 @@ using System.Linq;
 
 namespace PasswordManger
 {
-    public class Fibonacci
+    internal static class Fibonacci
     {
         private static readonly IReadOnlyDictionary<int, int> Dict = GetFibonacci();
+
         public static string EncryptToFibonacci(string encrypt)
         {
             var encryptArray = encrypt.ToCharArray();
@@ -13,6 +14,7 @@ namespace PasswordManger
             {
                 encryptArray[i] = ToFibonacciChar(encryptArray[i]);
             }
+
             return new string(encryptArray);
         }
 
@@ -23,6 +25,7 @@ namespace PasswordManger
             {
                 decryptArray[i] = FromFibonacciChar(decryptArray[i]);
             }
+
             return new string(decryptArray);
         }
 
@@ -44,7 +47,7 @@ namespace PasswordManger
             for (var i = 0; i < 65535; i++)
             {
                 var temp = fib;
-                fib += fib; 
+                fib += fib;
                 dictionary.Add(i, temp);
             }
 

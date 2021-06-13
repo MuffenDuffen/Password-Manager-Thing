@@ -54,6 +54,7 @@ namespace PasswordManger
                         encrypt = PrimeStuff.EncryptToPrime(encrypt);
                         break;
                     case 7:
+                        encrypt = PythagoranTheorem.pTheoremWWords(encrypt);
                         break;
                     case 8:
                         break;
