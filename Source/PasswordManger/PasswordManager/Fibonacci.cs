@@ -5,7 +5,7 @@ namespace PasswordManger
 {
     internal static class Fibonacci
     {
-        private static readonly IReadOnlyDictionary<int, int> Dict = GetFibonacci();
+        private static readonly IReadOnlyDictionary<int, ulong> Dict = GetFibonacci();
 
         public static string EncryptToFibonacci(string encrypt)
         {
@@ -39,11 +39,11 @@ namespace PasswordManger
             return (char) Dict.FirstOrDefault(x => x.Value == c).Key;
         }
 
-        public static IReadOnlyDictionary<int, int> GetFibonacci()
+        public static IReadOnlyDictionary<int, ulong> GetFibonacci()
         {
-            var dictionary = new Dictionary<int, int>();
+            var dictionary = new Dictionary<int, ulong>();
 
-            int a = 0, b = 1;
+            ulong a = 0, b = 1;
             for (var i = 2; i < 65535; i++)
             {
                 var c = a + b;
