@@ -60,23 +60,6 @@ namespace PasswordManger
                     case 4:
                         decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
                         break;
-                    case 5:
-                        decrypt = Fibonacci.DecryptFromFibonacci(decrypt);
-                        break;
-                    case 6:
-                        // decrypt = PrimeStuff.DecryptFromPrime(decrypt);
-                        break;
-                    case 7:
-                        // decrypt = PythagoranTheorem.ReversePTheoremWWords(decrypt);
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
-                        break;
                 }
 
             return decrypt;
