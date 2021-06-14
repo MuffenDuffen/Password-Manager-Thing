@@ -8,7 +8,7 @@ namespace PasswordManger
         private static void Main(string[] args)
         {
             //Interface.LogIn();
-
+            /*
             var mPass = "HAHAISAKBAD2";
             var encryptionKey = Profile.GetEncryptionKey(mPass);
 
@@ -22,6 +22,10 @@ namespace PasswordManger
             Console.WriteLine(decryptedCred.AppName);
             Console.WriteLine(decryptedCred.Email);
             Console.WriteLine(decryptedCred.Password);
+            */
+            Fibonacci.GetFibonacci();
+            var encrypted = Fibonacci.EncryptToFibonacci("LOL");
+            Console.WriteLine(Fibonacci.DecryptFromFibonacci(encrypted));
         }
     }
 }

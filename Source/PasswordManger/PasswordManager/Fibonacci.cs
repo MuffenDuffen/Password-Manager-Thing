@@ -39,16 +39,17 @@ namespace PasswordManger
             return (char) Dict.FirstOrDefault(x => x.Value == c).Key;
         }
 
-        private static IReadOnlyDictionary<int, int> GetFibonacci()
+        public static IReadOnlyDictionary<int, int> GetFibonacci()
         {
             var dictionary = new Dictionary<int, int>();
 
-            var fib = 1;
-            for (var i = 0; i < 65535; i++)
+            int a = 0, b = 1;
+            for (var i = 2; i < 65535; i++)
             {
-                var temp = fib;
-                fib += fib;
-                dictionary.Add(i, temp);
+                var c = a + b;
+                dictionary.Add(i, c % 65535);
+                a = b;
+                b = c;
             }
 
             return dictionary;

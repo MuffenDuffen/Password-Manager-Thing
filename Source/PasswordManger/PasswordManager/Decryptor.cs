@@ -42,10 +42,8 @@ namespace PasswordManger
 
         public static string DecryptString(string decrypt, int[] key, ulong decryptShift) //ToDo mek function us key but reverse
         {
-            var reversedKey = key.Reverse();
-
-            foreach (var keys in reversedKey)
-                switch (keys)
+            for (var i = key.Length - 1; i > 0; i--)
+                switch (key[i])
                 {
                     case 0:
                         decrypt = PreviousChar(decrypt);
@@ -66,10 +64,10 @@ namespace PasswordManger
                         decrypt = Fibonacci.DecryptFromFibonacci(decrypt);
                         break;
                     case 6:
-                        decrypt = PrimeStuff.DecryptFromPrime(decrypt);
+                        // decrypt = PrimeStuff.DecryptFromPrime(decrypt);
                         break;
                     case 7:
-                        decrypt = PythagoranTheorem.ReversePTheoremWWords(decrypt);
+                        // decrypt = PythagoranTheorem.ReversePTheoremWWords(decrypt);
                         break;
                     case 8:
                         break;

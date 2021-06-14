@@ -51,10 +51,10 @@ namespace PasswordManger
                         encrypt = Fibonacci.EncryptToFibonacci(encrypt);
                         break;
                     case 6:
-                        encrypt = PrimeStuff.EncryptToPrime(encrypt);
+                        // encrypt = PrimeStuff.EncryptToPrime(encrypt);
                         break;
                     case 7:
-                        encrypt = PythagoranTheorem.PTheoremWWords(encrypt);
+                        // encrypt = PythagoranTheorem.PTheoremWWords(encrypt);
                         break;
                     case 8:
                         break;
