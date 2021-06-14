@@ -13,9 +13,6 @@ namespace PasswordManger
         public int[] EncryptionKey;
         internal List<Credential> Credentials;
 
-        public Dictionary<uint, uint> Dictionary;
-        public Dictionary<uint, uint> Dictionary2;
-
         internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift)
         {
             var profile = new Profile();
