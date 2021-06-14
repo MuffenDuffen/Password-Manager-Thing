@@ -54,14 +54,14 @@ namespace PasswordManger
             var rand1 = new Random(baseRand.Next() * masterPassword[1]);
             var rand2 = new Random(baseRand.Next() * masterPassword[2]);
             var rand3 = new Random(baseRand.Next() * masterPassword[3]);
-            var rand4 = new Random(baseRand.Next() * masterPassword[^7]);
-            var rand5 = new Random(baseRand.Next() * masterPassword[^7]);
-            var rand6 = new Random(baseRand.Next() * masterPassword[^7]);
-            var rand7 = new Random(baseRand.Next() * masterPassword[^7]);
-            var rand8 = new Random(baseRand.Next() * masterPassword[^3]);
-            var rand9 = new Random(baseRand.Next() * masterPassword[^2]);
-            var rand10 = new Random(baseRand.Next() * masterPassword[^1]);
-            var rand11 = new Random(baseRand.Next() * masterPassword[^1]);
+            var rand4 = new Random(baseRand.Next() * masterPassword[4]);
+            var rand5 = new Random(baseRand.Next() * masterPassword[5]);
+            var rand6 = new Random(baseRand.Next() * masterPassword[6]);
+            var rand7 = new Random(baseRand.Next() * masterPassword[7]);
+            var rand8 = new Random(baseRand.Next() * masterPassword[8]);
+            var rand9 = new Random(baseRand.Next() * masterPassword[9]);
+            var rand10 = new Random(baseRand.Next() * masterPassword[10]);
+            var rand11 = new Random(baseRand.Next() * masterPassword[11]);
 
             for (var i = 0; i < baseRand.Next(16, 32); i++)
             {

@@ -23,9 +23,11 @@ namespace PasswordManger
 
             credential.AppName = encrypted[..appNameLength];
             credential.Email = encrypted.Substring(appNameLength, emailLength);
-
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
 
+            credential.AppName = Decryptor.DecryptString(credential.AppName, key, shift);
+            credential.Email = Decryptor.DecryptString(credential.Email, key, shift);
+            credential.Password = Decryptor.DecryptString(credential.Password, key, shift);
             return credential;
         }
 
