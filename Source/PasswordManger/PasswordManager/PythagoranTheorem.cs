@@ -10,7 +10,7 @@ namespace PasswordManger
 
             for (var i = 0; i < encryptArray.Length; i++)
             {
-                encryptArray[i] = (char) (Math.Pow(encryptArray[i], 2) * 2);
+                encryptArray[i] = (char) Math.Round(Math.Sqrt(Math.Pow(encryptArray[i], 2) * 2));
             }
 
             return new string(encryptArray);
@@ -22,7 +22,7 @@ namespace PasswordManger
 
             for (var i = 0; i < decryptArray.Length; i++)
             {
-                decryptArray[i] = (char) Math.Sqrt(decryptArray[i] / 2);
+                decryptArray[i] = (char) Math.Round(Math.Sqrt(Math.Pow(decryptArray[i], 2) / 2));
             }
 
             return new string(decryptArray);
