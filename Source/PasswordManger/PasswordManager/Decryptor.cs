@@ -12,11 +12,11 @@ namespace PasswordManger
             var firstComma = credentialString.IndexOf(',', 0);
             var secondComma = credentialString.IndexOf(',', firstComma + 1);
 
-            var appNameLength = Convert.ToInt16(credentialString[..firstComma]);
+            var appNameLength = Convert.ToInt32(credentialString[..firstComma]);
 
-            var emailLength = Convert.ToInt16(credentialString.Substring(firstComma + 1, secondComma - firstComma - 1));
+            var emailLength = Convert.ToInt32(credentialString.Substring(firstComma + 1, secondComma - firstComma - 1));
 
-            var passwordLength = Convert.ToInt16(credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1));
+            var passwordLength = Convert.ToInt32(credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1));
 
             var encrypted = credentialString[(credentialString.IndexOf(' ') + 1)..];
 
@@ -30,6 +30,29 @@ namespace PasswordManger
             return credential;
         }
 
+        public static string DecryptString(string decrypt, int[] key, ulong decryptShift, string passPhrase) //ToDo mek function us key but reverse
+        {
+            var result = decrypt;
+            foreach (var i in key.Reverse())
+                result = i switch
+                {
+                    0 => PreviousChar(result),
+                    1 => Encryptor.InvertBits(result),
+                    2 => LatinizeLol.ReverseConvertStringToLatinNumber(result),
+                    3 => ReverseCaesarion(result, decryptShift),
+                    4 => RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(result),
+                    5 => HexStuff.reverseWordToHex(result),
+                    6 => ReverseCharAdder(result, passPhrase),
+                    7 => PythagoranTheorem.ReversePTheoremWWords(result),
+                    8 => Encryptor.reverseString(result),
+                    9 => StringLolifierlol.ReverseLOLIFIERLOL(result),
+                    10 => CircumferenceStuff.ReverseGetCircumferenceOfCharWithEntireText(result),
+                    _ => result
+                };
+            return result;
+        }
+
+        // functions
         private static string ReverseCaesarion(string decrypt, ulong shift)
         {
             var decryptArray = decrypt.ToCharArray();
@@ -39,39 +62,21 @@ namespace PasswordManger
             return new string(decryptArray);
         }
 
-        public static string DecryptString(string decrypt, int[] key, ulong decryptShift, string passPhrase) //ToDo mek function us key but reverse
-        {
-            return key.Reverse()
-                .Aggregate(decrypt, (current, keys) => keys switch
-                {
-                    0 => PreviousChar(current),
-                    1 => Encryptor.InvertBits(current),
-                    2 => LatinizeLol.ReverseConvertStringToLatinNumber(current),
-                    3 => ReverseCaesarion(current, decryptShift),
-                    4 => RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(current),
-                    5 => HexStuff.reverseWordToHex(current),
-                    6 => Encryptor.reverseString(current),
-                    7 => ReverseCharAdder(current, passPhrase),
-                    _ => current
-                });
-        }
-
-        // functions
         private static string ReverseCharAdder(string input, string passPhrase)
         {
             var inputArray = input.ToCharArray();
 
             foreach (var passChar in passPhrase)
             {
-                for (int i = 0; i < inputArray.Length; i++)
+                for (var i = 0; i < inputArray.Length; i++)
                 {
-                    inputArray[i] = (char) (Convert.ToInt16(inputArray[i]) - Convert.ToInt16(passChar));
+                    inputArray[i] = (char) (Convert.ToInt64(inputArray[i]) - Convert.ToInt64(passChar));
                 }
             }
 
             return new string(inputArray);
         }
-        
+
         private static string PreviousChar(string stringToPrevChar) // Removes one from the UTF-8 value
         {
             var prevCharArray = stringToPrevChar.ToCharArray();

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace PasswordManger
 {
@@ -17,33 +20,45 @@ namespace PasswordManger
             return encrypted;
         }
 
-        private static string Caesarion(string encrypt, ulong shift)
-        {
-            var encryptArray = encrypt.ToCharArray();
-
-            encryptArray = encryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + shift)).ToArray();
-
-            return new string(encryptArray);
-        }
-
         public static string EncryptString(string encrypt, int[] key, ulong encryptShift, string passPhrase) //ToDo mek function us key
         {
-            return key.Aggregate(encrypt, (current, keyAtIndex) => keyAtIndex switch
+            var text = new List<string>();
+
+            var result = encrypt;
+            foreach (var i in key)
             {
-                0 => NextChar(current),
-                1 => InvertBits(current),
-                2 => LatinizeLol.ConvertStringToLatinNumber(current),
-                3 => Caesarion(current, encryptShift),
-                4 => RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(current),
-                5 => HexStuff.wordToHex(current),
-                6 => reverseString(current),
-                7 => CharAdder(current, passPhrase),
-                _ => current
-            });
+                result = i switch
+                {
+                    0 => NextChar(result),
+                    1 => InvertBits(result),
+                    2 => LatinizeLol.ConvertStringToLatinNumber(result),
+                    3 => Caesarion(result, encryptShift),
+                    4 => RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(result),
+                    5 => HexStuff.wordToHex(result),
+                    6 => CharAdder(result, passPhrase),
+                    7 => PythagoranTheorem.PTheoremWWords(result),
+                    8 => reverseString(result),
+                    9 => StringLolifierlol.LOLIFIERLOL(result),
+                    10 => CircumferenceStuff.GetCircumferenceOfCharWithEntireText(result),
+                    _ => result
+                };
+            }
+
+            return result;
         }
+
         //Gets next char and replaces old one
 
             //encryptions, replacecharwithnextchar, toandinvertbinary,
+            
+            private static string Caesarion(string encrypt, ulong shift)
+            {
+                var encryptArray = encrypt.ToCharArray();
+
+                encryptArray = encryptArray.Select(Convert.ToUInt64).Select(utf8ValueFromChar => (char) (utf8ValueFromChar + shift)).ToArray();
+
+                return new string(encryptArray);
+            }
 
             private static string CharAdder(string input, string passPhrase)
             {
@@ -51,9 +66,9 @@ namespace PasswordManger
 
                 foreach (var passChar in passPhrase)
                 {
-                    for (int i = 0; i < inputArray.Length; i++)
+                    for (var i = 0; i < inputArray.Length; i++)
                     {
-                        inputArray[i] = (char) (Convert.ToInt16(inputArray[i]) + Convert.ToInt16(passChar));
+                        inputArray[i] = (char) (Convert.ToInt64(inputArray[i]) + Convert.ToInt64(passChar));
                     }
                 }
 

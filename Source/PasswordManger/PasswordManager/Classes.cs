@@ -157,7 +157,6 @@ namespace PasswordManger
 
         public static string GetPassPhrase(string masterPassword)
         {
-            var passPhrase = "";
             var masterPasswordCharArray = masterPassword.ToCharArray();
 
             Array.Reverse(masterPasswordCharArray);

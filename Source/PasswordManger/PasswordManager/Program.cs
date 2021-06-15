@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace PasswordManger
@@ -12,18 +13,33 @@ namespace PasswordManger
             var mPass = "HAHAIaSAKBAD2";
             var passPhrase = "LoL" + Profile.GetPassPhrase(mPass);
             
-            var encryptionKey = Profile.GetEncryptionKeyLOL(mPass);
+            var encryptionKey = Profile.GetEncryptionKey(mPass);
             foreach (var key in encryptionKey) Console.WriteLine(key);
             var shift = Profile.GetShift(mPass);
-            var cred = new Credential("testName", "testEmail", "testPass");
-            var encryptedCred = Encryptor.EncryptCredential(cred, encryptionKey, shift, passPhrase);
-            var decryptedCred = Decryptor.DecryptCredential(encryptedCred, encryptionKey, shift, passPhrase);
+
+            var cred = new Credential("testAppName", "testEmail", "testPass");
             
-            Console.WriteLine(encryptedCred);
+            var stopWatch = new Stopwatch();
+
+            stopWatch.Start();
+            var eC = Encryptor.EncryptCredential(cred, encryptionKey, shift, passPhrase);
+            var dC = Decryptor.DecryptCredential(eC, encryptionKey, shift, passPhrase);
+            stopWatch.Stop();
+
+            var ts = stopWatch.Elapsed;
+
+            Console.WriteLine(eC);
+
+            Console.WriteLine("---");
+
+            Console.WriteLine(ts);
+            Console.WriteLine("---");
+            Console.WriteLine("LOL");
             Console.WriteLine("------------------");
-            Console.WriteLine(decryptedCred.AppName);
-            Console.WriteLine(decryptedCred.Email);
-            Console.WriteLine(decryptedCred.Password);
+            
+            Console.WriteLine(dC.AppName);
+            Console.WriteLine(dC.Email);
+            Console.WriteLine(dC.Password);
         }
     }
 }
