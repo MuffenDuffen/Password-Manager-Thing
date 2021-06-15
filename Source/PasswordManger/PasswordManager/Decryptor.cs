@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace PasswordManger
 {
     internal static class Decryptor
     {
-        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift)
+        public static Credential DecryptCredential(string credentialString, int[] key, ulong shift, string passPhrase)
         {
             var credential = new Credential("", "", "");
 
             var firstComma = credentialString.IndexOf(',', 0);
             var secondComma = credentialString.IndexOf(',', firstComma + 1);
 
-            int appNameLength = Convert.ToInt16(credentialString[..firstComma]);
+            var appNameLength = Convert.ToInt16(credentialString[..firstComma]);
 
-            int emailLength = Convert.ToInt16(credentialString.Substring(firstComma + 1, secondComma - firstComma - 1));
+            var emailLength = Convert.ToInt16(credentialString.Substring(firstComma + 1, secondComma - firstComma - 1));
 
-            int passwordLength = Convert.ToInt16(credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1));
+            var passwordLength = Convert.ToInt16(credentialString.Substring(secondComma + 1, credentialString.IndexOf(' ') - secondComma - 1));
 
             var encrypted = credentialString[(credentialString.IndexOf(' ') + 1)..];
 
@@ -25,9 +24,9 @@ namespace PasswordManger
             credential.Email = encrypted.Substring(appNameLength, emailLength);
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
 
-            credential.AppName = Decryptor.DecryptString(credential.AppName, key, shift);
-            credential.Email = Decryptor.DecryptString(credential.Email, key, shift);
-            credential.Password = Decryptor.DecryptString(credential.Password, key, shift);
+            credential.AppName = Decryptor.DecryptString(credential.AppName, key, shift, passPhrase);
+            credential.Email = Decryptor.DecryptString(credential.Email, key, shift, passPhrase);
+            credential.Password = Decryptor.DecryptString(credential.Password, key, shift, passPhrase);
             return credential;
         }
 
@@ -40,32 +39,39 @@ namespace PasswordManger
             return new string(decryptArray);
         }
 
-        public static string DecryptString(string decrypt, int[] key, ulong decryptShift) //ToDo mek function us key but reverse
+        public static string DecryptString(string decrypt, int[] key, ulong decryptShift, string passPhrase) //ToDo mek function us key but reverse
         {
-            for (var i = key.Length - 1; i > 0; i--)
-                switch (key[i])
+            return key.Reverse()
+                .Aggregate(decrypt, (current, keys) => keys switch
                 {
-                    case 0:
-                        decrypt = PreviousChar(decrypt);
-                        break;
-                    case 1:
-                        decrypt = Encryptor.InvertBits(decrypt);
-                        break;
-                    case 2:
-                        decrypt = LatinizeLol.ReverseConvertStringToLatinNumber(decrypt);
-                        break;
-                    case 3:
-                        decrypt = ReverseCaesarion(decrypt, decryptShift);
-                        break;
-                    case 4:
-                        decrypt = RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(decrypt);
-                        break;
-                }
-
-            return decrypt;
+                    0 => PreviousChar(current),
+                    1 => Encryptor.InvertBits(current),
+                    2 => LatinizeLol.ReverseConvertStringToLatinNumber(current),
+                    3 => ReverseCaesarion(current, decryptShift),
+                    4 => RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(current),
+                    5 => HexStuff.reverseWordToHex(current),
+                    6 => Encryptor.reverseString(current),
+                    7 => ReverseCharAdder(current, passPhrase),
+                    _ => current
+                });
         }
 
         // functions
+        private static string ReverseCharAdder(string input, string passPhrase)
+        {
+            var inputArray = input.ToCharArray();
+
+            foreach (var passChar in passPhrase)
+            {
+                for (int i = 0; i < inputArray.Length; i++)
+                {
+                    inputArray[i] = (char) (Convert.ToInt16(inputArray[i]) - Convert.ToInt16(passChar));
+                }
+            }
+
+            return new string(inputArray);
+        }
+        
         private static string PreviousChar(string stringToPrevChar) // Removes one from the UTF-8 value
         {
             var prevCharArray = stringToPrevChar.ToCharArray();

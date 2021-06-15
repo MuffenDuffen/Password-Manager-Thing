@@ -5,14 +5,14 @@ namespace PasswordManger
 {
     internal abstract class Encryptor
     {
-        public static string EncryptCredential(Credential credential, int[] key, ulong shift)
+        public static string EncryptCredential(Credential credential, int[] key, ulong shift, string passPhrase)
         {
-            var encrypted = EncryptString(credential.AppName, key, shift).Length + "," +
-                            EncryptString(credential.Email, key, shift).Length + "," +
-                            EncryptString(credential.Password, key, shift).Length + " " +
-                            EncryptString(credential.AppName, key, shift) +
-                            EncryptString(credential.Email, key, shift) +
-                            EncryptString(credential.Password, key, shift);
+            var encrypted = EncryptString(credential.AppName, key, shift, passPhrase).Length + "," +
+                            EncryptString(credential.Email, key, shift, passPhrase).Length + "," +
+                            EncryptString(credential.Password, key, shift, passPhrase).Length + " " +
+                            EncryptString(credential.AppName, key, shift, passPhrase) +
+                            EncryptString(credential.Email, key, shift, passPhrase) +
+                            EncryptString(credential.Password, key, shift, passPhrase);
 
             return encrypted;
         }
@@ -26,35 +26,47 @@ namespace PasswordManger
             return new string(encryptArray);
         }
 
-        public static string EncryptString(string encrypt, int[] key, ulong encryptShift) //ToDo mek function us key
+        public static string EncryptString(string encrypt, int[] key, ulong encryptShift, string passPhrase) //ToDo mek function us key
         {
-            foreach (var keyAtIndex in key)
+            return key.Aggregate(encrypt, (current, keyAtIndex) => keyAtIndex switch
             {
-                switch (keyAtIndex)
-                {
-                    case 0:
-                        encrypt = NextChar(encrypt);
-                        break;
-                    case 1:
-                        encrypt = InvertBits(encrypt);
-                        break;
-                    case 2:
-                        encrypt = LatinizeLol.ConvertStringToLatinNumber(encrypt);
-                        break;
-                    case 3:
-                        encrypt = Caesarion(encrypt, encryptShift);
-                        break;
-                    case 4:
-                        encrypt = RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(encrypt);
-                        break;
-                }
-            }
-
-            return encrypt;
+                0 => NextChar(current),
+                1 => InvertBits(current),
+                2 => LatinizeLol.ConvertStringToLatinNumber(current),
+                3 => Caesarion(current, encryptShift),
+                4 => RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(current),
+                5 => HexStuff.wordToHex(current),
+                6 => reverseString(current),
+                7 => CharAdder(current, passPhrase),
+                _ => current
+            });
         }
         //Gets next char and replaces old one
 
             //encryptions, replacecharwithnextchar, toandinvertbinary,
+
+            private static string CharAdder(string input, string passPhrase)
+            {
+                var inputArray = input.ToCharArray();
+
+                foreach (var passChar in passPhrase)
+                {
+                    for (int i = 0; i < inputArray.Length; i++)
+                    {
+                        inputArray[i] = (char) (Convert.ToInt16(inputArray[i]) + Convert.ToInt16(passChar));
+                    }
+                }
+
+                return new string(inputArray);
+            }
+
+            public static string reverseString(string word)
+            {
+                var wordCharArray = word.ToCharArray();
+                Array.Reverse(wordCharArray);
+
+                return new string(wordCharArray);
+            }
 
             private static string NextChar(string stringToNextChar) // adds one to the UTF-8 value
             {

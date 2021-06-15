@@ -7,39 +7,40 @@ namespace PasswordManger
 {
     internal sealed class Profile
     {
-        internal string Name, MasterPassword;
+        internal string Name, MasterPassword, PassPhrase;
         public ulong Shift;
 
         public int[] EncryptionKey;
+        
         internal List<Credential> Credentials;
 
-        internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift)
+        internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift, string passPhrase)
         {
             var profile = new Profile();
 
             var text = File.ReadAllLines(path);
 
-            profile.Name = Decryptor.DecryptString(text[0], encryptionKey, shift);
+            profile.Name = Decryptor.DecryptString(text[0], encryptionKey, shift, passPhrase);
             profile.MasterPassword = text[1];
             profile.EncryptionKey = encryptionKey;
             profile.Credentials = new List<Credential>();
 
             for (var i = 2; i < text.Length; i++)
             {
-                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift));
+                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift, passPhrase));
             }
 
             return profile;
         }
 
-        internal static void SaveToFile(Profile profile, string path, ulong shift)
+        internal static void SaveToFile(Profile profile, string path, ulong shift, string passPhrase)
         {
             var text = new List<string>
             {
-                Encryptor.EncryptString(profile.Name, profile.EncryptionKey, shift),
-                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey, shift)
+                Encryptor.EncryptString(profile.Name, profile.EncryptionKey, shift, passPhrase),
+                Encryptor.EncryptString(Interface.Hash(profile.MasterPassword), profile.EncryptionKey, shift, passPhrase)
             };
-            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey, shift)));
+            text.AddRange(profile.Credentials.Select(credential => Encryptor.EncryptCredential(credential, profile.EncryptionKey, shift, passPhrase)));
 
 
             File.WriteAllLines(path, text);
@@ -126,11 +127,42 @@ namespace PasswordManger
             return encryptionKey.ToArray();
         }
 
+        internal static int[] GetEncryptionKeyLOL(string masterPassword)
+        {
+            var encryptionKey = new List<int>
+            {
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+            };
+
+            return encryptionKey.ToArray();
+        }
+
         internal static ulong GetShift(string encrypt)
         {
             var randTest = new Random(encrypt.Length);
 
             return (ulong) randTest.Next(2, encrypt.Length);
+        }
+
+        public static string GetPassPhrase(string masterPassword)
+        {
+            var passPhrase = "";
+            var masterPasswordCharArray = masterPassword.ToCharArray();
+
+            Array.Reverse(masterPasswordCharArray);
+
+            return new String(masterPasswordCharArray);
         }
     }
 

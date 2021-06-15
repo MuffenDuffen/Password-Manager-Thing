@@ -24,10 +24,10 @@ namespace PasswordManger
                     var hashedInput = Hash(input);
 
                     var encryptionKey = Profile.GetEncryptionKey(input);
-
                     var shift = Profile.GetShift(input);
+                    var passPhrase = Profile.GetPassPhrase(input);
 
-                    var encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift);
+                    var encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift, passPhrase);
 
                     // Get heavily encrypted master password from a file
                     var lines = File.ReadAllLines(path);
@@ -36,7 +36,7 @@ namespace PasswordManger
                     if (encryptedInput == masterPassword)
                     {
                         Console.WriteLine("\nYou are successfully logged in!");
-                        GetCredentials(encryptionKey, path, input, shift);
+                        GetCredentials(encryptionKey, path, input, shift, passPhrase);
                     }
                     else
                     {
@@ -63,8 +63,9 @@ namespace PasswordManger
             Console.WriteLine("To get started, you need to add some credentials");
 
             var shiftt = Profile.GetShift(masterPassword);
+            var passPhrase = Profile.GetPassPhrase(masterPassword);
 
-            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword), Shift = shiftt};
+            var profile = new Profile {MasterPassword = masterPassword, Credentials = new List<Credential>() {Credential.CreateCredential()}, Name = name, EncryptionKey = Profile.GetEncryptionKey(masterPassword), Shift = shiftt, PassPhrase = passPhrase};
 
             var done = false;
             while (!done)
@@ -81,18 +82,19 @@ namespace PasswordManger
                 }
             }
 
-            Profile.SaveToFile(profile, path, profile.Shift);
+            Profile.SaveToFile(profile, path, profile.Shift, profile.PassPhrase);
 
-            GetCredentials(profile.EncryptionKey, path, masterPassword, profile.Shift);
+            GetCredentials(profile.EncryptionKey, path, masterPassword, profile.Shift, profile.PassPhrase);
         }
 
-        private static void GetCredentials(int[] encryptionKey, string path, string masterPassword, ulong shift)
+        private static void GetCredentials(int[] encryptionKey, string path, string masterPassword, ulong shift, string passPhrase)
         {
             Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
 
-            var profile = Profile.GetFromFile(path, encryptionKey, shift);
+            var profile = Profile.GetFromFile(path, encryptionKey, shift, passPhrase);
             profile.MasterPassword = masterPassword;
             profile.Shift = shift;
+            profile.PassPhrase = passPhrase;
 
             var done = false;
 
@@ -104,7 +106,7 @@ namespace PasswordManger
                 {
                     // Direct Actions
                     case "exit":
-                        Profile.SaveToFile(profile, path, profile.Shift);
+                        Profile.SaveToFile(profile, path, profile.Shift, profile.PassPhrase);
                         done = true;
                         break;
                     case "help":
