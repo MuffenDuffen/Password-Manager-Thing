@@ -4,15 +4,16 @@ namespace PasswordManger
 {
     public class BitReverserOfDoom
     {
-        public static char reverseBitsForChar(char c)
+        public static string reverseBitOrder(string encrypt)
         {
-            var charNumberInBinary = Convert.ToString(c, 2);
-            var charNumberInBinaryArray = charNumberInBinary.ToCharArray();
-            
-            Array.Reverse(charNumberInBinaryArray);
-            var charNumberInBinaryReversed = new string(charNumberInBinaryArray);
-
-            return (char) Convert.ToInt32(charNumberInBinaryReversed, 2);
+            var encrypted = "";
+            foreach (char c in encrypt)
+            {
+                var binary = Convert.ToString(c, 2);
+                while (binary.Length <= 16) { binary = binary.Insert(0, 0);}
+                encrypted += Encryptor.reverseString(binary);
+            }
+            return encrypted;
         }
     }
 }
