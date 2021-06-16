@@ -32,25 +32,23 @@ namespace PasswordManger
 
         public static string DecryptString(string decrypt, int[] key, ulong decryptShift, string passPhrase) //ToDo mek function us key but reverse
         {
-            var result = decrypt;
-            foreach (var i in key.Reverse())
-                result = i switch
+            return key.Reverse()
+                .Aggregate(decrypt, (current, i) => i switch
                 {
-                    0 => PreviousChar(result),
-                    1 => Encryptor.InvertBits(result),
-                    2 => LatinizeLol.ReverseConvertStringToLatinNumber(result),
-                    3 => ReverseCaesarion(result, decryptShift),
-                    4 => RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(result),
-                    //5 => HexStuff.reverseWordToHex(result),
-                    6 => ReverseCharAdder(result, passPhrase),
-                    7 => PythagoranTheorem.ReversePTheoremWWords(result),
-                    8 => Encryptor.reverseString(result),
-                    9 => StringLolifierlol.ReverseLOLIFIERLOL(result),
-                    10 => CircumferenceStuff.ReverseGetCircumferenceOfCharWithEntireText(result),
-                    11 => BitReverserOfDoom.ReverseBitOrder(result),
-                    _ => result
-                };
-            return result;
+                    0 => PreviousChar(current),
+                    1 => Encryptor.InvertBits(current),
+                    2 => LatinizeLol.ReverseConvertStringToLatinNumber(current),
+                    3 => ReverseCaesarion(current, decryptShift),
+                    4 => RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(current),
+                    5 => HexStuff.reverseWordToHex(current),
+                    6 => ReverseCharAdder(current, passPhrase),
+                    7 => PythagoranTheorem.ReversePTheoremWWords(current),
+                    8 => Encryptor.reverseString(current),
+                    9 => StringLolifierlol.ReverseLOLIFIERLOL(current),
+                    10 => CircumferenceStuff.ReverseGetCircumferenceOfCharWithEntireText(current),
+                    11 => BitReverserOfDoom.ReverseBitOrder(current),
+                    _ => current
+                });
         }
 
         // functions

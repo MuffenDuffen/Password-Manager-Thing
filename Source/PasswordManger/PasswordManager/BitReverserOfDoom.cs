@@ -11,9 +11,9 @@ namespace PasswordManger
         public static string ReverseLol(string text)
         {
             var finalString = "";
-            for (var i = 0; i < text.Length; i++)
+            foreach (var t in text)
             {
-                var charInInt = (long) text[i];
+                var charInInt = (long) t;
                 var charInIntInBinary = Convert.ToString(charInInt, 2);
 
                 var reversedBinary = Encryptor.reverseString(charInIntInBinary);
@@ -35,21 +35,7 @@ namespace PasswordManger
 
         public static string ReveseReverseLol(string text)
         {
-            var finalString = "";
-            for (var i = 0; i < text.Length; i++)
-            {
-                var charInInt = (int) text[i];
-                var charInIntInBinary = Convert.ToString(charInInt, 2).PadLeft(Dict[charInInt], '0');
-
-                var reversedBinary = Encryptor.reverseString(charInIntInBinary);
-
-                var reversedBinaryInInt = Convert.ToInt32(reversedBinary, 2);
-
-                var reversedBinaryInIntChar = (char) reversedBinaryInInt;
-                finalString += reversedBinaryInIntChar;
-            }
-
-            return finalString;
+            return (from t in text select (int) t into charInInt select Convert.ToString(charInInt, 2).PadLeft(Dict[charInInt], '0') into charInIntInBinary select Encryptor.reverseString(charInIntInBinary) into reversedBinary select Convert.ToInt32(reversedBinary, 2) into reversedBinaryInInt select (char) reversedBinaryInInt).Aggregate("", (current, reversedBinaryInIntChar) => current + reversedBinaryInIntChar);
         }
 
         public static string ReverseBitOrder(string encrypt)
@@ -58,7 +44,7 @@ namespace PasswordManger
             foreach (var c in encrypt)
             {
                 var binary = Convert.ToString(c, 2);
-                while (binary.Length < 16) { binary = binary.Insert(0, "0"); }
+                while (binary.Length < 16) binary = binary.Insert(0, "0");
 
                 binary = Encryptor.reverseString(binary);
                 encrypted += (char) Convert.ToInt32(binary, 2);

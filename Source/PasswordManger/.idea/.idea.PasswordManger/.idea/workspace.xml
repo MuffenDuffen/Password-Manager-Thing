@@ -10,14 +10,19 @@
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Classes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/HexStuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/HexStuff.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/uSoE.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +57,31 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="M-branch" />
+                    <option name="lastUsedInstant" value="1623828688" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="BitReverser_fixed" />
+                    <option name="lastUsedInstant" value="1623828603" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/../.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/E2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -105,16 +135,16 @@
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/cipherStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/CipherStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/BinaryStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/PrimeStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/HexStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/StringLOLIFIERLOL.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Encryptor.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Encryptor.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/HexStuff.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -357,29 +387,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PasswordManager/HexStuff.cs</url>
-          <line>15</line>
+          <line>22</line>
           <properties documentPath="D:\Repos\Password-Manager-Thing\Source\PasswordManger\PasswordManager\HexStuff.cs" initialLine="15" containingFunctionPresentation="method 'reverseWordToHex'">
             <startOffsets>
-              <option value="503" />
+              <option value="629" />
             </startOffsets>
             <endOffsets>
-              <option value="536" />
+              <option value="662" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManager/Program.cs</url>
-          <line>46</line>
-          <properties documentPath="D:\Repos\Password-Manager-Thing\Source\PasswordManger\PasswordManager\Program.cs" initialLine="46" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="1595" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1643" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

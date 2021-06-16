@@ -11,7 +11,7 @@ namespace PasswordManger
         public ulong Shift;
 
         public int[] EncryptionKey;
-        
+
         internal List<Credential> Credentials;
 
         internal static Profile GetFromFile(string path, int[] encryptionKey, ulong shift, string passPhrase)
@@ -123,27 +123,6 @@ namespace PasswordManger
             }
 
             //foreach (int key in encryptionKey) Console.WriteLine(key);
-
-            return encryptionKey.ToArray();
-        }
-
-        internal static int[] GetEncryptionKeyLOL(string masterPassword)
-        {
-            var encryptionKey = new List<int>
-            {
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11
-            };
 
             return encryptionKey.ToArray();
         }

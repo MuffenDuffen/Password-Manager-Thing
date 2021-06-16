@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace PasswordManger
 {
@@ -22,30 +20,22 @@ namespace PasswordManger
 
         public static string EncryptString(string encrypt, int[] key, ulong encryptShift, string passPhrase) //ToDo mek function us key
         {
-            var text = new List<string>();
-
-            var result = encrypt;
-            foreach (var i in key)
+            return key.Aggregate(encrypt, (current, i) => i switch
             {
-                result = i switch
-                {
-                    0 => NextChar(result),
-                    1 => InvertBits(result),
-                    2 => LatinizeLol.ConvertStringToLatinNumber(result),
-                    3 => Caesarion(result, encryptShift),
-                    4 => RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(result),
-                    //5 => HexStuff.wordToHex(result),
-                    6 => CharAdder(result, passPhrase),
-                    7 => PythagoranTheorem.PTheoremWWords(result),
-                    8 => reverseString(result),
-                    9 => StringLolifierlol.LOLIFIERLOL(result),
-                    10 => CircumferenceStuff.GetCircumferenceOfCharWithEntireText(result),
-                    11 => BitReverserOfDoom.ReverseBitOrder(result),
-                    _ => result
-                };
-            }
-
-            return result;
+                0 => NextChar(current),
+                1 => InvertBits(current),
+                2 => LatinizeLol.ConvertStringToLatinNumber(current),
+                3 => Caesarion(current, encryptShift),
+                4 => RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(current),
+                5 => HexStuff.wordToHex(current),
+                6 => CharAdder(current, passPhrase),
+                7 => PythagoranTheorem.PTheoremWWords(current),
+                8 => reverseString(current),
+                9 => StringLolifierlol.LOLIFIERLOL(current),
+                10 => CircumferenceStuff.GetCircumferenceOfCharWithEntireText(current),
+                11 => BitReverserOfDoom.ReverseBitOrder(current),
+                _ => current
+            });
         }
 
         //Gets next char and replaces old one
