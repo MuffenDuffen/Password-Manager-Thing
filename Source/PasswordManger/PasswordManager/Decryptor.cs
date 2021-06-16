@@ -41,12 +41,13 @@ namespace PasswordManger
                     2 => LatinizeLol.ReverseConvertStringToLatinNumber(result),
                     3 => ReverseCaesarion(result, decryptShift),
                     4 => RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(result),
-                    5 => HexStuff.reverseWordToHex(result),
+                    //5 => HexStuff.reverseWordToHex(result),
                     6 => ReverseCharAdder(result, passPhrase),
                     7 => PythagoranTheorem.ReversePTheoremWWords(result),
                     8 => Encryptor.reverseString(result),
                     9 => StringLolifierlol.ReverseLOLIFIERLOL(result),
                     10 => CircumferenceStuff.ReverseGetCircumferenceOfCharWithEntireText(result),
+                    11 => BitReverserOfDoom.ReverseBitOrder(result),
                     _ => result
                 };
             return result;

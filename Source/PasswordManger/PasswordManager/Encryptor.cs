@@ -34,12 +34,13 @@ namespace PasswordManger
                     2 => LatinizeLol.ConvertStringToLatinNumber(result),
                     3 => Caesarion(result, encryptShift),
                     4 => RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(result),
-                    5 => HexStuff.wordToHex(result),
+                    //5 => HexStuff.wordToHex(result),
                     6 => CharAdder(result, passPhrase),
                     7 => PythagoranTheorem.PTheoremWWords(result),
                     8 => reverseString(result),
                     9 => StringLolifierlol.LOLIFIERLOL(result),
                     10 => CircumferenceStuff.GetCircumferenceOfCharWithEntireText(result),
+                    11 => BitReverserOfDoom.ReverseBitOrder(result),
                     _ => result
                 };
             }
