@@ -9,20 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Classes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/HexStuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/HexStuff.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/uSoE.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,9 +130,9 @@
       <option value="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Encryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/HexStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Encryptor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -247,6 +235,7 @@
       <workItem from="1623668791384" duration="413000" />
       <workItem from="1623748958047" duration="8865000" />
       <workItem from="1623765710978" duration="11763000" />
+      <workItem from="1623852333233" duration="359000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>

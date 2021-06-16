@@ -41,7 +41,7 @@ namespace PasswordManger
         //Gets next char and replaces old one
 
             //encryptions, replacecharwithnextchar, toandinvertbinary,
-            
+
             private static string Caesarion(string encrypt, ulong shift)
             {
                 var encryptArray = encrypt.ToCharArray();
