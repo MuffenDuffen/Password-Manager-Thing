@@ -11,7 +11,8 @@ namespace PasswordManger
         public static void LogIn()
         {
             Console.WriteLine("PasswordManager Program by Nanojaw studios");
-            var path = Directory.GetCurrentDirectory() + @"\data.txt";
+            var path = Directory.GetCurrentDirectory() + @"\data.jpg";
+
             if (File.Exists(path))
             {
                 var tries = 0;
@@ -29,8 +30,12 @@ namespace PasswordManger
 
                     var encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift, passPhrase);
 
+                    FileByteStuff.decryptFile(path);
+
+                    var nPath = Directory.GetCurrentDirectory() + @"\data.txt";
+                    
                     // Get heavily encrypted master password from a file
-                    var lines = File.ReadAllLines(path);
+                    var lines = File.ReadAllLines(nPath);
                     var masterPassword = lines[1];
 
                     if (encryptedInput == masterPassword)
@@ -48,7 +53,8 @@ namespace PasswordManger
             }
             else
             {
-                CreateProfile(path);
+                var nPath = Directory.GetCurrentDirectory() + @"data.txt";
+                CreateProfile(nPath);
             }
         }
 
@@ -107,6 +113,7 @@ namespace PasswordManger
                     // Direct Actions
                     case "exit":
                         Profile.SaveToFile(profile, path, profile.Shift, profile.PassPhrase);
+                        FileByteStuff.encryptFile(path);
                         done = true;
                         break;
                     case "help":

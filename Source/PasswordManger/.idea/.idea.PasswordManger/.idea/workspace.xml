@@ -8,9 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PasswordManager/FileByteStuff.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Interface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +87,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2E9BEEB1-8083-4F4B-9ABE-A5F3DB1BC8BD/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E6E6B40B-308C-4FE1-9C93-7C26C144C865/E2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D01EA799-E9C9-4F77-A043-C8ECB5387E2F/C/Aggregate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D01EA799-E9C9-4F77-A043-C8ECB5387E2F/46/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -122,7 +138,6 @@
       <option value="$PROJECT_DIR$/PasswordManager/Fibonacci.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/cipherStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/CipherStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/BinaryStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/PrimeStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/StringLOLIFIERLOL.cs" />
@@ -131,8 +146,11 @@
       <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/HexStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Encryptor.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/fileStuff.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/FileByteStuff.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -155,7 +173,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -236,6 +254,8 @@
       <workItem from="1623748958047" duration="8865000" />
       <workItem from="1623765710978" duration="11763000" />
       <workItem from="1623852333233" duration="359000" />
+      <workItem from="1624045378667" duration="2849000" />
+      <workItem from="1624087395750" duration="2513000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
