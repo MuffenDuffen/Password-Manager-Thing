@@ -2,9 +2,9 @@
 
 namespace PasswordManger
 {
-    public class FileByteStuff
+    internal static class FileByteStuff
     {
-        private static byte[] fileToByteArray(string path)
+        private static byte[] FileToByteArray(string path)
         {
             var stream = File.OpenRead(path);
             var fileBytes = new byte[stream.Length];
@@ -15,39 +15,37 @@ namespace PasswordManger
             return fileBytes;
         }
 
-        private static void writeByteArrayToFile(string filePath, byte[] bytes)
+        private static void WriteByteArrayToFile(string filePath, byte[] bytes)
         {
             File.Create(filePath).Dispose();
 
-            using (Stream file = File.OpenWrite(filePath))
-            {
-                file.Write(bytes, 0, bytes.Length);
-            }
+            using Stream file = File.OpenWrite(filePath);
+            file.Write(bytes, 0, bytes.Length);
         }
 
 
-        public static void encryptFile(string path)
+        public static void EncryptFile(string path)
         {
-            var bytes = fileToByteArray(path);
+            var bytes = FileToByteArray(path);
             var encryptedFilePath = Directory.GetCurrentDirectory() + @"\data.jpg";
 
             for (var i = 0; i < bytes.Length; i++) bytes[i] += (byte) 'L';
 
             File.Delete(path);
 
-            writeByteArrayToFile(encryptedFilePath, bytes);
+            WriteByteArrayToFile(encryptedFilePath, bytes);
         }
 
-        public static void decryptFile(string path)
+        internal static void DecryptFile(string path)
         {
-            var bytes = fileToByteArray(path);
+            var bytes = FileToByteArray(path);
             var decryptedFilePath = Directory.GetCurrentDirectory() + @"\data.txt";
 
             for (var i = 0; i < bytes.Length; i++) bytes[i] -= (byte) 'L';
 
             File.Delete(path);
 
-            writeByteArrayToFile(decryptedFilePath, bytes);
+            WriteByteArrayToFile(decryptedFilePath, bytes);
         }
     }
 }

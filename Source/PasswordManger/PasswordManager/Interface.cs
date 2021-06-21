@@ -10,7 +10,7 @@ namespace PasswordManger
     {
         public static void LogIn()
         {
-            Console.WriteLine("PasswordManager Program by Nanojaw studios");
+            Console.WriteLine(@"PasswordManager Program by Nanojaw studios");
             var path = Directory.GetCurrentDirectory() + @"\data.jpg";
 
             if (File.Exists(path))
@@ -18,7 +18,7 @@ namespace PasswordManger
                 var tries = 0;
                 while (tries != 64) //ToDo add a timer
                 {
-                    Console.Write("Enter Master Password: ");
+                    Console.Write(@"Enter Master Password: ");
                     var input = Console.ReadLine();
 
                     // return a hashed value that we compare to the stored masterPassword
@@ -30,22 +30,23 @@ namespace PasswordManger
 
                     var encryptedInput = Encryptor.EncryptString(hashedInput, encryptionKey, shift, passPhrase);
 
-                    FileByteStuff.decryptFile(path);
+                    FileByteStuff.DecryptFile(path);
 
                     var nPath = Directory.GetCurrentDirectory() + @"\data.txt";
-                    
+
                     // Get heavily encrypted master password from a file
                     var lines = File.ReadAllLines(nPath);
                     var masterPassword = lines[1];
 
                     if (encryptedInput == masterPassword)
                     {
-                        Console.WriteLine("\nYou are successfully logged in!");
+                        Console.WriteLine(@"
+You are successfully logged in!");
                         GetCredentials(encryptionKey, path, input, shift, passPhrase);
                     }
                     else
                     {
-                        Console.WriteLine("Wrong password, you have {0} tries left", 64 - tries);
+                        Console.WriteLine(@"Wrong password, you have {0} tries left", 64 - tries);
                         tries++;
                         if (tries == 64) File.Delete(path); // Delete the file containing passwords if you fail too many times, then create a new profile
                     }
@@ -60,13 +61,13 @@ namespace PasswordManger
 
         private static void CreateProfile(string path)
         {
-            Console.WriteLine("Welcome to the password manager, please make a profile to start using this app!");
-            Console.Write("Enter a secure Master password: ");
+            Console.WriteLine(@"Welcome to the password manager, please make a profile to start using this app!");
+            Console.Write(@"Enter a secure Master password: ");
             var masterPassword = Console.ReadLine();
 
             var name = AskQuestion("What is your name: ");
 
-            Console.WriteLine("To get started, you need to add some credentials");
+            Console.WriteLine(@"To get started, you need to add some credentials");
 
             var shiftt = Profile.GetShift(masterPassword);
             var passPhrase = Profile.GetPassPhrase(masterPassword);
@@ -95,7 +96,7 @@ namespace PasswordManger
 
         private static void GetCredentials(int[] encryptionKey, string path, string masterPassword, ulong shift, string passPhrase)
         {
-            Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
+            Console.WriteLine(@"Type 'exit' to exit, type 'help' for more information");
 
             var profile = Profile.GetFromFile(path, encryptionKey, shift, passPhrase);
             profile.MasterPassword = masterPassword;
@@ -113,24 +114,24 @@ namespace PasswordManger
                     // Direct Actions
                     case "exit":
                         Profile.SaveToFile(profile, path, profile.Shift, profile.PassPhrase);
-                        FileByteStuff.encryptFile(path);
+                        FileByteStuff.EncryptFile(path);
                         done = true;
                         break;
                     case "help":
-                        Console.WriteLine("**********************************");
-                        Console.WriteLine("Help menu");
-                        Console.WriteLine("");
-                        Console.WriteLine("Type 'exit' to exit");
-                        Console.WriteLine("To find login credentials, write 'get login'");
-                        Console.WriteLine("To create login credentials, write 'create login'");
-                        Console.WriteLine("To list all credentials, write 'list logins'");
-                        Console.WriteLine("To clear console, write 'clear'");
-                        Console.WriteLine("**********************************");
+                        Console.WriteLine(@"**********************************");
+                        Console.WriteLine(@"Help menu");
+                        Console.WriteLine(@"");
+                        Console.WriteLine(@"Type 'exit' to exit");
+                        Console.WriteLine(@"To find login credentials, write 'get login'");
+                        Console.WriteLine(@"To create login credentials, write 'create login'");
+                        Console.WriteLine(@"To list all credentials, write 'list logins'");
+                        Console.WriteLine(@"To clear console, write 'clear'");
+                        Console.WriteLine(@"**********************************");
                         break;
 
                     case "clear":
                         Console.Clear();
-                        Console.WriteLine("Type 'exit' to exit, type 'help' for more information");
+                        Console.WriteLine(@"Type 'exit' to exit, type 'help' for more information");
                         break;
 
                     case "list logins":
@@ -149,19 +150,13 @@ namespace PasswordManger
 
                             case "email":
                                 var email = AskQuestion("Enter email: ");
-                                foreach (var t in profile.Credentials.Where(t => t.Email == email))
-                                {
-                                    Credential.OutputCredentials(t);
-                                }
+                                foreach (var t in profile.Credentials.Where(t => t.Email == email)) Credential.OutputCredentials(t);
 
                                 break;
 
                             case "app name":
                                 var appName = AskQuestion("Enter app name: ");
-                                foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName))
-                                {
-                                    Credential.OutputCredentials(tt);
-                                }
+                                foreach (var tt in profile.Credentials.Where(tt => tt.AppName == appName)) Credential.OutputCredentials(tt);
 
                                 break;
                         }
@@ -173,11 +168,9 @@ namespace PasswordManger
                 }
             }
 
-            Console.WriteLine("Successfully logged out.");
+            Console.WriteLine(@"Successfully logged out.");
             Environment.Exit(0);
         }
-
-        #region Non-Interface functions
 
         public static string AskQuestion(string question)
         {
@@ -195,19 +188,16 @@ namespace PasswordManger
 
         private static void OutputCredentials(Credential credential)
         {
-            Console.WriteLine("Login information:");
-            Console.WriteLine("App name: " + credential.AppName);
-            Console.WriteLine("Email used: " + credential.Email);
-            Console.WriteLine("Password used: " + credential.Password);
-            Console.WriteLine("");
+            Console.WriteLine(@"Login information:");
+            Console.WriteLine(@"App name: " + credential.AppName);
+            Console.WriteLine(@"Email used: " + credential.Email);
+            Console.WriteLine(@"Password used: " + credential.Password);
+            Console.WriteLine(@"");
         }
 
         public static string Hash(string input)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                return string.Empty;
-            }
+            if (string.IsNullOrEmpty(input)) return string.Empty;
 
             // Triple hashing because why not
             var sha256 = new SHA256Managed();
@@ -230,7 +220,5 @@ namespace PasswordManger
             rng.GetBytes(password);
             return System.Text.Encoding.UTF8.GetString(password);
         }
-
-        #endregion
     }
 }

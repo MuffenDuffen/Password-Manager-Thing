@@ -101,10 +101,7 @@ namespace PasswordManger
 
             var stringOfNumberInLatin = "";
 
-            if (indexInNumber == 1 && numberString[0] == '0')
-            {
-                return "Nihil";
-            }
+            if (indexInNumber == 1 && numberString[0] == '0') return "Nihil";
 
             foreach (var cc in numberString)
             {
@@ -235,10 +232,7 @@ namespace PasswordManger
 
             var backToNumberFromLatin = stringOfNumberInLatin.Split(',');
 
-            for (var i = 0; i < backToNumberFromLatin.Length; i++)
-            {
-                backToNumberFromLatin[i] = reverseNumbersInLatin[backToNumberFromLatin[i]].ToString();
-            }
+            for (var i = 0; i < backToNumberFromLatin.Length; i++) backToNumberFromLatin[i] = reverseNumbersInLatin[backToNumberFromLatin[i]].ToString();
 
             return backToNumberFromLatin.Aggregate<string, ulong>(0, (current, t) => current + (ulong) Convert.ToInt64(t));
         }

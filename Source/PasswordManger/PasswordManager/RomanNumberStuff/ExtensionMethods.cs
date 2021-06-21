@@ -9,12 +9,8 @@ namespace PasswordManger.RomanNumberStuff
         public static int IndexOfValue(this OrderedDictionary dictionary, object value)
         {
             for (var i = 0; i < dictionary.Count; ++i)
-            {
                 if (dictionary[i].Equals(value))
-                {
                     return i;
-                }
-            }
 
             return -1;
         }
@@ -22,12 +18,8 @@ namespace PasswordManger.RomanNumberStuff
         public static bool ContainsValue(this OrderedDictionary dictionary, object value)
         {
             for (var i = 0; i < dictionary.Count; ++i)
-            {
                 if (dictionary[i].Equals(value))
-                {
                     return true;
-                }
-            }
 
             return false;
         }
@@ -35,12 +27,8 @@ namespace PasswordManger.RomanNumberStuff
         public static object GetKeyFromFirstElementWithValue(this OrderedDictionary dictionary, object value)
         {
             for (var i = 0; i < dictionary.Count; ++i)
-            {
                 if (dictionary[i].Equals(value))
-                {
                     return dictionary.Cast<DictionaryEntry>().ElementAt(i).Key;
-                }
-            }
 
             return null;
         }

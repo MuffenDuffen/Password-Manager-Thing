@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace PasswordManger
@@ -27,11 +26,11 @@ namespace PasswordManger
                 2 => LatinizeLol.ConvertStringToLatinNumber(current),
                 3 => Caesarion(current, encryptShift),
                 4 => RomanNumberStuff.RomanNumeralCalculator.ConvertToRomanNumeral(current),
-                5 => HexStuff.wordToHex(current),
+                5 => HexStuff.WordToHex(current),
                 6 => CharAdder(current, passPhrase),
                 7 => PythagoranTheorem.PTheoremWWords(current),
-                8 => reverseString(current),
-                9 => StringLolifierlol.LOLIFIERLOL(current),
+                8 => ReverseString(current),
+                9 => StringLolifierlol.Lolifierlol(current),
                 10 => CircumferenceStuff.GetCircumferenceOfCharWithEntireText(current),
                 11 => BitReverserOfDoom.ReverseBitOrder(current),
                 _ => current
@@ -56,17 +55,13 @@ namespace PasswordManger
                 var inputArray = input.ToCharArray();
 
                 foreach (var passChar in passPhrase)
-                {
                     for (var i = 0; i < inputArray.Length; i++)
-                    {
                         inputArray[i] = (char) (Convert.ToInt64(inputArray[i]) + Convert.ToInt64(passChar));
-                    }
-                }
 
                 return new string(inputArray);
             }
 
-            public static string reverseString(string word)
+            public static string ReverseString(string word)
             {
                 var wordCharArray = word.ToCharArray();
                 Array.Reverse(wordCharArray);
@@ -86,10 +81,7 @@ namespace PasswordManger
             public static string InvertBits(string stringToInvert) // converts each characters UTF-8 value into bits and inverts it, then converts back to chars. China warning
             {
                 var inverted = stringToInvert.ToCharArray();
-                for (var i = 0; i < inverted.Length; i++)
-                {
-                    inverted[i] = (char) ~Convert.ToInt64(inverted[i]);
-                }
+                for (var i = 0; i < inverted.Length; i++) inverted[i] = (char) ~Convert.ToInt64(inverted[i]);
 
                 return new string(inverted);
             }

@@ -8,10 +8,7 @@ namespace PasswordManger
         {
             var charArray = text.ToCharArray();
 
-            for (var i = 0; i < charArray.Length; i++)
-            {
-                charArray[i] = GetCircumferenceOfChar(charArray[i]);
-            }
+            for (var i = 0; i < charArray.Length; i++) charArray[i] = GetCircumferenceOfChar(charArray[i]);
 
             return new string(charArray);
         }
@@ -20,10 +17,7 @@ namespace PasswordManger
         {
             var charArray = text.ToCharArray();
 
-            for (var i = 0; i < charArray.Length; i++)
-            {
-                charArray[i] = ReverseGetCircumferenceOfChar(charArray[i]);
-            }
+            for (var i = 0; i < charArray.Length; i++) charArray[i] = ReverseGetCircumferenceOfChar(charArray[i]);
 
             return new string(charArray);
         }

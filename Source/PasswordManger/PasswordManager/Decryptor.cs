@@ -24,9 +24,9 @@ namespace PasswordManger
             credential.Email = encrypted.Substring(appNameLength, emailLength);
             credential.Password = encrypted.Substring(appNameLength + emailLength, passwordLength);
 
-            credential.AppName = Decryptor.DecryptString(credential.AppName, key, shift, passPhrase);
-            credential.Email = Decryptor.DecryptString(credential.Email, key, shift, passPhrase);
-            credential.Password = Decryptor.DecryptString(credential.Password, key, shift, passPhrase);
+            credential.AppName = DecryptString(credential.AppName, key, shift, passPhrase);
+            credential.Email = DecryptString(credential.Email, key, shift, passPhrase);
+            credential.Password = DecryptString(credential.Password, key, shift, passPhrase);
             return credential;
         }
 
@@ -40,11 +40,11 @@ namespace PasswordManger
                     2 => LatinizeLol.ReverseConvertStringToLatinNumber(current),
                     3 => ReverseCaesarion(current, decryptShift),
                     4 => RomanNumberStuff.RomanNumeralCalculator.ReverseConvertToRomanNumeral(current),
-                    5 => HexStuff.reverseWordToHex(current),
+                    5 => HexStuff.ReverseWordToHex(current),
                     6 => ReverseCharAdder(current, passPhrase),
                     7 => PythagoranTheorem.ReversePTheoremWWords(current),
-                    8 => Encryptor.reverseString(current),
-                    9 => StringLolifierlol.ReverseLOLIFIERLOL(current),
+                    8 => Encryptor.ReverseString(current),
+                    9 => StringLolifierlol.ReverseLolifierlol(current),
                     10 => CircumferenceStuff.ReverseGetCircumferenceOfCharWithEntireText(current),
                     11 => BitReverserOfDoom.ReverseBitOrder(current),
                     _ => current
@@ -66,12 +66,8 @@ namespace PasswordManger
             var inputArray = input.ToCharArray();
 
             foreach (var passChar in passPhrase)
-            {
                 for (var i = 0; i < inputArray.Length; i++)
-                {
                     inputArray[i] = (char) (Convert.ToInt64(inputArray[i]) - Convert.ToInt64(passChar));
-                }
-            }
 
             return new string(inputArray);
         }

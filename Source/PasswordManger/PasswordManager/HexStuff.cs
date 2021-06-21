@@ -5,7 +5,7 @@ namespace PasswordManger
 {
     internal static class HexStuff
     {
-        internal static string wordToHex(string word)
+        internal static string WordToHex(string word)
         {
             var wordCharArray = word.ToCharArray();
             var finalString = wordCharArray.Aggregate(string.Empty, (current, c) => current + ((int) c).ToString("X") + ",");
@@ -13,15 +13,15 @@ namespace PasswordManger
             return finalString;
         }
 
-        private static int toIntFromHex(string s)
+        private static int ToIntFromHex(string s)
         {
             return Convert.ToInt16(s, 16);
         }
 
-        internal static string reverseWordToHex(string word)
+        internal static string ReverseWordToHex(string word)
         {
             var wordsArray = word.Split(',');
-            return wordsArray.Aggregate("", (current, s) => current + (char) toIntFromHex(s));
+            return wordsArray.Aggregate("", (current, s) => current + (char) ToIntFromHex(s));
         }
     }
 }

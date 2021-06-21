@@ -8,24 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45c51d26-94ba-4133-9b83-bacb708c7764" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PasswordManager/FileByteStuff.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PasswordManger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Classes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Classes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Decryptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Encryptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/FileByteStuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/FileByteStuff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/HexStuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/HexStuff.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Interface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PasswordManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/bin/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/ref/PasswordManager.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/PasswordManager.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/PythagoranTheorem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/PythagoranTheorem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/ExtensionMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/ExtensionMethods.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/InputGatherer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/MathCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/MathCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/OutputDisplayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/RomanNumeralCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/RomanNumeralCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/StringLOLIFIERLOL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/StringLOLIFIERLOL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,17 +116,12 @@
       <option value="$PROJECT_DIR$/PasswordManger/Encrypter.cs" />
       <option value="$PROJECT_DIR$/PasswordManger/Decryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Clippy.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumeralStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/ExtensionMethods.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/InputGatherer.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/InputValidator.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/MathCalculator.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/OutputDisplayer.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/obj/Debug/net5.0/PasswordManager.AssemblyInfo.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/App.config" />
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/Constants.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/RomanNumeralCalculator.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/testStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/uSOE.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Encrypter.cs" />
@@ -134,23 +129,28 @@
       <option value="$PROJECT_DIR$/PasswordManager/Fibbonaci.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/uSoE.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/pythagoran theorem.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/PythagoranTheorem.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Fibonacci.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/cipherStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/CipherStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/BinaryStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/PrimeStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/StringLOLIFIERLOL.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/HexStuff.cs" />
-      <option value="$PROJECT_DIR$/PasswordManager/Encryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/fileStuff.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/OutputDisplayer.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/StringLOLIFIERLOL.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/PythagoranTheorem.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/latinizeLOL.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/HexStuff.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/FileByteStuff.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Encryptor.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Classes.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/CircumferenceStuff.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/Decryptor.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Program.cs" />
       <option value="$PROJECT_DIR$/PasswordManager/Interface.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/BitReverserOfDoom.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/RomanNumeralCalculator.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/MathCalculator.cs" />
+      <option value="$PROJECT_DIR$/PasswordManager/RomanNumberStuff/ExtensionMethods.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sX0DnsOV3Hd6D0FVcBBRp4yNoT" />
@@ -256,6 +256,7 @@
       <workItem from="1623852333233" duration="359000" />
       <workItem from="1624045378667" duration="2849000" />
       <workItem from="1624087395750" duration="2513000" />
+      <workItem from="1624289118883" duration="1235000" />
     </task>
     <task id="LOCAL−00001" summary="Base commit">
       <created>1621003542389</created>
@@ -392,23 +393,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="FIXED ERROR IN LATINIZELOL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PasswordManager/HexStuff.cs</url>
-          <line>22</line>
-          <properties documentPath="D:\Repos\Password-Manager-Thing\Source\PasswordManger\PasswordManager\HexStuff.cs" initialLine="15" containingFunctionPresentation="method 'reverseWordToHex'">
-            <startOffsets>
-              <option value="629" />
-            </startOffsets>
-            <endOffsets>
-              <option value="662" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#System.Random" memberName="s_globalRandom" />

@@ -29,15 +29,9 @@ namespace PasswordManger.RomanNumberStuff
             var numbers = numeralWord.Split(new[] {" , "}, StringSplitOptions.None);
 
             for (var indexInNumbersArray = 0; indexInNumbersArray < numbers.Length; indexInNumbersArray++)
-            {
-                for (var indexInWord = 0; indexInWord < numbers[indexInNumbersArray].Length; indexInWord++)
-                {
-                    if (indexInWord == numbers[indexInNumbersArray].Length - 1 && numbers[indexInNumbersArray][indexInWord] == ',')
-                    {
-                        numbers[indexInNumbersArray] = numbers[indexInNumbersArray][..^1];
-                    }
-                }
-            }
+            for (var indexInWord = 0; indexInWord < numbers[indexInNumbersArray].Length; indexInWord++)
+                if (indexInWord == numbers[indexInNumbersArray].Length - 1 && numbers[indexInNumbersArray][indexInWord] == ',')
+                    numbers[indexInNumbersArray] = numbers[indexInNumbersArray][..^1];
 
 
             return numbers.Aggregate("", (current, number) => current + (char) ReverseCalculateRomanNumeral(number));
@@ -51,7 +45,7 @@ namespace PasswordManger.RomanNumberStuff
                 {"IV", 4},
                 {"V", 5},
                 {"IX", 9},
-                
+
                 {"X", 10},
                 {"XL", 40},
                 {"L", 50},
@@ -81,10 +75,7 @@ namespace PasswordManger.RomanNumberStuff
             var numberInRomanNumeralsStringArray = numberInRomanNumeralsString.Split(',');
             var finalInt = new int[numberInRomanNumeralsString.Length];
 
-            for (var i = 0; i < numberInRomanNumeralsStringArray.Length; i++)
-            {
-                finalInt[i] = backToArabicNumberals[numberInRomanNumeralsStringArray[i]];
-            }
+            for (var i = 0; i < numberInRomanNumeralsStringArray.Length; i++) finalInt[i] = backToArabicNumberals[numberInRomanNumeralsStringArray[i]];
 
             return (ulong) finalInt.Sum();
         }
@@ -165,10 +156,7 @@ namespace PasswordManger.RomanNumberStuff
         {
             var lowerPowerOfTenRomanNumeralValue = lowerRomanNumeralValue;
 
-            if (MathCalculator.IsValuePowerOfTen(upperRomanNumeralValue))
-            {
-                lowerPowerOfTenRomanNumeralValue = GetNextLowerPowerOfTenRomanNumeral(lowerRomanNumeralValue);
-            }
+            if (MathCalculator.IsValuePowerOfTen(upperRomanNumeralValue)) lowerPowerOfTenRomanNumeralValue = GetNextLowerPowerOfTenRomanNumeral(lowerRomanNumeralValue);
 
             return lowerPowerOfTenRomanNumeralValue;
         }
@@ -216,10 +204,7 @@ namespace PasswordManger.RomanNumberStuff
             {
                 var romanNumeralValue = GetRomanNumeralValueAtIndex(i);
 
-                if (romanNumeralValue <= input)
-                {
-                    return romanNumeralValue;
-                }
+                if (romanNumeralValue <= input) return romanNumeralValue;
             }
 
             throw new Exception(global::RomanNumerals.Strings.Strings.LowerRomanNumeralNotFound);
@@ -227,7 +212,7 @@ namespace PasswordManger.RomanNumberStuff
 
         private static int GetRomanNumeralValueAtIndex(int index)
         {
-            return (int)RomanNumerals[index];
+            return (int) RomanNumerals[index];
         }
 
         private static string GetRomanNumeralFromValue(int value)

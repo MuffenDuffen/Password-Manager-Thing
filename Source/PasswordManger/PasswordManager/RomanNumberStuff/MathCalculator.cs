@@ -9,10 +9,7 @@
 
         private static bool IsValuePowerOfX(int x, int value)
         {
-            while (value > x - 1 && value % x == 0)
-            {
-                value /= x;
-            }
+            while (value > x - 1 && value % x == 0) value /= x;
 
             return value == 1;
         }

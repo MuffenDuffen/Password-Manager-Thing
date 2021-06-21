@@ -25,10 +25,7 @@ namespace PasswordManger
             profile.EncryptionKey = encryptionKey;
             profile.Credentials = new List<Credential>();
 
-            for (var i = 2; i < text.Length; i++)
-            {
-                profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift, passPhrase));
-            }
+            for (var i = 2; i < text.Length; i++) profile.Credentials.Add(Decryptor.DecryptCredential(text[i], profile.EncryptionKey, shift, passPhrase));
 
             return profile;
         }
@@ -65,7 +62,6 @@ namespace PasswordManger
             var rand11 = new Random(baseRand.Next() * masterPassword[11]);
 
             for (var i = 0; i < baseRand.Next(16, 32); i++)
-            {
                 switch (baseRand.Next(12))
                 {
                     case 0:
@@ -105,7 +101,6 @@ namespace PasswordManger
                         encryptionKey.Add(rand11.Next(12));
                         break;
                 }
-            }
 
             var indexOfFirstTwo = 0;
 
@@ -118,9 +113,8 @@ namespace PasswordManger
             }
 
             for (var iii = (indexOfFirstTwo + 1); iii < encryptionKey.Count; iii++)
-            {
-                if (encryptionKey[iii] == 2) encryptionKey[iii] = 0;
-            }
+                if (encryptionKey[iii] == 2)
+                    encryptionKey[iii] = 0;
 
             //foreach (int key in encryptionKey) Console.WriteLine(key);
 
@@ -162,7 +156,7 @@ namespace PasswordManger
                 return new Credential(Interface.AskQuestion("Enter App name: "),
                     Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword());
 
-            Console.WriteLine("Enter a Password: ");
+            Console.WriteLine(@"Enter a Password: ");
             var password = Console.ReadLine();
 
             return new Credential(Interface.AskQuestion("Enter App name: "), Interface.AskQuestion("Enter Email used: "), password);
@@ -170,12 +164,13 @@ namespace PasswordManger
 
         public static void OutputCredentials(Credential credential)
         {
-            Console.WriteLine("**************************************************************************");
-            Console.WriteLine("App Name: " + credential.AppName);
-            Console.WriteLine("Email: " + credential.Email);
-            Console.WriteLine("Password: " + credential.Password);
+            Console.WriteLine(@"**************************************************************************");
+            Console.WriteLine(@"App Name: " + credential.AppName);
+            Console.WriteLine(@"Email: " + credential.Email);
+            Console.WriteLine(@"Password: " + credential.Password);
 
-            Console.WriteLine("\n**************************************************************************");
+            Console.WriteLine(@"
+**************************************************************************");
         }
     }
 }
