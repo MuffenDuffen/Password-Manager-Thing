@@ -60,9 +60,12 @@ namespace PasswordManger
             var rand9 = new Random(baseRand.Next() * masterPassword[9]);
             var rand10 = new Random(baseRand.Next() * masterPassword[10]);
             var rand11 = new Random(baseRand.Next() * masterPassword[11]);
+            var rand12 = new Random(baseRand.Next() * masterPassword[12]);
+            var rand13 = new Random(baseRand.Next() * masterPassword[13]);
+            var rand14 = new Random(baseRand.Next() * masterPassword[14]);
 
             for (var i = 0; i < baseRand.Next(16, 32); i++)
-                switch (baseRand.Next(12))
+                switch (baseRand.Next(15))
                 {
                     case 0:
                         encryptionKey.Add(rand0.Next(12));
@@ -99,6 +102,15 @@ namespace PasswordManger
                         break;
                     case 11:
                         encryptionKey.Add(rand11.Next(12));
+                        break;
+                    case 12:
+                        encryptionKey.Add(rand12.Next(12));
+                        break;
+                    case 13:
+                        encryptionKey.Add(rand13.Next(12));
+                        break;
+                    case 14:
+                        encryptionKey.Add(rand14.Next(12));
                         break;
                 }
 
@@ -151,7 +163,6 @@ namespace PasswordManger
 
         internal static Credential CreateCredential()
         {
-            // ReSharper disable once ConvertIfStatementToReturnStatement Because the line becomes too long
             if (!Interface.AskQuestion("Do you want to enter your own password? ").Contains("yes"))
                 return new Credential(Interface.AskQuestion("Enter App name: "),
                     Interface.AskQuestion("Enter Email used: "), Interface.CreatePassword());
